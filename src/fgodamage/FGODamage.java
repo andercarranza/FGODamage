@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ servants.java contains info for a few advantages like class and attribute advantages.
+**IMPORTANT** all damage claculations and info located at http://blogs.nrvnqsr.com/entry.php/3309-How-is-damage-calculated this guy goes into a lot of detail and this 
+forum thread seems to have a lot of useful information **IMPORTANT*
+
  */
 package fgodamage;
 
@@ -19,7 +20,14 @@ import java.util.concurrent.TimeUnit;
 
 
 public class FGODamage {
-    public static final Map <String, String> servantsMap;
+    public static final Map <String, String> servantsMap; //this map contains general servant info, in the style of "servantname0" = first skill
+    //"servantname1" = second skill, "servantname2" = third skill, "servantname3" = servant gender, "servantname4" = servant attribute
+    //later on i wanted to add upgraded skills. the "servantnameX" where X is a number is very useful because it allows us to add servant info
+    //we feel we need while leaving it extremely easy to access, as long as we keep the same pattern for each servant
+    //info from http://fate-go.cirnopedia.org/servant_all.php#
+    
+    
+    //note on this: i really like this map format and i think it would be useful for storing Noble Phantasm damage info and maybe skills as well
     static{
         Map <String, String> servants = new HashMap<String, String>();
         servants.put("Emiya0","Mind's Eye (True) B");
@@ -117,6 +125,93 @@ public class FGODamage {
         servants.put("Benkei2","Blank Subscription List");
         servants.put("Benkei3","Male");
         servants.put("Benkei4","Man");
+        servants.put("Cu Chulainn (Prototype)0","Rune Spell B");
+        servants.put("Cu Chulainn (Prototype)1","Protection from Arrows B");
+        servants.put("Cu Chulainn (Prototype)2","Beast-Slayer B+");
+        servants.put("Cu Chulainn (Prototype)3","Male");
+        servants.put("Cu Chulainn (Prototype)4","Sky");
+        servants.put("Leonidas0","Rear Guard's Pride A");
+        servants.put("Leonidas1","Battle Continuation A");
+        servants.put("Leonidas2","Warrior's Roar B");
+        servants.put("Leonidas3","Male");
+        servants.put("Leonidas4","Man");
+        servants.put("Romulus0","Natural Body C");
+        servants.put("Romulus1","Imperial Privilege EX");
+        servants.put("Romulus2","Septem Colles A");
+        servants.put("Romulus3","Male");
+        servants.put("Romulus4","Star");
+        servants.put("Medusa0","Mysitc Eyes A+");
+        servants.put("Medusa1","Monstrous Strength B");
+        servants.put("Medusa2","Bloodfort Andromeda B");
+        servants.put("Medusa3","Female");
+        servants.put("Medusa4","Earth");
+        servants.put("Georgios0","Guardian Knight A+");
+        servants.put("Georgios1","Martyr's Soul B+");
+        servants.put("Georgios2","Battle Continuation A");
+        servants.put("Georgios3","Male");
+        servants.put("Georgios4","Man");
+        servants.put("Edward Teach0","Voyager of the Storm A");
+        servants.put("Edward Teach1","Pirate's Glory B");
+        servants.put("Edward Teach2","Loving Gentleman C");
+        servants.put("Edward Teach3","Male");
+        servants.put("Edward Teach4","Man");
+        servants.put("Boudica0","Vow to the Goddess B");
+        servants.put("Boudica1","Battle Continuation A");
+        servants.put("Boudica2","Protection of Andrasta A");
+        servants.put("Boudica3","Female");
+        servants.put("Boudica4","Man");
+        servants.put("Ushiwakamaru0","Tenga's Strategy A");
+        servants.put("Ushiwakamaru1","Charisma C+");
+        servants.put("Ushiwakamaru2","Quick-Witted Swallow B");
+        servants.put("Ushiwakamaru3","Female");
+        servants.put("Ushiwakamaru4","Man");
+        servants.put("Alexander0","Charisma C");
+        servants.put("Alexander1","Fair Youth B");
+        servants.put("Alexander2","Signs of a Supreme Ruler A");
+        servants.put("Alexander3","Male");
+        servants.put("Alexander4","Man");
+        servants.put("Marie Antoinette0","Siren Song C");
+        servants.put("Marie Antoinette1","Beautiful Princess A");
+        servants.put("Marie Antoinette2","Grace of God B");
+        servants.put("Marie Antoinette3","Female");
+        servants.put("Marie Antoinette4","Man");
+        servants.put("Martha0","Protection of the Faith A");
+        servants.put("Martha1","Miracle D");
+        servants.put("Martha2","Holy Maiden's Oath C");
+        servants.put("Martha3","Female");
+        servants.put("Martha4","Man");
+        servants.put("Medea0","Rapid Divine Words A");
+        servants.put("Medea1","Argon Coin");
+        servants.put("Medea2","Circe's Teaching A");
+        servants.put("Medea3","Female");
+        servants.put("Medea4","Earth");
+        servants.put("Gilles Caster0","Mental Corruption A");
+        servants.put("Gilles Caster1","Aesthitic Appreciation E-");
+        servants.put("Gilles Caster2","Evil Eye of the Abyss C");
+        servants.put("Gilles Caster3","Male");
+        servants.put("Gilles Caster4","Man");
+        servants.put("Hans Christian Andersen0","Human Observation A");
+        servants.put("Hans Christian Andersen1","Rapid Casting E");
+        servants.put("Hans Christian Andersen2","Innocent Monster D");
+        servants.put("Hans Christian Andersen3","Male");
+        servants.put("Hans Christian Andersen4","Man");
+        servants.put("William Shakespeare0","Enchant A");
+        servants.put("William Shakespeare1","Self-Preservation B");
+        servants.put("William Shakespeare2","The King's Men C");
+        servants.put("William Shakespeare3","Male");
+        servants.put("William Shakespeare4","Man");
+        servants.put("Mephistopheles0","Curse A");
+        servants.put("Mephistopheles1","Innocent Monster B");
+        servants.put("Mephistopheles2","Jester's Burst of Laughter A+");
+        servants.put("Mephistopheles3","Male");
+        servants.put("Mephistopheles4","Earth");
+        servants.put("Wolfganag Amadeus Mozart0","Protection of Muse (Fake) EX");
+        servants.put("Wolfganag Amadeus Mozart1","Aesthetic Appreciation B");
+        servants.put("Wolfganag Amadeus Mozart2","A Little Night Music EX");
+        servants.put("Wolfganag Amadeus Mozart3","Male");
+        servants.put("Wolfganag Amadeus Mozart4","Star");
+        
+        
         servantsMap = Collections.unmodifiableMap(servants);
     }
 
@@ -191,8 +286,8 @@ public class FGODamage {
         }
         Servant myServ = new Servant(atk, name, classname);
         Servant enemyServ = new Servant(0, nameEnemy, classnameEnemy);
-        double classBonus = myServ.servInfo.getClassMultiplier();
-        double classAdvantage = myServ.servInfo.getClassAdv(enemyServ.servInfo);
+        double classBonus = myServ.getClassMultiplier();
+        double classAdvantage = myServ.getClassAdv(enemyServ);
         double randomlow = .9, randomhigh = 1.1;
         double endDamage = (atk * NPdmgMult *(firstcardBonus + (cardDV *(1+ cardMOD))) * classBonus * classAdvantage * myServ.getAtrributeAdv(enemyServ)
                 * 1 * .23 *(1 + atkMod - enemyDefMod) * criticalModifier * extraCardModifier * (1 - specialDefMod) * //the times one at the start is to make the high and low points easier to calculate. just mulitply the final result by .9 and 1.1 for low and high bounds

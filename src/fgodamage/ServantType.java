@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ a now defunct class, originally was seperate from servant.java, all these methods now contained in servant.java
  */
 package fgodamage;
 
@@ -11,7 +9,7 @@ package fgodamage;
  */
 public class ServantType {
     private String className;
-    private double classMultiplier;
+   
 
     public ServantType(String className) {
         this.className = className;

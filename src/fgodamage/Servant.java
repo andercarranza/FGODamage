@@ -14,12 +14,15 @@ public class Servant {
     public ServantType servInfo;
     private String attribute;
     private String className;
+    private String skill1, skill2, skill3;
     
     public Servant(int ATK, String name, String className) {
         this.ATK = ATK;
         this.attribute = FGODamage.servantsMap.get(name + "4");
         this.className = className;
-
+        this.skill1 = FGODamage.servantsMap.get(name + "0");
+        this.skill2 = FGODamage.servantsMap.get(name + "1");
+        this.skill3 = FGODamage.servantsMap.get(name + "2");
     }
     
     public double getClassMultiplier() {

@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -26,6 +26,24 @@ public class FGODamage {
     //we feel we need while leaving it extremely easy to access, as long as we keep the same pattern for each servant
     //info from http://fate-go.cirnopedia.org/servant_all.php#
     
+    
+    public static int atk, cardNum, NPdmgMult = 1, criticalModifier = 1,
+            isCrit = 0, isNPcard = 0, isSuperEffective = 0; //critmodifier is 1 if not, 2 if yes. isCrit 1 if crit 0 if not. same for np
+    public static int skill1Level, skill2Level, skill3Level;
+    public static double firstcardBonus = 0, cardDV = -1, cardMOD = 0; //cardmod is for buffs of type arts/buster/quick ste to zero for now
+    public static double atkMod = 0, enemyDefMod = 0; //atkMod for your servants attack modification, enemyDefMod for enemy defense modification....sidenote, note sure if this is where i want to put skill usage but might as well
+    public static double extraCardModifier = 1; //1 if not  abrave chain, 2 if just a normal brave chain, 3.5 if in a brave chain with 3 of the same cards
+    public static double specialDefMod = 0; //***NOTE ON THIS: only for bosses who have a special damage reduction on them ie gawain in camelot likely will be a while before i implement this***
+    public static double powerMod = 0; //Power Up [Anti-X] includes dragon killer, beast killer, executioner, boudica's skill and whatever else I forget.
+    public static double selfDamageMod = 0; //forum says not used yet, not sure if this is still true 
+    public static double critDamageMod = 0; //additive modifications to how hard you crit (10% == .1)
+    public static double npDamageMod = 0; //same as above except for NPs NOTE NOT THE AMOUNT OF DAMAGE NP DOES
+    public static double superEffectiveModifier = 0; //not sure what this is about maybe something like "weak to enuma elish"
+    public static int dmgPlusAdd = 0; //dmg that is added like divinity and wavers 3rd skill
+    public static int enemyDmgCutAdd = 0; //dmg cut like wavers second skill and mashus first, might implement in the future
+    public static double busterChainMod = 0; //is .2 if it is a buster card in a buster chain, does not have to be buster brave
+    public static String classname, name, cardType, strIsbuster, classnameEnemy, nameEnemy;
+    public static boolean isBuster, isNP = false;
     
     //note on this: i really like this map format and i think it would be useful for storing Noble Phantasm damage info and maybe skills as well
     static{
@@ -658,28 +676,32 @@ public class FGODamage {
     public static void main(String[] args) {
         Scanner rtz = new Scanner(System.in);
         Scanner rtz1 = new Scanner(System.in);
-        int atk, cardNum, NPdmgMult = 1, criticalModifier = 1, isCrit = 0, isNPcard = 0
-                , isSuperEffective = 0; //critmodifier is 1 if not, 2 if yes. isCrit 1 if crit 0 if not. same for np
-        double firstcardBonus = 0, cardDV = -1, cardMOD = 0; //cardmod is for buffs of type arts/buster/quick ste to zero for now
-        double atkMod = 0, enemyDefMod = 0; //atkMod for your servants attack modification, enemyDefMod for enemy defense modification....sidenote, note sure if this is where i want to put skill usage but might as well
-        double extraCardModifier = 1; //1 if not  abrave chain, 2 if just a normal brave chain, 3.5 if in a brave chain with 3 of the same cards
-        double specialDefMod = 0; //***NOTE ON THIS: only for bosses who have a special damage reduction on them ie gawain in camelot likely will be a while before i implement this***
-        double powerMod = 0; //not sure what this is, check forum/skill wording 
-        double selfDamageMod = 0; //forum says not used yet, not sure if this is still true 
-        double critDamageMod = 0; //additive modifications to how hard you crit (10% == .1)
-        double npDamageMod = 0; //same as above except for NPs NOTE NOT THE AMOUNT OF DAMAGE NP DOES
-        double superEffectiveModifier = 0; //not sure what this is about maybe something like "weak to enuma elish"
-        int dmgPlusAdd = 0; //dmg that is added like divinity and wavers 3rd skill
-        int enemyDmgCutAdd = 0; //dmg cut like wavers second skill and mashus first, might implement in the future
-        double busterChainMod = 0; //is .2 if it is a buster card in a buster chain, does not have to be buster brave
-        String classname, name, cardType, strIsbuster, classnameEnemy, nameEnemy;
-        boolean isBuster, isNP = false;
+//        public static int atk, cardNum, NPdmgMult = 1, criticalModifier = 1, isCrit = 0, isNPcard = 0
+//                , isSuperEffective = 0; //critmodifier is 1 if not, 2 if yes. isCrit 1 if crit 0 if not. same for np
+//        double firstcardBonus = 0, cardDV = -1, cardMOD = 0; //cardmod is for buffs of type arts/buster/quick ste to zero for now
+//        double atkMod = 0, enemyDefMod = 0; //atkMod for your servants attack modification, enemyDefMod for enemy defense modification....sidenote, note sure if this is where i want to put skill usage but might as well
+//        double extraCardModifier = 1; //1 if not  abrave chain, 2 if just a normal brave chain, 3.5 if in a brave chain with 3 of the same cards
+//        double specialDefMod = 0; //***NOTE ON THIS: only for bosses who have a special damage reduction on them ie gawain in camelot likely will be a while before i implement this***
+//        double powerMod = 0; //not sure what this is, check forum/skill wording 
+//        double selfDamageMod = 0; //forum says not used yet, not sure if this is still true 
+//        double critDamageMod = 0; //additive modifications to how hard you crit (10% == .1)
+//        double npDamageMod = 0; //same as above except for NPs NOTE NOT THE AMOUNT OF DAMAGE NP DOES
+//        double superEffectiveModifier = 0; //not sure what this is about maybe something like "weak to enuma elish"
+//        int dmgPlusAdd = 0; //dmg that is added like divinity and wavers 3rd skill
+//        int enemyDmgCutAdd = 0; //dmg cut like wavers second skill and mashus first, might implement in the future
+//        double busterChainMod = 0; //is .2 if it is a buster card in a buster chain, does not have to be buster brave
+//        String classname, name, cardType, strIsbuster, classnameEnemy, nameEnemy;
+//        boolean isBuster, isNP = false;
+
+        boolean skill1Active = false, skill2Active = false, skill3Active = false;
+        
+        
         System.out.println("What is the class of the enemy?");
         classnameEnemy = rtz.nextLine();
         System.out.println("What is the name of the enemy?");
         nameEnemy = rtz.nextLine();
         System.out.println("What is the ATK of your servant?");
-        atk = rtz.nextInt();
+        atk = rtz.nextInt();    
         rtz.nextLine();
         System.out.println("What is the class of your servant?");
         classname = rtz.nextLine();
@@ -693,6 +715,25 @@ public class FGODamage {
         rtz.nextLine();
         System.out.println("Type of card?");
         cardType = rtz.nextLine();
+        System.out.println("Skill level 1?");
+        skill1Level = rtz.nextInt();
+        rtz.nextLine();
+        System.out.println("Skill level 2?");
+        skill2Level = rtz.nextInt();
+        rtz.nextLine();
+        System.out.println("Skill level 3?");
+        skill3Level = rtz.nextInt();
+        rtz.nextLine();
+        
+        
+        
+        if(skill1Active)
+            Effects.activateSkill(servantsMap.get(name + "0"), skill1Level);
+        if(skill2Active)
+            Effects.activateSkill(servantsMap.get(name + "1"), skill2Level);
+        if(skill3Active)
+            Effects.activateSkill(servantsMap.get(name + "2"), skill3Level);
+        
         if(isNP)
             NPdmgMult = 200; //change to the servants np level and dmg amount later
         if(strIsbuster.equals("y"))

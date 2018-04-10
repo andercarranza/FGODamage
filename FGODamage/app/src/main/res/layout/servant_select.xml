@@ -7,7 +7,7 @@
     tools:context=".LoadEnemy">
 
     <TextView
-        android:id="@+id/enemy_select"
+        android:id="@+id/serv_select"
         android:layout_width="328dp"
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"
@@ -17,8 +17,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="@string/enemy"
         android:textSize="20dp"
+        android:text="Servant Number"
         app:layout_constraintBottom_toTopOf="@+id/serv_class"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@+id/serv_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enemy_select"
+        app:layout_constraintTop_toBottomOf="@+id/serv_select"
         app:layout_constraintVertical_bias="0.026" />
 
     <Spinner
@@ -68,7 +68,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="number"
-        android:text="@string/input_hp"
+        android:text="@string/input_atk"
         app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -83,7 +83,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:onClick="loadServants"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

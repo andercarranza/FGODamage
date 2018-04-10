@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FGODamage</string>
+
+    <string name="enemy">Enemy Servant</string>
+
+    <string name="servant1">Servant 1</string>
+    <string name="servant2">Servant 2</string>
+    <string name="servant3">Servant 3</string>
+
+    <string name="input_atk">Enter Attack Value</string>
+    <string name="input_hp">Enter HP Value</string>
+
+    <string name="next">Next</string>
+
+    <string name="confirm">Is this information correct?</string>
 </resources>

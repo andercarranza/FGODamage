@@ -1,4 +1,4 @@
-package com.example.christian.fgodamage;
+package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,22 +6,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 /**
- * Created by Christian on 3/31/2018.
+ * Created by Christian on 4/9/2018.
  */
 
-public class LoadEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+    int servantNumber;
     Spinner spinnerClass, spinnerServname;
     ArrayAdapter<String> classArray, nameArray;
-    String enemyClass, enemyServant;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.enemy_select);
+        setContentView(R.layout.servant_select);
 
         spinnerClass = (Spinner) findViewById(R.id.serv_class);
         spinnerClass.setOnItemSelectedListener(this);
@@ -51,19 +52,59 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
         spinnerServname.setAdapter(nameArray);
-        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-            enemyServant  = (String) parent.getItemAtPosition(position);
-                Toast.makeText
-                        (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
-                        .show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+        TextView nextServant =(TextView)findViewById(R.id.serv_select);
+        Button Next = (Button) findViewById(R.id.next);
 
+        Intent servantInfo = getIntent();
+        Bundle servant = servantInfo.getExtras();
+
+        //retrieve servant number
+        if(servant!=null)
+        {
+            servantNumber = (int) servant.get("servant");
+        }
+
+        //display servant number
+        switch (servantNumber){
+            case 1:
+                nextServant.setText("Servant 1");
+                break;
+            case 2:
+                nextServant.setText("Servant 2");
+                break;
+            case 3:
+                nextServant.setText("Servant 3");
+                break;
+            default:
+                break;
+        }
+
+        final Intent loadNextServant = new Intent(this, LoadServants.class);
+        final Intent display = new Intent(this, Confirm.class);
+
+        //next button restarts activity for next servant
+        Next.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
+                switch(servantNumber) {
+                    case 1:
+                        loadNextServant.putExtra("servant", 2);
+                        startActivity(loadNextServant);
+                        break;
+                    case 2:
+                        loadNextServant.putExtra("servant", 3);
+                        startActivity(loadNextServant);
+                        break;
+                    case 3:
+                        startActivity(display);
+                        break;
+                    default:
+                        //
+                        break;
+                }
             }
         });
+
     }
 
     @Override
@@ -71,49 +112,36 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch(classSpinnerPosition){
             case 0:
-                enemyClass = "Saber";
                 fillSaberNames();
                 break;
             case 1:
-                enemyClass = "Archer";
                 fillArcherNames();
                 break;
             case 2:
-                enemyClass = "Lancer";
                 fillLancerNames();
                 break;
             case 3:
-                enemyClass = "Rider";
                 fillRiderNames();
                 break;
             case 4:
-                enemyClass = "Caster";
                 fillCasterNames();
                 break;
             case 5:
-                enemyClass = "Assassin";
                 fillAssassinNames();
                 break;
             case 6:
-                enemyClass = "Berserker";
                 fillBerserkerNames();
                 break;
             case 7:
-                enemyClass = "Shielder";
                 fillShielderNames();
                 break;
             case 8:
-                enemyClass = "Ruler";
                 fillRulerNames();
                 break;
             case 9:
-                enemyClass = "Avenger";
                 fillAvengerNames();
                 break;
         }
-        Toast.makeText
-                (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
-                .show();
 
     }
 
@@ -316,4 +344,8 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
                 "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
+
+
+
+
 }

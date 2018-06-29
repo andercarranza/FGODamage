@@ -1,4 +1,4 @@
-package com.example.christian.fgodamage;
+package com.example.ander.fgodamagerecovery;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.christian.fgodamage", appContext.getPackageName());
+        assertEquals("com.example.ander.fgodamagerecovery", appContext.getPackageName());
     }
 }

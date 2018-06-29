@@ -1,4 +1,4 @@
-package com.example.christian.fgodamage;
+package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
 import android.os.Bundle;

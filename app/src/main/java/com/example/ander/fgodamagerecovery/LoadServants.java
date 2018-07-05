@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -16,8 +17,10 @@ import android.widget.Toast;
  */
 
 public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-    int servantNumber;
+    int servantNumber, servantAttack;
     Spinner spinnerClass, spinnerServname;
+    String thisServ, servantClass;
+    EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +57,23 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         spinnerServname.setAdapter(nameArray);
         TextView nextServant =(TextView)findViewById(R.id.serv_select);
         Button Next = (Button) findViewById(R.id.next);
+        textBox = (EditText)findViewById(R.id.serv_atk);
 
-        Intent servantInfo = getIntent();
+        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                thisServ  = (String) parent.getItemAtPosition(position);
+
+                //Servant enemy = new Servant(0, enemyServant, enemyClass);
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        final Intent servantInfo = getIntent();
         Bundle servant = servantInfo.getExtras();
 
         //retrieve servant number
@@ -88,14 +106,26 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 switch(servantNumber) {
                     case 1:
+                        servantAttack = Integer.parseInt(textBox.getText().toString());
                         loadNextServant.putExtra("servant", 2);
+                        servantInfo.putExtra("serv_1a", thisServ);
+                        servantInfo.putExtra("serv_1b", servantClass);
+                        servantInfo.putExtra("serv_1c", servantAttack);
                         startActivity(loadNextServant);
                         break;
                     case 2:
+                        servantAttack = Integer.parseInt(textBox.getText().toString());
                         loadNextServant.putExtra("servant", 3);
+                        servantInfo.putExtra("serv_2a", thisServ);
+                        servantInfo.putExtra("serv_2b", servantClass);
+                        servantInfo.putExtra("serv_2c", servantAttack);
                         startActivity(loadNextServant);
                         break;
                     case 3:
+                        servantAttack = Integer.parseInt(textBox.getText().toString());
+                        servantInfo.putExtra("serv_3a", thisServ);
+                        servantInfo.putExtra("serv_3b", servantClass);
+                        servantInfo.putExtra("serv_3c", servantAttack);
                         startActivity(display);
                         break;
                     default:
@@ -112,33 +142,43 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch(classSpinnerPosition){
             case 0:
+                servantClass = "Saber";
                 fillSaberNames();
                 break;
             case 1:
+                servantClass = "Archer";
                 fillArcherNames();
                 break;
             case 2:
+                servantClass = "Lancer";
                 fillLancerNames();
                 break;
             case 3:
+                servantClass = "Rider";
                 fillRiderNames();
                 break;
             case 4:
+                servantClass = "Caster";
                 fillCasterNames();
                 break;
             case 5:
+                servantClass = "Assassin";
                 fillAssassinNames();
                 break;
             case 6:
+                servantClass = "Berserker";
                 fillBerserkerNames();
                 break;
             case 7:
+                servantClass = "Shielder";
                 fillShielderNames();
                 break;
             case 8:
+                servantClass = "Ruler";
                 fillRulerNames();
                 break;
             case 9:
+                servantClass = "Avenger";
                 fillAvengerNames();
                 break;
         }

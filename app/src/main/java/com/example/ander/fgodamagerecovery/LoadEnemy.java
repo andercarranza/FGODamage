@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ander.fgodamagerecovery.Objects.Servant;
+
 /**
  * Created by Christian on 3/31/2018.
  */
@@ -50,6 +52,10 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
+        final Intent servantInfo = new Intent(this, LoadServants.class);
+
+
+
         spinnerServname.setAdapter(nameArray);
         spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
@@ -58,6 +64,9 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 Toast.makeText
                         (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
                         .show();
+                //Servant enemy = new Servant(0, enemyServant, enemyClass);
+                servantInfo.putExtra("enemy_1", enemyServant);
+                servantInfo.putExtra("enemy_2", enemyClass);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

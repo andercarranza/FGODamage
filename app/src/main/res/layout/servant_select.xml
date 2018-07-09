@@ -68,7 +68,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="number"
-        android:text="@string/input_atk"
+        android:hint="@string/input_atk"
         app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"

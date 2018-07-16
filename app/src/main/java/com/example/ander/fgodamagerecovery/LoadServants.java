@@ -124,6 +124,9 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         Next.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
+                //edit button pressed from confirm screen: edit selected servant then return to confirm screen
+
+                //initial run, servants 1-3 empty
                 switch(servantNumber) {
                     case 1:
                         try {

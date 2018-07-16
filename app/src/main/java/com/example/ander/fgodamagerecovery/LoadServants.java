@@ -3,6 +3,7 @@ package com.example.ander.fgodamagerecovery;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,16 +18,16 @@ import android.widget.Toast;
  */
 
 public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-    int servantNumber, servantAttack;
+    int servantNumber, servantAttack, servant1c, servant2c;
     Spinner spinnerClass, spinnerServname;
-    String thisServ, servantClass;
+    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servant_select);
-
+        Log.d("Test", "Does this work?");
         spinnerClass = (Spinner) findViewById(R.id.serv_class);
         spinnerClass.setOnItemSelectedListener(this);
 
@@ -74,11 +75,28 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         });
 
         final Intent servantInfo = getIntent();
+        //servantInfo.getExtras();
+        final String enemy_1 = servantInfo.getStringExtra("enemy_1");
+        final String enemy_2 = servantInfo.getStringExtra("enemy_2");
+        //Log.d("servantName", s);
         Bundle servant = servantInfo.getExtras();
-
+        if(servantInfo.hasExtra("serv_1a"))
+        {
+            servant1a = servantInfo.getStringExtra("serv_1a");
+            servant1b = servantInfo.getStringExtra("serv_1b");
+            servant1c = servantInfo.getIntExtra("serv_1c", -1);
+            Log.d("servantAttack", String.valueOf(servant1c));
+        }
+        if(servantInfo.hasExtra("serv_2a"))
+        {
+            servant2a = servantInfo.getStringExtra("serv_2a");
+            servant2b = servantInfo.getStringExtra("serv_2b");
+            servant2c = servantInfo.getIntExtra("serv_2c", -1);
+            Log.d("servantAttack", String.valueOf(servant2c));
+        }
         //retrieve servant number
         if(servant!=null)
-        {
+            {
             servantNumber = (int) servant.get("servant");
         }
 
@@ -100,7 +118,9 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         final Intent loadNextServant = new Intent(this, LoadServants.class);
         final Intent display = new Intent(this, Confirm.class);
 
+
         //next button restarts activity for next servant
+        //might have to readd previous info each time
         Next.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
@@ -108,24 +128,41 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                     case 1:
                         servantAttack = Integer.parseInt(textBox.getText().toString());
                         loadNextServant.putExtra("servant", 2);
-                        servantInfo.putExtra("serv_1a", thisServ);
-                        servantInfo.putExtra("serv_1b", servantClass);
-                        servantInfo.putExtra("serv_1c", servantAttack);
+                        loadNextServant.putExtra("serv_1a", thisServ);
+                        loadNextServant.putExtra("serv_1b", servantClass);
+                        loadNextServant.putExtra("serv_1c", servantAttack);
+                        loadNextServant.putExtra("enemy_1", enemy_1);
+                        loadNextServant.putExtra("enemy_2", enemy_2);
                         startActivity(loadNextServant);
                         break;
                     case 2:
                         servantAttack = Integer.parseInt(textBox.getText().toString());
                         loadNextServant.putExtra("servant", 3);
-                        servantInfo.putExtra("serv_2a", thisServ);
-                        servantInfo.putExtra("serv_2b", servantClass);
-                        servantInfo.putExtra("serv_2c", servantAttack);
+                        loadNextServant.putExtra("serv_2a", thisServ);
+                        loadNextServant.putExtra("serv_2b", servantClass);
+                        loadNextServant.putExtra("serv_2c", servantAttack);
+                        loadNextServant.putExtra("serv_1a", servant1a);
+                        loadNextServant.putExtra("serv_1b", servant1b);
+                        loadNextServant.putExtra("serv_1c", servant1c);
+                        loadNextServant.putExtra("enemy_1", enemy_1);
+                        loadNextServant.putExtra("enemy_2", enemy_2);
                         startActivity(loadNextServant);
                         break;
                     case 3:
                         servantAttack = Integer.parseInt(textBox.getText().toString());
-                        servantInfo.putExtra("serv_3a", thisServ);
-                        servantInfo.putExtra("serv_3b", servantClass);
-                        servantInfo.putExtra("serv_3c", servantAttack);
+                        Bundle passThis = new Bundle();
+                        passThis.putString("serv_3a", thisServ);
+                        passThis.putString("serv_3b", servantClass);
+                        passThis.putInt("serv_3c", servantAttack);
+                        passThis.putString("serv_1a", servant1a);
+                        passThis.putString("serv_1b", servant1b);
+                        passThis.putInt("serv_1c", servant1c);
+                        passThis.putString("serv_2a", servant2a);
+                        passThis.putString("serv_2b", servant2b);
+                        passThis.putInt("serv_2c", servant2c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
                         startActivity(display);
                         break;
                     default:

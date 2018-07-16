@@ -85,14 +85,14 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             servant1a = servantInfo.getStringExtra("serv_1a");
             servant1b = servantInfo.getStringExtra("serv_1b");
             servant1c = servantInfo.getIntExtra("serv_1c", -1);
-            Log.d("servantAttack", String.valueOf(servant1c));
+            //Log.d("servantAttack", String.valueOf(servant1c));
         }
         if(servantInfo.hasExtra("serv_2a"))
         {
             servant2a = servantInfo.getStringExtra("serv_2a");
             servant2b = servantInfo.getStringExtra("serv_2b");
             servant2c = servantInfo.getIntExtra("serv_2c", -1);
-            Log.d("servantAttack", String.valueOf(servant2c));
+            //Log.d("servantAttack", String.valueOf(servant2c));
         }
         //retrieve servant number
         if(servant!=null)
@@ -126,7 +126,12 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 switch(servantNumber) {
                     case 1:
-                        servantAttack = Integer.parseInt(textBox.getText().toString());
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception){
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
                         loadNextServant.putExtra("servant", 2);
                         loadNextServant.putExtra("serv_1a", thisServ);
                         loadNextServant.putExtra("serv_1b", servantClass);
@@ -136,7 +141,12 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         startActivity(loadNextServant);
                         break;
                     case 2:
-                        servantAttack = Integer.parseInt(textBox.getText().toString());
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception){
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
                         loadNextServant.putExtra("servant", 3);
                         loadNextServant.putExtra("serv_2a", thisServ);
                         loadNextServant.putExtra("serv_2b", servantClass);
@@ -149,7 +159,12 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         startActivity(loadNextServant);
                         break;
                     case 3:
-                        servantAttack = Integer.parseInt(textBox.getText().toString());
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception){
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
                         Bundle passThis = new Bundle();
                         passThis.putString("serv_3a", thisServ);
                         passThis.putString("serv_3b", servantClass);

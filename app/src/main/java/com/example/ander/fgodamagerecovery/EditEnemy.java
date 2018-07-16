@@ -11,13 +11,7 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
-
-
-/**
- * Created by Christian on 3/31/2018.
- */
-
-public class LoadEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class EditEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     Spinner spinnerClass, spinnerServname;
     ArrayAdapter<String> classArray, nameArray;
     String enemyClass, enemyServant;
@@ -53,17 +47,18 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
-        //final Intent servantInfo = new Intent(getApplicationContext(), LoadServants.class);
+        //use getPosition for the ArrayAdapters
 
+        Intent servantInfo = new Intent();
 
+        Bundle received = servantInfo.getExtras();
 
         spinnerServname.setAdapter(nameArray);
         spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-            enemyServant  = spinnerServname.getSelectedItem().toString();
-            Log.d("Test", "Does this work?");
-            Log.d("Servants Name", enemyServant);
+                enemyServant  = spinnerServname.getSelectedItem().toString();
+
                 Toast.makeText
                         (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
                         .show();
@@ -122,7 +117,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 fillAvengerNames();
                 break;
         }
-       // Log.d("Servants Class", enemyClass);
+        // Log.d("Servants Class", enemyClass);
         Toast.makeText
                 (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
                 .show();
@@ -330,4 +325,5 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
                 "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
+
 }

@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <!-- ENEMY -->
             <TextView
                 android:id="@+id/Enemy_Header"
                 android:layout_width="match_parent"
@@ -78,8 +79,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/enemy_2"/>
 
 
-
-
+            <!-- SERVANT1 -->
             <TextView
                 android:id="@+id/Servant1_Header"
                 android:layout_width="match_parent"
@@ -152,13 +152,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/servant1c"/>
 
 
-
-
-
-
-
-
-
+            <!-- SERVANT2 -->
             <TextView
                 android:id="@+id/Servant2_Header"
                 android:layout_width="match_parent"
@@ -231,11 +225,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/servant2c"/>
 
 
-
-
-
-
-
+            <!-- SERVANT3 -->
             <TextView
                 android:id="@+id/Servant3_Header"
                 android:layout_width="match_parent"
@@ -306,8 +296,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/servant3c"/>
-
-
+            <!-- endservants -->
 
 
             <Button

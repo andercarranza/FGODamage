@@ -126,12 +126,27 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 //edit button pressed from confirm screen: edit selected servant then return to confirm screen
 
+
+//                if(servantInfo.hasExtra("servant_editinfo"))
+//                {
+//                    Bundle editServant = getIntent().getExtras();
+//                    int editNo = editServant.getInt("servant_editnum");
+//
+//
+//                }
+
+
+
                 //initial run, servants 1-3 empty
                 switch(servantNumber) {
                     case 1:
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
                         } catch (NumberFormatException exception){
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        if (servantAttack == 0){
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
@@ -150,6 +165,11 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
+                        if (servantAttack == 0){
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+
                         loadNextServant.putExtra("servant", 3);
                         loadNextServant.putExtra("serv_2a", thisServ);
                         loadNextServant.putExtra("serv_2b", servantClass);
@@ -165,6 +185,10 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
                         } catch (NumberFormatException exception){
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        if (servantAttack == 0){
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }

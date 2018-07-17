@@ -58,9 +58,11 @@ public class Confirm extends AppCompatActivity {
         Button next = (Button)findViewById(R.id.next);
         final Intent passToEditEnemy = new Intent(this, EditEnemy.class);
         final Intent passToEditServant1 = new Intent(this, LoadServants.class);
-        final Intent passToEditServant2 = new Intent(this, LoadServants.class);
-        final Intent passToEditServant3 = new Intent(this, LoadServants.class);
+//        final Intent passToEditServant2 = new Intent(this, LoadServants.class);
+//        final Intent passToEditServant3 = new Intent(this, LoadServants.class);
         final Intent passToConfirm2 = new Intent(this, Confirm2.class);
+
+        //actual damage calculation (do after edit)
         next.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 passToConfirm2.putExtras(recieved);
@@ -69,7 +71,22 @@ public class Confirm extends AppCompatActivity {
         });
 
 
-        //TODO
+        final Bundle passThis = new Bundle();
+        passThis.putString("serv_3a", recieved.getString("serv_3a"));
+        passThis.putString("serv_3b", recieved.getString("serv_3b"));
+        passThis.putInt("serv_3c", recieved.getInt("serv_3c"));
+        passThis.putString("serv_1a", recieved.getString("serv_1a"));
+        passThis.putString("serv_1b", recieved.getString("serv_1b"));
+        passThis.putInt("serv_1c", recieved.getInt("serv_1c"));
+        passThis.putString("serv_2a", recieved.getString("serv_2a"));
+
+        passThis.putInt("serv_2c", recieved.getInt("serv_2c"));passThis.putString("serv_2b", recieved.getString("serv_2b"));
+        passThis.putString("enemy_1", recieved.getString("enemy_1"));
+        passThis.putString("enemy_2", recieved.getString("enemy_2"));
+
+
+
+        //pass entire bundle of 4 servants with servant edit number
         editEnemy.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                    passToEditEnemy.putExtras(recieved);
@@ -78,20 +95,23 @@ public class Confirm extends AppCompatActivity {
         });
         editServant1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                passToEditServant1.putExtra("servant_editnum",1);
+                passThis.putInt("serv_edit", 1);
+                passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
             }
         });
         editServant2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                passToEditServant2.putExtra("servant_editnum",2);
-                startActivity(passToEditServant2);
+                passThis.putInt("serv_edit", 2);
+                passToEditServant1.putExtras(passThis);
+                startActivity(passToEditServant1);
             }
         });
         editServant3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                passToEditServant3.putExtra("servant_editnum",3);
-                startActivity(passToEditServant3);
+                passThis.putInt("serv_edit", 3);
+                passToEditServant1.putExtras(passThis);
+                startActivity(passToEditServant1);
             }
         });
         //Log.d("servantName", servantInfo.getStringExtra("enemy_1"));

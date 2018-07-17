@@ -124,19 +124,6 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         Next.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                //edit button pressed from confirm screen: edit selected servant then return to confirm screen
-
-
-//                if(servantInfo.hasExtra("servant_editinfo"))
-//                {
-//                    Bundle editServant = getIntent().getExtras();
-//                    int editNo = editServant.getInt("servant_editnum");
-//
-//
-//                }
-
-
-
                 //initial run, servants 1-3 empty
                 switch(servantNumber) {
                     case 1:
@@ -204,6 +191,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         passThis.putInt("serv_2c", servant2c);
                         passThis.putString("enemy_1", enemy_1);
                         passThis.putString("enemy_2", enemy_2);
+                        passThis.putInt("serv_edit", 0); passThis.putInt("serv_edit", 0);
                         display.putExtras(passThis);
                         startActivity(display);
                         break;

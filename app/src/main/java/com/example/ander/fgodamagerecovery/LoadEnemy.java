@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Christian on 3/31/2018.
@@ -60,10 +61,17 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
         spinnerServname.setAdapter(nameArray);
         spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
+<<<<<<< HEAD
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 enemyServant = spinnerServname.getSelectedItem().toString();
                 Log.d("Test", "Does this work?");
                 Log.d("Servants Name", enemyServant);
+=======
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+            enemyServant  = spinnerServname.getSelectedItem().toString();
+            //Log.d("Test", "Does this work?");
+            Log.d("Servants Name", enemyServant);
+>>>>>>> upstream/master
                 Toast.makeText
                         (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
                         .show();
@@ -76,6 +84,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
             }
         });
+<<<<<<< HEAD
 
         final Intent loadServants = new Intent(this, LoadServants.class);
 
@@ -94,6 +103,49 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+=======
+        Intent servantInfo = getIntent();
+        final Bundle received = servantInfo.getExtras();
+        final Intent passer = new Intent(this, Confirm.class);
+        if(servantInfo.hasExtra("EnemyEdit")){
+            Button bottom = (Button)findViewById(R.id.next);
+            bottom.setText("Confirm");
+            String name = received.getString("enemy_1");
+            String enClass = received.getString("enemy_2");
+            int classPos = classArray.getPosition(enClass);
+            spinnerClass.setSelection(classPos);
+            fillNameArray();
+            Log.d("Passed Name", name);
+            int namePos = nameArray.getPosition(name);
+            int testPos = nameArray.getPosition("Arturia");
+            Log.d("Int set for namePos", " " + namePos);
+            //Log.d("Int set for testPos", " " + testPos);
+            spinnerServname.setSelection(namePos);
+
+            bottom.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v) {
+                    received.putString("enemy_1", enemyServant);
+                    received.putString("enemy_2", enemyClass);
+                    passer.putExtras(received);
+                    startActivity(passer);
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+        fillNameArray();
+       // Log.d("Servants Class", enemyClass);
+        /*Toast.makeText
+                (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
+                .show();*/
+        enemyServant = (String) spinnerServname.getItemAtPosition(0);
+
+    }
+
+    private void fillNameArray(){
+>>>>>>> upstream/master
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch (classSpinnerPosition) {
             case 0:
@@ -137,10 +189,13 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 fillAvengerNames();
                 break;
         }
+<<<<<<< HEAD
         // Log.d("Servants Class", enemyClass);
         Toast.makeText
                 (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
                 .show();
+=======
+>>>>>>> upstream/master
 
     }
 

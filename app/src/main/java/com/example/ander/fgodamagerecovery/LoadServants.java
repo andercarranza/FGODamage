@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     int servantNumber, servantAttack, servant1c, servant2c;
     Spinner spinnerClass, spinnerServname;
-    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b;
+    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, enemy_1, enemy_2;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
 
@@ -78,11 +78,17 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         final Intent servantInfo = getIntent();
         //servantInfo.getExtras();
-        final String enemy_1 = servantInfo.getStringExtra("enemy_1");
-        final String enemy_2 = servantInfo.getStringExtra("enemy_2");
+        enemy_1 = servantInfo.getStringExtra("enemy_1");
+        enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
+<<<<<<< HEAD
         Bundle servant = servantInfo.getExtras();
         if (servantInfo.hasExtra("serv_1a")) {
+=======
+        final Bundle servant = servantInfo.getExtras();
+        if(servantInfo.hasExtra("serv_1a"))
+        {
+>>>>>>> upstream/master
             servant1a = servantInfo.getStringExtra("serv_1a");
             servant1b = servantInfo.getStringExtra("serv_1b");
             servant1c = servantInfo.getIntExtra("serv_1c", -1);
@@ -95,7 +101,11 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             //Log.d("servantAttack", String.valueOf(servant2c));
         }
         //retrieve servant number
+<<<<<<< HEAD
         if (servant != null) {
+=======
+        if(servant!=null && !servantInfo.hasExtra("servant_editnum")){
+>>>>>>> upstream/master
             servantNumber = (int) servant.get("servant");
         }
 
@@ -116,12 +126,61 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         final Intent loadNextServant = new Intent(this, LoadServants.class);
         final Intent display = new Intent(this, Confirm.class);
+        if(servantInfo.hasExtra("servant_editnum")){
+            Next.setText("Confirm");
+            final String servNum = servantInfo.getStringExtra("servant_editnum");
+            nextServant.setText("Servant " + servNum);
+            String nameOf = servant.getString("serv_" + servNum +"a");
+            String classOf = servant.getString("serv_" + servNum +"b");
+            int atkOf = servant.getInt("serv_" + servNum +"c");
+            Log.d("Servants name", "" + nameOf);
+            Log.d("Servants class", "" + classOf);
+            Log.d("Servants ATK", "" + atkOf);
+            int classPos = classArray.getPosition(classOf);
+            spinnerClass.setSelection(classPos);
+            fillNameArray();
+            int namePos = nameArray.getPosition(nameOf);
+            spinnerServname.setSelection(namePos);
+            textBox.setText("" + atkOf);
 
+            Next.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v) {
+                    invalidAttack:
+                    {
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception) {
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break invalidAttack;
+                        }
+                        if (servantAttack == 0) {
+                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break invalidAttack;
+                        }
+                    }
+                    servant.putString("serv_" + servNum + "a", thisServ);
+                    servant.putString("serv_" + servNum + "b", servantClass);
+                    servant.putInt("serv_" + servNum + "c", servantAttack);
+                    display.putExtras(servant);
+                    startActivity(display);
+                }
+            });
+        }
 
         //next button restarts activity for next servant
         //might have to readd previous info each time
+<<<<<<< HEAD
         Next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+=======
+        /*Next.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
+                //edit button pressed from confirm screen: edit selected servant then return to confirm screen
+
+
+
+>>>>>>> upstream/master
                 //initial run, servants 1-3 empty
                 switch (servantNumber) {
                     case 1:
@@ -198,12 +257,21 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
             }
-        });
+        });*/
 
     }
 
     @Override
+<<<<<<< HEAD
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+=======
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+        fillNameArray();
+        thisServ = (String) spinnerServname.getItemAtPosition(0);
+    }
+
+    private void fillNameArray(){
+>>>>>>> upstream/master
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch (classSpinnerPosition) {
             case 0:
@@ -247,7 +315,6 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                 fillAvengerNames();
                 break;
         }
-
     }
 
     private void fillArcherNames() {
@@ -431,11 +498,90 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
+<<<<<<< HEAD
     public void loadServants(View view) {
         Intent loadServants = new Intent(this, LoadServants.class);
         loadServants.putExtra("servant", 1);
         startActivity(loadServants);
         //this.overridePendingTransition(0, 0);
+=======
+    public void loadServants(View view){
+        final Intent loadNextServant = new Intent(this, LoadServants.class);
+        final Intent display = new Intent(this, Confirm.class);
+        switch(servantNumber) {
+            case 1:
+                try {
+                    servantAttack = Integer.parseInt(textBox.getText().toString());
+                } catch (NumberFormatException exception){
+                    Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                if (servantAttack == 0){
+                    Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                loadNextServant.putExtra("servant", 2);
+                loadNextServant.putExtra("serv_1a", thisServ);
+                loadNextServant.putExtra("serv_1b", servantClass);
+                loadNextServant.putExtra("serv_1c", servantAttack);
+                loadNextServant.putExtra("enemy_1", enemy_1);
+                loadNextServant.putExtra("enemy_2", enemy_2);
+                startActivity(loadNextServant);
+                break;
+            case 2:
+                try {
+                    servantAttack = Integer.parseInt(textBox.getText().toString());
+                } catch (NumberFormatException exception){
+                    Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                if (servantAttack == 0){
+                    Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                    break;
+                }
+
+                loadNextServant.putExtra("servant", 3);
+                loadNextServant.putExtra("serv_2a", thisServ);
+                loadNextServant.putExtra("serv_2b", servantClass);
+                loadNextServant.putExtra("serv_2c", servantAttack);
+                loadNextServant.putExtra("serv_1a", servant1a);
+                loadNextServant.putExtra("serv_1b", servant1b);
+                loadNextServant.putExtra("serv_1c", servant1c);
+                loadNextServant.putExtra("enemy_1", enemy_1);
+                loadNextServant.putExtra("enemy_2", enemy_2);
+                startActivity(loadNextServant);
+                break;
+            case 3:
+                try {
+                    servantAttack = Integer.parseInt(textBox.getText().toString());
+                } catch (NumberFormatException exception){
+                    Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                if (servantAttack == 0){
+                    Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                Bundle passThis = new Bundle();
+                passThis.putString("serv_3a", thisServ);
+                passThis.putString("serv_3b", servantClass);
+                passThis.putInt("serv_3c", servantAttack);
+                passThis.putString("serv_1a", servant1a);
+                passThis.putString("serv_1b", servant1b);
+                passThis.putInt("serv_1c", servant1c);
+                passThis.putString("serv_2a", servant2a);
+                passThis.putString("serv_2b", servant2b);
+                passThis.putInt("serv_2c", servant2c);
+                passThis.putString("enemy_1", enemy_1);
+                passThis.putString("enemy_2", enemy_2);
+                display.putExtras(passThis);
+                startActivity(display);
+                break;
+            default:
+                //
+                break;
+        }
+>>>>>>> upstream/master
 
     }
 

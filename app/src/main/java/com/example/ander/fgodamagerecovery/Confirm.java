@@ -55,11 +55,19 @@ public class Confirm extends AppCompatActivity {
         Button editServant2 = (Button) findViewById(R.id.editServant2Btn);
         Button editServant3 = (Button) findViewById(R.id.editServant3Btn);
 
+<<<<<<< HEAD
         Button next = (Button) findViewById(R.id.next);
         final Intent passToEditEnemy = new Intent(this, EditEnemy.class);
         final Intent passToEditServant1 = new Intent(this, EditServant1.class);
 //        final Intent passToEditServant2 = new Intent(this, LoadServants.class);
 //        final Intent passToEditServant3 = new Intent(this, LoadServants.class);
+=======
+        Button next = (Button)findViewById(R.id.next);
+        final Intent passToEditEnemy = new Intent(this, LoadEnemy.class);
+        final Intent passToEditServant1 = new Intent(this, LoadServants.class);
+        final Intent passToEditServant2 = new Intent(this, LoadServants.class);
+        final Intent passToEditServant3 = new Intent(this, LoadServants.class);
+>>>>>>> upstream/master
         final Intent passToConfirm2 = new Intent(this, Confirm2.class);
 
         //actual damage calculation (do after edit)
@@ -87,29 +95,55 @@ public class Confirm extends AppCompatActivity {
         //pass entire bundle of 4 servants with servant edit number
         editEnemy.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
                 passToEditEnemy.putExtras(recieved);
                 startActivity(passToEditEnemy);
+=======
+                   passToEditEnemy.putExtras(recieved);
+                   passToEditEnemy.putExtra("EnemyEdit", "1");
+                   startActivity(passToEditEnemy);
+>>>>>>> upstream/master
             }
         });
         editServant1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
                 passThis.putInt("serv_edit", 1);
                 passToEditServant1.putExtras(passThis);
+=======
+                recieved.putInt("servant", 1);
+                passToEditServant1.putExtra("servant_editnum","1");
+                passToEditServant1.putExtras(recieved);
+>>>>>>> upstream/master
                 startActivity(passToEditServant1);
             }
         });
         editServant2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
                 passThis.putInt("serv_edit", 2);
                 passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
+=======
+                recieved.putInt("servant", 2);
+                passToEditServant2.putExtra("servant_editnum","2");
+                passToEditServant2.putExtras(recieved);
+                startActivity(passToEditServant2);
+>>>>>>> upstream/master
             }
         });
         editServant3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
                 passThis.putInt("serv_edit", 3);
                 passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
+=======
+                recieved.putInt("servant", 3);
+                passToEditServant3.putExtra("servant_editnum","3");
+                passToEditServant3.putExtras(recieved);
+                startActivity(passToEditServant3);
+>>>>>>> upstream/master
             }
         });
         //Log.d("servantName", servantInfo.getStringExtra("enemy_1"));

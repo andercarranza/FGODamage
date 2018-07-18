@@ -15,6 +15,4 @@ import android.widget.TextView;
 public class Confirm extends AppCompatActivity {
 
 
-
-
 }

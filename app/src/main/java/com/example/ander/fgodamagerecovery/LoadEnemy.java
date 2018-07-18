@@ -11,10 +11,13 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * Created by Christian on 3/31/2018.
  */
+
 
 public class LoadEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 

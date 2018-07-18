@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+//servantnumber not needed
 
 public class EditServant1 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     int servantNumber, servantAttack, servant1c, servant2c, servant3c;
@@ -123,11 +123,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         //send bundle with edited servant back to confirm
         Next.setOnClickListener(new View.OnClickListener()
         {
+            Bundle passThis = new Bundle();
             public void onClick(View v) {
-                switch(servantNumber) {
+                switch(servantToEdit) {
                     case 1:
-
-
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
                         } catch (NumberFormatException exception){
@@ -139,36 +138,77 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
+                        passThis.putString("serv_1a", thisServ);
+                        passThis.putString("serv_1b", servantClass);
+                        passThis.putInt("serv_1c", servantAttack);
+                        passThis.putString("serv_3a", servant3a);
+                        passThis.putString("serv_3b", servant3b);
+                        passThis.putInt("serv_3c", servant3c);
+                        passThis.putString("serv_2a", servant2a);
+                        passThis.putString("serv_2b", servant2b);
+                        passThis.putInt("serv_2c", servant2c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
+                        startActivity(display);
                         break;
                     case 2:
-
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        if (servantAttack == 0) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        //modify servant info
+                        passThis.putString("serv_2a", thisServ);
+                        passThis.putString("serv_2b", servantClass);
+                        passThis.putInt("serv_2c", servantAttack);
+                        passThis.putString("serv_3a", servant3a);
+                        passThis.putString("serv_3b", servant3b);
+                        passThis.putInt("serv_3c", servant3c);
+                        passThis.putString("serv_1a", servant1a);
+                        passThis.putString("serv_1b", servant1b);
+                        passThis.putInt("serv_1c", servant1c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
+                        startActivity(display);
                         break;
                     case 3:
-
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        if (servantAttack == 0) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        //modify servant info
+                        passThis.putString("serv_3a", thisServ);
+                        passThis.putString("serv_3b", servantClass);
+                        passThis.putInt("serv_3c", servantAttack);
+                        passThis.putString("serv_1a", servant1a);
+                        passThis.putString("serv_1b", servant1b);
+                        passThis.putInt("serv_1c", servant1c);
+                        passThis.putString("serv_2a", servant2a);
+                        passThis.putString("serv_2b", servant2b);
+                        passThis.putInt("serv_2c", servant2c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
+                        startActivity(display);
                         break;
                     default:
                         //
                         break;
                 }
 
-
-
-
-                Bundle passThis = new Bundle();
-                passThis.putString("serv_3a", thisServ);
-                passThis.putString("serv_3b", servantClass);
-                passThis.putInt("serv_3c", servantAttack);
-                passThis.putString("serv_1a", servant1a);
-                passThis.putString("serv_1b", servant1b);
-                passThis.putInt("serv_1c", servant1c);
-                passThis.putString("serv_2a", servant2a);
-                passThis.putString("serv_2b", servant2b);
-                passThis.putInt("serv_2c", servant2c);
-                passThis.putString("enemy_1", enemy_1);
-                passThis.putString("enemy_2", enemy_2);
-                passThis.putInt("serv_edit", 0);
-                display.putExtras(passThis);
-                startActivity(display);
             }
 
         });

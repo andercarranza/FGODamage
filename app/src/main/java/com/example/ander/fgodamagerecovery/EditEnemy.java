@@ -16,6 +16,8 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
     Spinner spinnerClass, spinnerServname;
     ArrayAdapter<String> classArray, nameArray;
     String enemyClass, enemyServant;
+    int servantAttack, servant1c, servant2c, servant3c;
+    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, servant3a, servant3b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
 
         spinnerServname = (Spinner) findViewById(R.id.serv_name);
         spinnerServname.setOnItemSelectedListener(this);
+        Button Next = (Button) findViewById(R.id.next);
+
 
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
@@ -73,7 +77,65 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
 
             }
         });
+
+
+
+
+
+
+
+
+        final Intent enemyToEdit = getIntent();
+        final Intent display = new Intent(this, Confirm.class);
+
+        //send bundle with edited servant back to confirm
+        Next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //servantInfo.getExtras();
+//                final String enemy_1 = enemyToEdit.getStringExtra("enemy_1");
+//                final String enemy_2 = enemyToEdit.getStringExtra("enemy_2");
+                //Log.d("servantName", s);
+                Bundle servant = enemyToEdit.getExtras();
+                servant1a = enemyToEdit.getStringExtra("serv_1a");
+                servant1b = enemyToEdit.getStringExtra("serv_1b");
+                servant1c = enemyToEdit.getIntExtra("serv_1c", -1);
+                //Log.d("servantAttack", String.valueOf(servant1c));
+                servant2a = enemyToEdit.getStringExtra("serv_2a");
+                servant2b = enemyToEdit.getStringExtra("serv_2b");
+                servant2c = enemyToEdit.getIntExtra("serv_2c", -1);
+                //Log.d("servantAttack", String.valueOf(servant2c));
+                servant3a = enemyToEdit.getStringExtra("serv_3a");
+                servant3b = enemyToEdit.getStringExtra("serv_3b");
+                servant3c = enemyToEdit.getIntExtra("serv_3c", -1);
+
+
+                Bundle passThis = new Bundle();
+                //add modified enemy
+                passThis.putString("enemy_1", enemyServant);
+                passThis.putString("enemy_2", enemyClass);
+                //this.overridePendingTransition(0, 0);
+
+                //pass the same servant info
+                passThis.putString("serv_1a", servant1a);
+                passThis.putString("serv_1b", servant1b);
+                passThis.putInt("serv_1c", servant1c);
+                passThis.putString("serv_3a", servant3a);
+                passThis.putString("serv_3b", servant3b);
+                passThis.putInt("serv_3c", servant3c);
+                passThis.putString("serv_2a", servant2a);
+                passThis.putString("serv_2b", servant2b);
+                passThis.putInt("serv_2c", servant2c);
+                passThis.putInt("serv_edit", 0);
+                display.putExtras(passThis);
+                startActivity(display);
+            }
+        });
     }
+
+
+
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -308,15 +370,6 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    public void loadServants(View view) {
-        Intent loadServants = new Intent(this, LoadServants.class);
-        loadServants.putExtra("servant", 1);
-        loadServants.putExtra("enemy_1", enemyServant);
-        loadServants.putExtra("enemy_2", enemyClass);
-        startActivity(loadServants);
-        //this.overridePendingTransition(0, 0);
-
-    }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

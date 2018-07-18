@@ -51,6 +51,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
         spinnerServname = (Spinner) findViewById(R.id.serv_name);
         spinnerServname.setOnItemSelectedListener(this);
+        Button Next = (Button) findViewById(R.id.next);
 
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
@@ -76,7 +77,24 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
             }
         });
+
+
+        final Intent loadServants = new Intent(this, LoadServants.class);
+
+        Next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                loadServants.putExtra("servant", 1);
+                loadServants.putExtra("enemy_1", enemyServant);
+                loadServants.putExtra("enemy_2", enemyClass);
+                startActivity(loadServants);
+                //this.overridePendingTransition(0, 0);
+            }
+
+        });
+
     }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
@@ -310,15 +328,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    public void loadServants(View view){
-        Intent loadServants = new Intent(this, LoadServants.class);
-        loadServants.putExtra("servant", 1);
-        loadServants.putExtra("enemy_1", enemyServant);
-        loadServants.putExtra("enemy_2", enemyClass);
-        startActivity(loadServants);
-        //this.overridePendingTransition(0, 0);
 
-    }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

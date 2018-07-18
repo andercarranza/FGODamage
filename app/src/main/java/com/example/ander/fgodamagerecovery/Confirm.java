@@ -58,7 +58,7 @@ public class Confirm extends AppCompatActivity {
 
         Button next = (Button)findViewById(R.id.next);
         final Intent passToEditEnemy = new Intent(this, EditEnemy.class);
-        final Intent passToEditServant1 = new Intent(this, LoadServants.class);
+        final Intent passToEditServant1 = new Intent(this, EditServant1.class);
 //        final Intent passToEditServant2 = new Intent(this, LoadServants.class);
 //        final Intent passToEditServant3 = new Intent(this, LoadServants.class);
         final Intent passToConfirm2 = new Intent(this, Confirm2.class);
@@ -81,7 +81,7 @@ public class Confirm extends AppCompatActivity {
         passThis.putInt("serv_1c", recieved.getInt("serv_1c"));
         passThis.putString("serv_2a", recieved.getString("serv_2a"));
 
-        passThis.putInt("serv_2c", recieved.getInt("serv_2c"));passThis.putString("serv_2b", recieved.getString("serv_2b"));
+        passThis.putInt("serv_2c", recieved.getInt("serv_2c"));
         passThis.putString("enemy_1", recieved.getString("enemy_1"));
         passThis.putString("enemy_2", recieved.getString("enemy_2"));
 

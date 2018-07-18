@@ -453,8 +453,18 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                 "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
 
-
-
-
 }
+
+//CHANGES
+//deleted dupe code in bundle additions
+//changed edit button to map to editservant1
+//finished editservant1 for editing servants 1-3
+
+//FIX
+//confirm layout screen (servant 2 class not showing sometimes)
+//editenemy overhaul
+
+//everything after is actual damage calculations
+
+
 

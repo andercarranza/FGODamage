@@ -81,7 +81,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         enemy_1 = servantInfo.getStringExtra("enemy_1");
         enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
-<<<<<<< HEAD
+<<<<<<< HEAD   
         Bundle servant = servantInfo.getExtras();
         if (servantInfo.hasExtra("serv_1a")) {
 =======

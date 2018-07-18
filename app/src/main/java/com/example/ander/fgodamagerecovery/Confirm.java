@@ -56,7 +56,7 @@ public class Confirm extends AppCompatActivity {
         Button editServant3 = (Button)findViewById(R.id.editServant3Btn);
 
         Button next = (Button)findViewById(R.id.next);
-        final Intent passToEditEnemy = new Intent(this, EditEnemy.class);
+        final Intent passToEditEnemy = new Intent(this, LoadEnemy.class);
         final Intent passToEditServant1 = new Intent(this, LoadServants.class);
         final Intent passToEditServant2 = new Intent(this, LoadServants.class);
         final Intent passToEditServant3 = new Intent(this, LoadServants.class);
@@ -73,24 +73,31 @@ public class Confirm extends AppCompatActivity {
         editEnemy.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                    passToEditEnemy.putExtras(recieved);
+                   passToEditEnemy.putExtra("EnemyEdit", "1");
                    startActivity(passToEditEnemy);
             }
         });
         editServant1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                passToEditServant1.putExtra("servant_editnum",1);
+                recieved.putInt("servant", 1);
+                passToEditServant1.putExtra("servant_editnum","1");
+                passToEditServant1.putExtras(recieved);
                 startActivity(passToEditServant1);
             }
         });
         editServant2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                passToEditServant2.putExtra("servant_editnum",2);
+                recieved.putInt("servant", 2);
+                passToEditServant2.putExtra("servant_editnum","2");
+                passToEditServant2.putExtras(recieved);
                 startActivity(passToEditServant2);
             }
         });
         editServant3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                passToEditServant3.putExtra("servant_editnum",3);
+                recieved.putInt("servant", 3);
+                passToEditServant3.putExtra("servant_editnum","3");
+                passToEditServant3.putExtras(recieved);
                 startActivity(passToEditServant3);
             }
         });

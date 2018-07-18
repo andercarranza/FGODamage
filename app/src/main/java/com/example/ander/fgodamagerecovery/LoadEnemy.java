@@ -64,11 +64,6 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
             enemyServant  = spinnerServname.getSelectedItem().toString();
-            Log.d("Test", "Does this work?");
-            Log.d("Servants Name", enemyServant);
-                Toast.makeText
-                        (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
-                        .show();
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
@@ -98,6 +93,14 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+        fillNameArray();
+
+
+        enemyServant = (String) spinnerServname.getItemAtPosition(0);
+
+    }
+
+    private void fillNameArray(){
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch(classSpinnerPosition){
             case 0:
@@ -141,10 +144,6 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 fillAvengerNames();
                 break;
         }
-       // Log.d("Servants Class", enemyClass);
-        Toast.makeText
-                (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
-                .show();
 
     }
 

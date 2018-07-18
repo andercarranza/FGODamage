@@ -207,6 +207,14 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+        fillNameArray();
+
+
+        thisServ = (String) spinnerServname.getItemAtPosition(0);
+
+    }
+
+    private void fillNameArray(){
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch(classSpinnerPosition){
             case 0:

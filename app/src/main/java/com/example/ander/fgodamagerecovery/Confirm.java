@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
@@ -121,4 +120,4 @@ public class Confirm extends AppCompatActivity {
 
 
 }
->>>>>>> parent of 16e5b3a... update
+

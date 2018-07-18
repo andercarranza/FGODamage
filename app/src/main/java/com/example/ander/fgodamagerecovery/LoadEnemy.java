@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
@@ -333,4 +332,3 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
 }
->>>>>>> parent of 16e5b3a... update

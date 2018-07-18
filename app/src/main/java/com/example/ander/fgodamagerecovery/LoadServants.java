@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
@@ -458,4 +457,4 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
 
 }
->>>>>>> parent of 16e5b3a... update
+

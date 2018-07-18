@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
@@ -13,10 +12,11 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class EditEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class EditEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Spinner spinnerClass, spinnerServname;
     ArrayAdapter<String> classArray, nameArray;
     String enemyClass, enemyServant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +56,10 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         Bundle received = servantInfo.getExtras();
 
         spinnerServname.setAdapter(nameArray);
-        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-                enemyServant  = spinnerServname.getSelectedItem().toString();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                enemyServant = spinnerServname.getSelectedItem().toString();
 
                 Toast.makeText
                         (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
@@ -67,6 +67,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -75,9 +76,9 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
-        switch(classSpinnerPosition){
+        switch (classSpinnerPosition) {
             case 0:
                 enemyClass = "Saber";
                 fillSaberNames();
@@ -126,7 +127,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
 
     }
 
-    private void fillArcherNames(){
+    private void fillArcherNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Emiya");
@@ -144,7 +145,8 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.add("Billy The Kid");
         nameArray.notifyDataSetChanged();
     }
-    private void fillSaberNames(){
+
+    private void fillSaberNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Arturia");
@@ -165,7 +167,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillLancerNames(){
+    private void fillLancerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Cu Chulainn");
@@ -185,7 +187,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillRiderNames(){
+    private void fillRiderNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Medusa");
@@ -206,7 +208,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillCasterNames(){
+    private void fillCasterNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Medea");
@@ -231,7 +233,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillAssassinNames(){
+    private void fillAssassinNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Sasaki Kojirou");
@@ -251,7 +253,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillBerserkerNames(){
+    private void fillBerserkerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Heracles");
@@ -275,7 +277,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillShielderNames(){
+    private void fillShielderNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Mash");
@@ -284,7 +286,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillRulerNames(){
+    private void fillRulerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Jeanne d'Arc");
@@ -295,7 +297,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillAvengerNames(){
+    private void fillAvengerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Edmond Dantes");
@@ -306,7 +308,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    public void loadServants(View view){
+    public void loadServants(View view) {
         Intent loadServants = new Intent(this, LoadServants.class);
         loadServants.putExtra("servant", 1);
         loadServants.putExtra("enemy_1", enemyServant);
@@ -323,10 +325,9 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, "Selected Country :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Selected Country :" + spinnerClass.getSelectedItem().toString() +
+                "\nSelected Division :" + spinnerClass.getSelectedItem().toString() +
+                "\nSelected District :" + spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
 
 }
->>>>>>> parent of 16e5b3a... update

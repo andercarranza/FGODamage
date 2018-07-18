@@ -70,6 +70,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
             enemyServant  = spinnerServname.getSelectedItem().toString();
             //Log.d("Test", "Does this work?");
+            Log.d("Test", "Does this work?");
             Log.d("Servants Name", enemyServant);
 >>>>>>> upstream/master
                 Toast.makeText
@@ -196,6 +197,10 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 .show();
 =======
 >>>>>>> upstream/master
+       // Log.d("Servants Class", enemyClass);
+        Toast.makeText
+                (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
+                .show();
 
     }
 

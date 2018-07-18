@@ -21,6 +21,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
     int servantNumber, servantAttack, servant1c, servant2c;
     Spinner spinnerClass, spinnerServname;
     String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, enemy_1, enemy_2;
+    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
 
@@ -80,12 +81,15 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         //servantInfo.getExtras();
         enemy_1 = servantInfo.getStringExtra("enemy_1");
         enemy_2 = servantInfo.getStringExtra("enemy_2");
+        final String enemy_1 = servantInfo.getStringExtra("enemy_1");
+        final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
 <<<<<<< HEAD   
         Bundle servant = servantInfo.getExtras();
         if (servantInfo.hasExtra("serv_1a")) {
 =======
         final Bundle servant = servantInfo.getExtras();
+        Bundle servant = servantInfo.getExtras();
         if(servantInfo.hasExtra("serv_1a"))
         {
 >>>>>>> upstream/master
@@ -106,6 +110,8 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 =======
         if(servant!=null && !servantInfo.hasExtra("servant_editnum")){
 >>>>>>> upstream/master
+        if(servant!=null)
+            {
             servantNumber = (int) servant.get("servant");
         }
 
@@ -174,9 +180,19 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
 =======
         /*Next.setOnClickListener(new View.OnClickListener()
+        Next.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
                 //edit button pressed from confirm screen: edit selected servant then return to confirm screen
+
+
+//                if(servantInfo.hasExtra("servant_editinfo"))
+//                {
+//                    Bundle editServant = getIntent().getExtras();
+//                    int editNo = editServant.getInt("servant_editnum");
+//
+//
+//                }
 
 
 
@@ -258,6 +274,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });*/
+        });
 
     }
 
@@ -582,6 +599,10 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 >>>>>>> upstream/master
+        Intent loadServants = new Intent(this, LoadServants.class);
+        loadServants.putExtra("servant", 1);
+        startActivity(loadServants);
+        //this.overridePendingTransition(0, 0);
 
     }
 

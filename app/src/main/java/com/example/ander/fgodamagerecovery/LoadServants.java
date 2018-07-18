@@ -20,7 +20,6 @@ import android.widget.Toast;
 public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     int servantNumber, servantAttack, servant1c, servant2c;
     Spinner spinnerClass, spinnerServname;
-    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, enemy_1, enemy_2;
     String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
@@ -79,17 +78,18 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         final Intent servantInfo = getIntent();
         //servantInfo.getExtras();
-        enemy_1 = servantInfo.getStringExtra("enemy_1");
-        enemy_2 = servantInfo.getStringExtra("enemy_2");
         final String enemy_1 = servantInfo.getStringExtra("enemy_1");
         final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
+<<<<<<< HEAD
 <<<<<<< HEAD   
         Bundle servant = servantInfo.getExtras();
         if (servantInfo.hasExtra("serv_1a")) {
 =======
         final Bundle servant = servantInfo.getExtras();
+=======
         Bundle servant = servantInfo.getExtras();
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
         if(servantInfo.hasExtra("serv_1a"))
         {
 >>>>>>> upstream/master
@@ -106,12 +106,15 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         }
         //retrieve servant number
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (servant != null) {
 =======
         if(servant!=null && !servantInfo.hasExtra("servant_editnum")){
 >>>>>>> upstream/master
+=======
         if(servant!=null)
             {
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
             servantNumber = (int) servant.get("servant");
         }
 
@@ -132,55 +135,19 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         final Intent loadNextServant = new Intent(this, LoadServants.class);
         final Intent display = new Intent(this, Confirm.class);
-        if(servantInfo.hasExtra("servant_editnum")){
-            Next.setText("Confirm");
-            final String servNum = servantInfo.getStringExtra("servant_editnum");
-            nextServant.setText("Servant " + servNum);
-            String nameOf = servant.getString("serv_" + servNum +"a");
-            String classOf = servant.getString("serv_" + servNum +"b");
-            int atkOf = servant.getInt("serv_" + servNum +"c");
-            Log.d("Servants name", "" + nameOf);
-            Log.d("Servants class", "" + classOf);
-            Log.d("Servants ATK", "" + atkOf);
-            int classPos = classArray.getPosition(classOf);
-            spinnerClass.setSelection(classPos);
-            fillNameArray();
-            int namePos = nameArray.getPosition(nameOf);
-            spinnerServname.setSelection(namePos);
-            textBox.setText("" + atkOf);
 
-            Next.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v) {
-                    invalidAttack:
-                    {
-                        try {
-                            servantAttack = Integer.parseInt(textBox.getText().toString());
-                        } catch (NumberFormatException exception) {
-                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
-                            break invalidAttack;
-                        }
-                        if (servantAttack == 0) {
-                            Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
-                            break invalidAttack;
-                        }
-                    }
-                    servant.putString("serv_" + servNum + "a", thisServ);
-                    servant.putString("serv_" + servNum + "b", servantClass);
-                    servant.putInt("serv_" + servNum + "c", servantAttack);
-                    display.putExtras(servant);
-                    startActivity(display);
-                }
-            });
-        }
 
         //next button restarts activity for next servant
         //might have to readd previous info each time
+<<<<<<< HEAD
 <<<<<<< HEAD
         Next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 =======
         /*Next.setOnClickListener(new View.OnClickListener()
+=======
         Next.setOnClickListener(new View.OnClickListener()
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
         {
             public void onClick(View v) {
                 //edit button pressed from confirm screen: edit selected servant then return to confirm screen
@@ -273,7 +240,6 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
             }
-        });*/
         });
 
     }
@@ -283,12 +249,15 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 =======
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+<<<<<<< HEAD
         fillNameArray();
         thisServ = (String) spinnerServname.getItemAtPosition(0);
     }
 
     private void fillNameArray(){
 >>>>>>> upstream/master
+=======
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch (classSpinnerPosition) {
             case 0:
@@ -332,6 +301,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                 fillAvengerNames();
                 break;
         }
+
     }
 
     private void fillArcherNames() {
@@ -523,6 +493,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         //this.overridePendingTransition(0, 0);
 =======
     public void loadServants(View view){
+<<<<<<< HEAD
         final Intent loadNextServant = new Intent(this, LoadServants.class);
         final Intent display = new Intent(this, Confirm.class);
         switch(servantNumber) {
@@ -599,10 +570,12 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 >>>>>>> upstream/master
+=======
         Intent loadServants = new Intent(this, LoadServants.class);
         loadServants.putExtra("servant", 1);
         startActivity(loadServants);
         //this.overridePendingTransition(0, 0);
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
 
     }
 

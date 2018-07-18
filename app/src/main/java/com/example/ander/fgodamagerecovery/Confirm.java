@@ -63,7 +63,6 @@ public class Confirm extends AppCompatActivity {
 //        final Intent passToEditServant3 = new Intent(this, LoadServants.class);
 =======
         Button next = (Button)findViewById(R.id.next);
-        final Intent passToEditEnemy = new Intent(this, LoadEnemy.class);
         final Intent passToEditEnemy = new Intent(this, EditEnemy.class);
         final Intent passToEditServant1 = new Intent(this, LoadServants.class);
         final Intent passToEditServant2 = new Intent(this, LoadServants.class);
@@ -101,13 +100,13 @@ public class Confirm extends AppCompatActivity {
                 startActivity(passToEditEnemy);
 =======
                    passToEditEnemy.putExtras(recieved);
-                   passToEditEnemy.putExtra("EnemyEdit", "1");
                    startActivity(passToEditEnemy);
 >>>>>>> upstream/master
             }
         });
         editServant1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 passThis.putInt("serv_edit", 1);
                 passToEditServant1.putExtras(passThis);
@@ -116,12 +115,15 @@ public class Confirm extends AppCompatActivity {
                 passToEditServant1.putExtra("servant_editnum","1");
                 passToEditServant1.putExtras(recieved);
 >>>>>>> upstream/master
+=======
                 passToEditServant1.putExtra("servant_editnum",1);
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
                 startActivity(passToEditServant1);
             }
         });
         editServant2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 passThis.putInt("serv_edit", 2);
                 passToEditServant1.putExtras(passThis);
@@ -130,13 +132,16 @@ public class Confirm extends AppCompatActivity {
                 recieved.putInt("servant", 2);
                 passToEditServant2.putExtra("servant_editnum","2");
                 passToEditServant2.putExtras(recieved);
+=======
                 passToEditServant2.putExtra("servant_editnum",2);
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
                 startActivity(passToEditServant2);
 >>>>>>> upstream/master
             }
         });
         editServant3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 passThis.putInt("serv_edit", 3);
                 passToEditServant1.putExtras(passThis);
@@ -145,7 +150,9 @@ public class Confirm extends AppCompatActivity {
                 recieved.putInt("servant", 3);
                 passToEditServant3.putExtra("servant_editnum","3");
                 passToEditServant3.putExtras(recieved);
+=======
                 passToEditServant3.putExtra("servant_editnum",3);
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
                 startActivity(passToEditServant3);
 >>>>>>> upstream/master
             }

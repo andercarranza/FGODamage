@@ -11,7 +11,6 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Christian on 3/31/2018.
@@ -69,7 +68,6 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 =======
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
             enemyServant  = spinnerServname.getSelectedItem().toString();
-            //Log.d("Test", "Does this work?");
             Log.d("Test", "Does this work?");
             Log.d("Servants Name", enemyServant);
 >>>>>>> upstream/master
@@ -85,6 +83,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
             }
         });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         final Intent loadServants = new Intent(this, LoadServants.class);
@@ -132,10 +131,13 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 }
             });
         }
+=======
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+<<<<<<< HEAD
         fillNameArray();
        // Log.d("Servants Class", enemyClass);
         /*Toast.makeText
@@ -147,6 +149,8 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
     private void fillNameArray(){
 >>>>>>> upstream/master
+=======
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
         switch (classSpinnerPosition) {
             case 0:
@@ -191,16 +195,19 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
                 break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Log.d("Servants Class", enemyClass);
         Toast.makeText
                 (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
                 .show();
 =======
 >>>>>>> upstream/master
+=======
        // Log.d("Servants Class", enemyClass);
         Toast.makeText
                 (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
                 .show();
+>>>>>>> parent of 238f979... Edit Pages now functional for all servants
 
     }
 

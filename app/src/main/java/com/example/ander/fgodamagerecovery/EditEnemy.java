@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
@@ -11,11 +13,6 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
-<<<<<<< HEAD
-
-public class EditEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-
-=======
 public class EditEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     Spinner spinnerClass, spinnerServname;
     ArrayAdapter<String> classArray, nameArray;
@@ -330,6 +327,6 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
                 "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
                 "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
->>>>>>> parent of bc1677b... update
 
 }
+>>>>>>> parent of 16e5b3a... update

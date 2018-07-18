@@ -19,6 +19,8 @@ import java.util.concurrent.TimeUnit;
  */
 
 
+
 public class LoadEnemy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+
 
 }

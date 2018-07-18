@@ -18,8 +18,8 @@ import android.widget.Toast;
  */
 
 
-public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
+public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
 
 }

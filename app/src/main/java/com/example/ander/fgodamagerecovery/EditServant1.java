@@ -118,7 +118,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-
+        Next.setText("Confirm");
 
         //send bundle with edited servant back to confirm
         Next.setOnClickListener(new View.OnClickListener()

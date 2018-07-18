@@ -14,13 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+//servantnumber not needed
 
-public class EditServant1 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class EditServant1 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     int servantNumber, servantAttack, servant1c, servant2c, servant3c;
     Spinner spinnerClass, spinnerServname;
     String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, servant3a, servant3b;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,18 +56,19 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
         spinnerServname.setAdapter(nameArray);
-        TextView nextServant =(TextView)findViewById(R.id.serv_select);
+        TextView nextServant = (TextView) findViewById(R.id.serv_select);
         Button Next = (Button) findViewById(R.id.next);
-        textBox = (EditText)findViewById(R.id.serv_atk);
+        textBox = (EditText) findViewById(R.id.serv_atk);
 
-        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-                thisServ  = (String) parent.getItemAtPosition(position);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                thisServ = (String) parent.getItemAtPosition(position);
 
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -78,22 +81,19 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
         Bundle servant = servantInfo.getExtras();
-        if(servantInfo.hasExtra("serv_1a"))
-        {
+        if (servantInfo.hasExtra("serv_1a")) {
             servant1a = servantInfo.getStringExtra("serv_1a");
             servant1b = servantInfo.getStringExtra("serv_1b");
             servant1c = servantInfo.getIntExtra("serv_1c", -1);
             //Log.d("servantAttack", String.valueOf(servant1c));
         }
-        if(servantInfo.hasExtra("serv_2a"))
-        {
+        if (servantInfo.hasExtra("serv_2a")) {
             servant2a = servantInfo.getStringExtra("serv_2a");
             servant2b = servantInfo.getStringExtra("serv_2b");
             servant2c = servantInfo.getIntExtra("serv_2c", -1);
             //Log.d("servantAttack", String.valueOf(servant2c));
         }
-        if(servantInfo.hasExtra("serv_3a"))
-        {
+        if (servantInfo.hasExtra("serv_3a")) {
             servant3a = servantInfo.getStringExtra("serv_3a");
             servant3b = servantInfo.getStringExtra("serv_3b");
             servant3c = servantInfo.getIntExtra("serv_3c", -1);
@@ -103,7 +103,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         final Intent display = new Intent(this, Confirm.class);
 
         //display servant number
-        switch (servantToEdit){
+        switch (servantToEdit) {
             case 1:
                 nextServant.setText("Servant 1");
                 break;
@@ -118,56 +118,94 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         }
 
 
-
         //send bundle with edited servant back to confirm
-        Next.setOnClickListener(new View.OnClickListener()
-        {
+        Next.setOnClickListener(new View.OnClickListener() {
+            Bundle passThis = new Bundle();
+
             public void onClick(View v) {
-                switch(servantNumber) {
+                switch (servantToEdit) {
                     case 1:
-
-
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
-                        } catch (NumberFormatException exception){
+                        } catch (NumberFormatException exception) {
                             Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
-                        if (servantAttack == 0){
+                        if (servantAttack == 0) {
                             Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
                         //modify servant info
+                        passThis.putString("serv_1a", thisServ);
+                        passThis.putString("serv_1b", servantClass);
+                        passThis.putInt("serv_1c", servantAttack);
+                        passThis.putString("serv_3a", servant3a);
+                        passThis.putString("serv_3b", servant3b);
+                        passThis.putInt("serv_3c", servant3c);
+                        passThis.putString("serv_2a", servant2a);
+                        passThis.putString("serv_2b", servant2b);
+                        passThis.putInt("serv_2c", servant2c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
+                        startActivity(display);
                         break;
                     case 2:
-
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        if (servantAttack == 0) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        //modify servant info
+                        passThis.putString("serv_2a", thisServ);
+                        passThis.putString("serv_2b", servantClass);
+                        passThis.putInt("serv_2c", servantAttack);
+                        passThis.putString("serv_3a", servant3a);
+                        passThis.putString("serv_3b", servant3b);
+                        passThis.putInt("serv_3c", servant3c);
+                        passThis.putString("serv_1a", servant1a);
+                        passThis.putString("serv_1b", servant1b);
+                        passThis.putInt("serv_1c", servant1c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
+                        startActivity(display);
                         break;
                     case 3:
-
+                        try {
+                            servantAttack = Integer.parseInt(textBox.getText().toString());
+                        } catch (NumberFormatException exception) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        if (servantAttack == 0) {
+                            Toast.makeText(EditServant1.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
+                            break;
+                        }
+                        //modify servant info
+                        passThis.putString("serv_3a", thisServ);
+                        passThis.putString("serv_3b", servantClass);
+                        passThis.putInt("serv_3c", servantAttack);
+                        passThis.putString("serv_1a", servant1a);
+                        passThis.putString("serv_1b", servant1b);
+                        passThis.putInt("serv_1c", servant1c);
+                        passThis.putString("serv_2a", servant2a);
+                        passThis.putString("serv_2b", servant2b);
+                        passThis.putInt("serv_2c", servant2c);
+                        passThis.putString("enemy_1", enemy_1);
+                        passThis.putString("enemy_2", enemy_2);
+                        display.putExtras(passThis);
+                        startActivity(display);
                         break;
                     default:
                         //
                         break;
                 }
-
-
-
-
-                Bundle passThis = new Bundle();
-                passThis.putString("serv_3a", thisServ);
-                passThis.putString("serv_3b", servantClass);
-                passThis.putInt("serv_3c", servantAttack);
-                passThis.putString("serv_1a", servant1a);
-                passThis.putString("serv_1b", servant1b);
-                passThis.putInt("serv_1c", servant1c);
-                passThis.putString("serv_2a", servant2a);
-                passThis.putString("serv_2b", servant2b);
-                passThis.putInt("serv_2c", servant2c);
-                passThis.putString("enemy_1", enemy_1);
-                passThis.putString("enemy_2", enemy_2);
-                passThis.putInt("serv_edit", 0);
-                display.putExtras(passThis);
-                startActivity(display);
             }
 
         });
@@ -175,9 +213,9 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
-        switch(classSpinnerPosition){
+        switch (classSpinnerPosition) {
             case 0:
                 servantClass = "Saber";
                 fillSaberNames();
@@ -222,7 +260,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void fillArcherNames(){
+    private void fillArcherNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Emiya");
@@ -240,7 +278,8 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Billy The Kid");
         nameArray.notifyDataSetChanged();
     }
-    private void fillSaberNames(){
+
+    private void fillSaberNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Arturia");
@@ -261,7 +300,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillLancerNames(){
+    private void fillLancerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Cu Chulainn");
@@ -281,7 +320,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillRiderNames(){
+    private void fillRiderNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Medusa");
@@ -302,7 +341,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillCasterNames(){
+    private void fillCasterNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Medea");
@@ -327,7 +366,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillAssassinNames(){
+    private void fillAssassinNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Sasaki Kojirou");
@@ -347,7 +386,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillBerserkerNames(){
+    private void fillBerserkerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Heracles");
@@ -371,7 +410,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillShielderNames(){
+    private void fillShielderNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Mash");
@@ -380,7 +419,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillRulerNames(){
+    private void fillRulerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Jeanne d'Arc");
@@ -391,7 +430,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillAvengerNames(){
+    private void fillAvengerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Edmond Dantes");
@@ -402,7 +441,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    public void loadServants(View view){
+    public void loadServants(View view) {
         Intent loadServants = new Intent(this, com.example.ander.fgodamagerecovery.LoadServants.class);
         loadServants.putExtra("servant", 1);
         startActivity(loadServants);
@@ -417,12 +456,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, "Selected Country :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Selected Country :" + spinnerClass.getSelectedItem().toString() +
+                "\nSelected Division :" + spinnerClass.getSelectedItem().toString() +
+                "\nSelected District :" + spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
-
-
 
 
 }

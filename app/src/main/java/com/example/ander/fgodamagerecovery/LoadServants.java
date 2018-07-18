@@ -17,12 +17,13 @@ import android.widget.Toast;
  * Created by Christian on 4/9/2018.
  */
 
-public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     int servantNumber, servantAttack, servant1c, servant2c;
     Spinner spinnerClass, spinnerServname;
     String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,18 +57,19 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
         spinnerServname.setAdapter(nameArray);
-        TextView nextServant =(TextView)findViewById(R.id.serv_select);
+        TextView nextServant = (TextView) findViewById(R.id.serv_select);
         Button Next = (Button) findViewById(R.id.next);
-        textBox = (EditText)findViewById(R.id.serv_atk);
+        textBox = (EditText) findViewById(R.id.serv_atk);
 
-        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinnerServname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-                thisServ  = (String) parent.getItemAtPosition(position);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                thisServ = (String) parent.getItemAtPosition(position);
 
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -80,28 +82,25 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
         Bundle servant = servantInfo.getExtras();
-        if(servantInfo.hasExtra("serv_1a"))
-        {
+        if (servantInfo.hasExtra("serv_1a")) {
             servant1a = servantInfo.getStringExtra("serv_1a");
             servant1b = servantInfo.getStringExtra("serv_1b");
             servant1c = servantInfo.getIntExtra("serv_1c", -1);
             //Log.d("servantAttack", String.valueOf(servant1c));
         }
-        if(servantInfo.hasExtra("serv_2a"))
-        {
+        if (servantInfo.hasExtra("serv_2a")) {
             servant2a = servantInfo.getStringExtra("serv_2a");
             servant2b = servantInfo.getStringExtra("serv_2b");
             servant2c = servantInfo.getIntExtra("serv_2c", -1);
             //Log.d("servantAttack", String.valueOf(servant2c));
         }
         //retrieve servant number
-        if(servant!=null)
-            {
+        if (servant != null) {
             servantNumber = (int) servant.get("servant");
         }
 
         //display servant number
-        switch (servantNumber){
+        switch (servantNumber) {
             case 1:
                 nextServant.setText("Servant 1");
                 break;
@@ -121,19 +120,18 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         //next button restarts activity for next servant
         //might have to readd previous info each time
-        Next.setOnClickListener(new View.OnClickListener()
-        {
+        Next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //initial run, servants 1-3 empty
-                switch(servantNumber) {
+                switch (servantNumber) {
                     case 1:
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
-                        } catch (NumberFormatException exception){
+                        } catch (NumberFormatException exception) {
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
-                        if (servantAttack == 0){
+                        if (servantAttack == 0) {
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
@@ -148,11 +146,11 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                     case 2:
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
-                        } catch (NumberFormatException exception){
+                        } catch (NumberFormatException exception) {
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
-                        if (servantAttack == 0){
+                        if (servantAttack == 0) {
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
@@ -171,11 +169,11 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                     case 3:
                         try {
                             servantAttack = Integer.parseInt(textBox.getText().toString());
-                        } catch (NumberFormatException exception){
+                        } catch (NumberFormatException exception) {
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
-                        if (servantAttack == 0){
+                        if (servantAttack == 0) {
                             Toast.makeText(LoadServants.this, "Invalid Attack Value", Toast.LENGTH_LONG).show();
                             break;
                         }
@@ -191,7 +189,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         passThis.putInt("serv_2c", servant2c);
                         passThis.putString("enemy_1", enemy_1);
                         passThis.putString("enemy_2", enemy_2);
-                        passThis.putInt("serv_edit", 0); passThis.putInt("serv_edit", 0);
+                        passThis.putInt("serv_edit", 0);
                         display.putExtras(passThis);
                         startActivity(display);
                         break;
@@ -205,9 +203,9 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         int classSpinnerPosition = spinnerClass.getSelectedItemPosition();
-        switch(classSpinnerPosition){
+        switch (classSpinnerPosition) {
             case 0:
                 servantClass = "Saber";
                 fillSaberNames();
@@ -252,7 +250,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void fillArcherNames(){
+    private void fillArcherNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Emiya");
@@ -270,7 +268,8 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Billy The Kid");
         nameArray.notifyDataSetChanged();
     }
-    private void fillSaberNames(){
+
+    private void fillSaberNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Arturia");
@@ -291,7 +290,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillLancerNames(){
+    private void fillLancerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Cu Chulainn");
@@ -311,7 +310,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillRiderNames(){
+    private void fillRiderNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Medusa");
@@ -332,7 +331,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillCasterNames(){
+    private void fillCasterNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Medea");
@@ -357,7 +356,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillAssassinNames(){
+    private void fillAssassinNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Sasaki Kojirou");
@@ -377,7 +376,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillBerserkerNames(){
+    private void fillBerserkerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Heracles");
@@ -401,7 +400,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillShielderNames(){
+    private void fillShielderNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Mash");
@@ -410,7 +409,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillRulerNames(){
+    private void fillRulerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Jeanne d'Arc");
@@ -421,7 +420,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    private void fillAvengerNames(){
+    private void fillAvengerNames() {
         nameArray.clear();
         nameArray.notifyDataSetChanged();
         nameArray.add("Edmond Dantes");
@@ -432,7 +431,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
     }
 
-    public void loadServants(View view){
+    public void loadServants(View view) {
         Intent loadServants = new Intent(this, LoadServants.class);
         loadServants.putExtra("servant", 1);
         startActivity(loadServants);
@@ -447,12 +446,24 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, "Selected Country :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Selected Country :" + spinnerClass.getSelectedItem().toString() +
+                "\nSelected Division :" + spinnerClass.getSelectedItem().toString() +
+                "\nSelected District :" + spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
     }
 
 
-
-
 }
+
+//CHANGES
+//deleted dupe code in bundle additions
+//changed edit button to map to editservant1
+//finished editservant1 for editing servants 1-3
+
+//FIX
+//confirm layout screen (servant 2 class not showing sometimes)
+//editenemy overhaul
+
+//everything after is actual damage calculations
+
+
+

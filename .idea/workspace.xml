@@ -7,6 +7,7 @@
   </component>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -126,6 +127,18 @@
 >>>>>>> upstream/master
 >>>>>>> parent of a3a9ebd... update
 =======
+>>>>>>> parent of 16e5b3a... update
+=======
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59d4fa79-2544-4cd2-aeb4-7bea3d17be97" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" />
 >>>>>>> parent of 16e5b3a... update
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -256,6 +269,7 @@
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="102">
               <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
 >>>>>>> parent of 1add1ab... Merge remote-tracking branch 'upstream/master'
@@ -293,6 +307,10 @@
             <state relative-caret-position="-706">
               <caret line="36" column="56" lean-forward="true" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
 >>>>>>> parent of 16e5b3a... update
+=======
+            <state relative-caret-position="-706">
+              <caret line="36" column="56" lean-forward="true" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+>>>>>>> parent of 16e5b3a... update
               <folding />
 >>>>>>> parent of e99ae80... Merge branch 'master' of https://github.com/christiansy/FGODamage
 =======
@@ -313,6 +331,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -400,11 +419,15 @@
 =======
       <file leaf-file-name="EditEnemy.java" pinned="false" current-in-tab="false">
 >>>>>>> parent of 16e5b3a... update
+=======
+      <file leaf-file-name="EditEnemy.java" pinned="false" current-in-tab="false">
+>>>>>>> parent of 16e5b3a... update
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditEnemy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <element signature="e#3040#5138#0" expanded="true" />
                 <element signature="e#5137#5138#0" expanded="true" />
@@ -435,6 +458,9 @@
 =======
                 <element signature="imports" expanded="true" />
 >>>>>>> parent of 16e5b3a... update
+=======
+                <element signature="imports" expanded="true" />
+>>>>>>> parent of 16e5b3a... update
               </folding>
 >>>>>>> parent of a3a9ebd... update
             </state>
@@ -458,6 +484,7 @@
       </file>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="EditServant1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -465,10 +492,22 @@
               <caret line="184" column="25" lean-forward="false" selection-start-line="184" selection-start-column="25" selection-end-line="184" selection-end-column="25" />
 >>>>>>> parent of a3a9ebd... update
               <folding />
+=======
+      <file leaf-file-name="LoadServants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="200" column="17" lean-forward="true" selection-start-line="127" selection-start-column="16" selection-end-line="200" selection-end-column="17" />
+              <folding>
+                <element signature="e#4546#8925#0" expanded="true" />
+                <element signature="e#8924#8925#0" expanded="true" />
+              </folding>
+>>>>>>> parent of 16e5b3a... update
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -533,10 +572,16 @@
       <file leaf-file-name="LoadEnemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java">
           <provider selected="true" editor-type-id="text-editor">
+=======
+      <file leaf-file-name="LoadEnemy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java">
+          <provider selected="true" editor-type-id="text-editor">
+>>>>>>> parent of 16e5b3a... update
             <state relative-caret-position="329">
               <caret line="319" column="5" lean-forward="false" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 16e5b3a... update
@@ -547,6 +592,8 @@
               </folding>
 >>>>>>> parent of 16e5b3a... update
 =======
+=======
+>>>>>>> parent of 16e5b3a... update
               </folding>
 >>>>>>> parent of 16e5b3a... update
             </state>
@@ -572,6 +619,7 @@
       <file leaf-file-name="enemy_select.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enemy_select.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -610,6 +658,8 @@
       <file leaf-file-name="enemy_select.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enemy_select.xml">
           <provider selected="true" editor-type-id="text-editor">
+=======
+>>>>>>> parent of 16e5b3a... update
             <state relative-caret-position="816">
               <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
               <folding />
@@ -632,6 +682,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="LoadEnemy.java" pinned="false" current-in-tab="false">
@@ -753,6 +804,11 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml">
           <provider selected="true" editor-type-id="text-editor">
 >>>>>>> parent of 16e5b3a... update
+=======
+      <file leaf-file-name="servant_select.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml">
+          <provider selected="true" editor-type-id="text-editor">
+>>>>>>> parent of 16e5b3a... update
             <state relative-caret-position="339">
               <caret line="85" column="35" lean-forward="false" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
               <folding />
@@ -762,6 +818,9 @@
             <state />
           </provider>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 16e5b3a... update
+=======
 >>>>>>> parent of 16e5b3a... update
 =======
 >>>>>>> parent of 16e5b3a... update
@@ -770,6 +829,7 @@
       <file leaf-file-name="confirm.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -814,11 +874,16 @@
               <folding />
 >>>>>>> parent of 1add1ab... Merge remote-tracking branch 'upstream/master'
 =======
+=======
+>>>>>>> parent of 16e5b3a... update
             <state relative-caret-position="4267">
               <caret line="251" column="39" lean-forward="true" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
               <folding>
                 <element signature="e#14274#14288#0" expanded="true" />
               </folding>
+<<<<<<< HEAD
+>>>>>>> parent of 16e5b3a... update
+=======
 >>>>>>> parent of 16e5b3a... update
             </state>
           </provider>
@@ -847,6 +912,7 @@
 >>>>>>> parent of f14ee1c... Revert "Edit Pages now functional for all servants"
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1022,6 +1088,8 @@
 =======
 =======
 >>>>>>> parent of 16e5b3a... update
+=======
+>>>>>>> parent of 16e5b3a... update
       <file leaf-file-name="EditServant1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -1046,8 +1114,11 @@
               <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
               <folding />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of a3a9ebd... update
+=======
+>>>>>>> parent of 16e5b3a... update
 =======
 >>>>>>> parent of 16e5b3a... update
             </state>
@@ -1056,10 +1127,13 @@
       </file>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 16e5b3a... update
 =======
 >>>>>>> upstream/master
 >>>>>>> parent of a3a9ebd... update
+=======
+>>>>>>> parent of 16e5b3a... update
 =======
 >>>>>>> parent of 16e5b3a... update
     </leaf>
@@ -1068,11 +1142,15 @@
     <findStrings>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <find>button</find>
 =======
       <find>oncli</find>
       <find>oncl</find>
 >>>>>>> parent of a3a9ebd... update
+=======
+      <find>button</find>
+>>>>>>> parent of 16e5b3a... update
 =======
       <find>button</find>
 >>>>>>> parent of 16e5b3a... update
@@ -1085,7 +1163,11 @@
     <option name="myGradleHomes">
       <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="C:\Users\Ander's\.gradle\wrapper\dists\gradle-4.4-all\9br9xq1tocpiv8o6njlyu5op1\gradle-4.4" />
+=======
+        <entry key="$PROJECT_DIR$" value="C:\Users\Christian\.gradle\wrapper\dists\gradle-4.4-all\9br9xq1tocpiv8o6njlyu5op1\gradle-4.4" />
+>>>>>>> parent of 16e5b3a... update
 =======
         <entry key="$PROJECT_DIR$" value="C:\Users\Christian\.gradle\wrapper\dists\gradle-4.4-all\9br9xq1tocpiv8o6njlyu5op1\gradle-4.4" />
 >>>>>>> parent of 16e5b3a... update
@@ -3114,6 +3196,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditEnemy.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" />
@@ -3157,9 +3240,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditEnemy.java" />
 >>>>>>> parent of 1add1ab... Merge remote-tracking branch 'upstream/master'
 =======
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/confirm.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" />
+>>>>>>> parent of 16e5b3a... update
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditEnemy.java" />
 >>>>>>> parent of 1add1ab... Merge remote-tracking branch 'upstream/master'
@@ -3256,6 +3344,13 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
 >>>>>>> parent of 16e5b3a... update
+=======
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+>>>>>>> parent of 16e5b3a... update
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -3274,6 +3369,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3421,6 +3517,9 @@
 =======
       <pane id="ProjectPane" />
 >>>>>>> parent of 16e5b3a... update
+=======
+      <pane id="ProjectPane" />
+>>>>>>> parent of 16e5b3a... update
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -3469,6 +3568,7 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3560,10 +3660,13 @@
 >>>>>>> parent of a3a9ebd... update
 =======
 >>>>>>> parent of 16e5b3a... update
+=======
+>>>>>>> parent of 16e5b3a... update
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3673,11 +3776,17 @@
       <pane id="Scratches" />
       <pane id="PackagesPane" />
 >>>>>>> parent of 16e5b3a... update
+=======
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+>>>>>>> parent of 16e5b3a... update
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5377,6 +5486,10 @@
     <property name="device.picker.selection" value="Copy_of_Nexus_5X_API_26" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/RCM/Room-Checkmate 5.5a" />
 >>>>>>> parent of 16e5b3a... update
+=======
+    <property name="device.picker.selection" value="Copy_of_Nexus_5X_API_26" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/RCM/Room-Checkmate 5.5a" />
+>>>>>>> parent of 16e5b3a... update
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -5543,6 +5656,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <changelist id="11bfd04f-0eed-4435-a63d-ff2e5fb30d20" name="Default" comment="" />
       <created>1531931820251</created>
       <option name="number" value="Default" />
@@ -5601,10 +5715,18 @@
       <option name="presentableId" value="Default" />
       <updated>1531778071662</updated>
 >>>>>>> parent of 16e5b3a... update
+=======
+      <changelist id="59d4fa79-2544-4cd2-aeb4-7bea3d17be97" name="Default" comment="" />
+      <created>1531778071662</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531778071662</updated>
+>>>>>>> parent of 16e5b3a... update
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5645,6 +5767,9 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
 >>>>>>> upstream/master
 >>>>>>> parent of a3a9ebd... update
+=======
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+>>>>>>> parent of 16e5b3a... update
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853025" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -5684,6 +5809,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 16e5b3a... update
 =======
 >>>>>>> parent of 16e5b3a... update
@@ -5698,6 +5824,8 @@
 =======
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
 >>>>>>> parent of a3a9ebd... update
+=======
+>>>>>>> parent of 16e5b3a... update
 =======
 >>>>>>> parent of 16e5b3a... update
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -5722,6 +5850,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -5772,6 +5901,10 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> parent of 16e5b3a... update
+=======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
 >>>>>>> parent of 16e5b3a... update
@@ -5972,6 +6105,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -5983,6 +6117,8 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enemy_select.xml">
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -5991,7 +6127,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java">
->>>>>>> parent of 16e5b3a... update
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
@@ -5999,6 +6134,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/editenemy.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enemy_select.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="85" column="35" lean-forward="false" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm2.java">
+>>>>>>> parent of 16e5b3a... update
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java">
+>>>>>>> parent of 16e5b3a... update
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4267">
+          <caret line="251" column="39" lean-forward="true" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
+          <folding>
+            <element signature="e#14274#14288#0" expanded="true" />
+          </folding>
+>>>>>>> parent of 16e5b3a... update
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -6029,10 +6256,20 @@
         <state relative-caret-position="-5">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditEnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> parent of 16e5b3a... update
         </state>
       </provider>
 <<<<<<< HEAD
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -6052,10 +6289,30 @@
 =======
       <provider selected="true" editor-type-id="android-designer2">
         <state />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-706">
+          <caret line="36" column="56" lean-forward="true" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+          <folding />
+        </state>
+>>>>>>> parent of 16e5b3a... update
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="68">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
@@ -6067,12 +6324,31 @@
         <state relative-caret-position="1224">
           <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="329">
+          <caret line="319" column="5" lean-forward="false" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="200" column="17" lean-forward="true" selection-start-line="127" selection-start-column="16" selection-end-line="200" selection-end-column="17" />
+          <folding>
+            <element signature="e#4546#8925#0" expanded="true" />
+            <element signature="e#8924#8925#0" expanded="true" />
+          </folding>
+>>>>>>> parent of 16e5b3a... update
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -7385,10 +7661,14 @@
             <element signature="imports" expanded="true" />
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditEnemy.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java">
+>>>>>>> parent of 16e5b3a... update
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="141" column="27" lean-forward="true" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#3040#5138#0" expanded="true" />
             <element signature="e#5137#5138#0" expanded="true" />
 >>>>>>> parent of 1add1ab... Merge remote-tracking branch 'upstream/master'
@@ -7508,6 +7788,11 @@
             <element signature="e#3365#3366#0" expanded="true" />
 >>>>>>> upstream/master
 =======
+>>>>>>> parent of 16e5b3a... update
+=======
+            <element signature="imports" expanded="true" />
+            <element signature="e#4593#6471#0" expanded="true" />
+            <element signature="e#6470#6471#0" expanded="true" />
 >>>>>>> parent of 16e5b3a... update
           </folding>
 >>>>>>> parent of a3a9ebd... update

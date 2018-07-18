@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".LoadServants" />
         <activity android:name=".Confirm" />
+        <activity android:name=".EditEnemy" />
+        <activity android:name=".EditServant1" />
     </application>
 
 </manifest>

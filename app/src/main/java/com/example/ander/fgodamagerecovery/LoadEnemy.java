@@ -1,3 +1,4 @@
+
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
@@ -11,7 +12,6 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -51,6 +51,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
         spinnerServname = (Spinner) findViewById(R.id.serv_name);
         spinnerServname.setOnItemSelectedListener(this);
+        Button Next = (Button) findViewById(R.id.next);
 
         nameArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 
@@ -63,11 +64,6 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
             enemyServant  = spinnerServname.getSelectedItem().toString();
-            //Log.d("Test", "Does this work?");
-            Log.d("Servants Name", enemyServant);
-                Toast.makeText
-                        (getApplicationContext(), "Selected : " + enemyServant, Toast.LENGTH_SHORT)
-                        .show();
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
@@ -76,42 +72,30 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
 
             }
         });
-        Intent servantInfo = getIntent();
-        final Bundle received = servantInfo.getExtras();
-        final Intent passer = new Intent(this, Confirm.class);
-        if(servantInfo.hasExtra("EnemyEdit")){
-            Button bottom = (Button)findViewById(R.id.next);
-            bottom.setText("Confirm");
-            String name = received.getString("enemy_1");
-            String enClass = received.getString("enemy_2");
-            int classPos = classArray.getPosition(enClass);
-            spinnerClass.setSelection(classPos);
-            fillNameArray();
-            Log.d("Passed Name", name);
-            int namePos = nameArray.getPosition(name);
-            int testPos = nameArray.getPosition("Arturia");
-            Log.d("Int set for namePos", " " + namePos);
-            //Log.d("Int set for testPos", " " + testPos);
-            spinnerServname.setSelection(namePos);
 
-            bottom.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v) {
-                    received.putString("enemy_1", enemyServant);
-                    received.putString("enemy_2", enemyClass);
-                    passer.putExtras(received);
-                    startActivity(passer);
-                }
-            });
-        }
+
+        final Intent loadServants = new Intent(this, LoadServants.class);
+
+        Next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                loadServants.putExtra("servant", 1);
+                loadServants.putExtra("enemy_1", enemyServant);
+                loadServants.putExtra("enemy_2", enemyClass);
+                startActivity(loadServants);
+                //this.overridePendingTransition(0, 0);
+            }
+
+        });
+
     }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
         fillNameArray();
-       // Log.d("Servants Class", enemyClass);
-        /*Toast.makeText
-                (getApplicationContext(), "Selected : " + enemyClass, Toast.LENGTH_SHORT)
-                .show();*/
+
+
         enemyServant = (String) spinnerServname.getItemAtPosition(0);
 
     }
@@ -343,15 +327,7 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.notifyDataSetChanged();
     }
 
-    public void loadServants(View view){
-        Intent loadServants = new Intent(this, LoadServants.class);
-        loadServants.putExtra("servant", 1);
-        loadServants.putExtra("enemy_1", enemyServant);
-        loadServants.putExtra("enemy_2", enemyClass);
-        startActivity(loadServants);
-        //this.overridePendingTransition(0, 0);
 
-    }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

@@ -4,7 +4,6 @@ package com.example.ander.fgodamagerecovery;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -55,11 +54,12 @@ public class Confirm extends AppCompatActivity {
         Button editServant1 = (Button)findViewById(R.id.editServant1Btn);
         Button editServant2 = (Button)findViewById(R.id.editServant2Btn);
         Button editServant3 = (Button)findViewById(R.id.editServant3Btn);
+        Button toCardSelect = (Button)findViewById(R.id.next);
 
         Button next = (Button)findViewById(R.id.next);
         final Intent passToEditEnemy = new Intent(this, EditEnemy.class);
         final Intent passToEditServant1 = new Intent(this, EditServant1.class);
-        final Intent passToConfirm2 = new Intent(this, Confirm2.class);
+        final Intent passToConfirm2 = new Intent(this, CardSelect.class);
 
         //actual damage calculation (do after edit)
         next.setOnClickListener(new View.OnClickListener(){
@@ -78,6 +78,7 @@ public class Confirm extends AppCompatActivity {
         passThis.putString("serv_1b", recieved.getString("serv_1b"));
         passThis.putInt("serv_1c", recieved.getInt("serv_1c"));
         passThis.putString("serv_2a", recieved.getString("serv_2a"));
+        passThis.putString("serv_2b", recieved.getString("serv_2b"));
         passThis.putInt("serv_2c", recieved.getInt("serv_2c"));
         passThis.putString("enemy_1", recieved.getString("enemy_1"));
         passThis.putString("enemy_2", recieved.getString("enemy_2"));
@@ -110,6 +111,13 @@ public class Confirm extends AppCompatActivity {
                 passThis.putInt("serv_edit", 3);
                 passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
+            }
+        });
+        toCardSelect.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                //passThis.putInt("serv_edit", 3);
+                passToConfirm2.putExtras(passThis);
+                startActivity(passToConfirm2);
             }
         });
         //Log.d("servantName", servantInfo.getStringExtra("enemy_1"));

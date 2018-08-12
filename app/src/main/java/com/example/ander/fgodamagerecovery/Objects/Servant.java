@@ -1,6 +1,9 @@
 package com.example.ander.fgodamagerecovery.Objects;
 
-public class Servant {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Servant implements Parcelable{
     private int ATK;
     //public ServantType servInfo;
     private String attribute;
@@ -8,6 +11,36 @@ public class Servant {
     private String skill1, skill2, skill3;
     private double critDamageMod = 0, npDamageMod = 0, atkMod = 0, cardMOD = 0, powerMod = 0, artsMOD = 0, busterMOD = 0, quickMOD = 0;
     private int dmgPlusAdd = 0;
+
+    protected Servant(Parcel in) {
+        ATK = in.readInt();
+        attribute = in.readString();
+        className = in.readString();
+        skill1 = in.readString();
+        skill2 = in.readString();
+        skill3 = in.readString();
+        critDamageMod = in.readDouble();
+        npDamageMod = in.readDouble();
+        atkMod = in.readDouble();
+        cardMOD = in.readDouble();
+        powerMod = in.readDouble();
+        artsMOD = in.readDouble();
+        busterMOD = in.readDouble();
+        quickMOD = in.readDouble();
+        dmgPlusAdd = in.readInt();
+    }
+
+    public static final Creator<Servant> CREATOR = new Creator<Servant>() {
+        @Override
+        public Servant createFromParcel(Parcel in) {
+            return new Servant(in);
+        }
+
+        @Override
+        public Servant[] newArray(int size) {
+            return new Servant[size];
+        }
+    };
 
     public double getArtsMOD() {
         return artsMOD;
@@ -251,4 +284,27 @@ public class Servant {
         return attribute;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(ATK);
+        dest.writeString(attribute);
+        dest.writeString(className);
+        dest.writeString(skill1);
+        dest.writeString(skill2);
+        dest.writeString(skill3);
+        dest.writeDouble(critDamageMod);
+        dest.writeDouble(npDamageMod);
+        dest.writeDouble(atkMod);
+        dest.writeDouble(cardMOD);
+        dest.writeDouble(powerMod);
+        dest.writeDouble(artsMOD);
+        dest.writeDouble(busterMOD);
+        dest.writeDouble(quickMOD);
+        dest.writeInt(dmgPlusAdd);
+    }
 }

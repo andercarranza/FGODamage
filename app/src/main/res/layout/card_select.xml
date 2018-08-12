@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--android:background="@color/white"-->
+
+
+    <TextView
+        android:id="@+id/selectCardsTitle"
+        android:layout_width="328dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Please select 3 Command Cards"
+        android:textSize="20dp"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toTopOf="@+id/card1spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <Spinner
+        android:id="@+id/card1spinner"
+        android:layout_width="328dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/card2spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectCardsTitle"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/NP1label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Level:"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/card1spinner"
+        app:layout_constraintTop_toBottomOf="@id/card1spinner"
+        />
+    <Spinner
+        android:id="@+id/NPlvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card1spinner"
+        app:layout_constraintLeft_toRightOf="@+id/NP1label"
+        />
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upgraded"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/card1spinner"
+        app:layout_constraintLeft_toRightOf="@+id/NPlvl1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+
+    <Spinner
+        android:id="@+id/card2spinner"
+        android:layout_width="328dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/card3spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card1spinner"
+        app:layout_constraintVertical_bias="0.026" />
+    <TextView
+        android:id="@+id/NP2label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Level:"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/card2spinner"
+        app:layout_constraintTop_toBottomOf="@id/card2spinner"
+        />
+    <Spinner
+        android:id="@+id/NPlvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card2spinner"
+        app:layout_constraintLeft_toRightOf="@+id/NP2label"
+        />
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upgraded"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/card2spinner"
+        app:layout_constraintLeft_toRightOf="@+id/NPlvl2"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+
+
+    <Spinner
+        android:id="@+id/card3spinner"
+        android:layout_width="328dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card2spinner"
+        app:layout_constraintVertical_bias="0.026" />
+    <TextView
+        android:id="@+id/NP3label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Level:"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/card3spinner"
+        app:layout_constraintTop_toBottomOf="@id/card3spinner"
+        />
+    <Spinner
+        android:id="@+id/NPlvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card3spinner"
+        app:layout_constraintLeft_toRightOf="@+id/NP3label"
+        />
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upgraded"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/card3spinner"
+        app:layout_constraintLeft_toRightOf="@+id/NPlvl3"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

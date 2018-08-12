@@ -20,6 +20,7 @@
         <activity android:name=".Confirm" />
         <activity android:name=".EditEnemy" />
         <activity android:name=".EditServant1" />
+        <activity android:name=".CardSelect" />
     </application>
 
 </manifest>

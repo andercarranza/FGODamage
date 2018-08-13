@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="Black">#000000</color>
+    <color name="fgoLB">#5384CF</color>
+    <color name="fgoBabyBlue">#859FD6</color>
+    <color name="fgoStaleBlue">#5A6499</color>
+    <color name="fgoDirtyBlue">#3C5699</color>
+    <color name="fgoDarkBlue">#414673</color>
+
 </resources>

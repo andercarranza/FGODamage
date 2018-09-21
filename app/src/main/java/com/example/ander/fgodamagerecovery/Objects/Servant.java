@@ -3,17 +3,35 @@ package com.example.ander.fgodamagerecovery.Objects;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import static com.example.ander.fgodamagerecovery.Objects.Effects.effectsMap;
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
+import static com.example.ander.fgodamagerecovery.Objects.Effects.damagePattern;
+import static com.example.ander.fgodamagerecovery.Objects.Effects.hougu;
+
 public class Servant implements Parcelable{
     private int ATK;
     //public ServantType servInfo;
     private String attribute;
+    private String name;
+    private boolean isUpgraded = false;
     private String className;
     private String skill1, skill2, skill3;
-    private double critDamageMod = 0, npDamageMod = 0, atkMod = 0, cardMOD = 0, powerMod = 0, artsMOD = 0, busterMOD = 0, quickMOD = 0;
+    private double critDamageMod = 0, npDamageMod = 0, atkMod = 0, cardMOD = 0, powerMod = 0, artsMOD = 0, busterMOD = 0, quickMOD = 0, defenseIgnoreHolder = 0, defMOD = 0;
     private int dmgPlusAdd = 0;
+
+    public void setCritDamageMod(double critDamageMod) {
+        this.critDamageMod = critDamageMod;
+    }
+
+    public void setUpgrade(Boolean check)
+    {
+        this.isUpgraded = check;
+    }
 
     protected Servant(Parcel in) {
         ATK = in.readInt();
+        name = in.readString();
         attribute = in.readString();
         className = in.readString();
         skill1 = in.readString();
@@ -42,9 +60,128 @@ public class Servant implements Parcelable{
         }
     };
 
+    public void activatePostEffect(int charge, Servant enemy, int NPlevel){
+        String NPname = servantsMap.get(this.name + "5");
+        //reset all preeffects that last only for NP (dont think this is necessary, only for ignore defense)
+        if(this.defenseIgnoreHolder != 0)
+        {
+            enemy.setDefMOD(this.defenseIgnoreHolder);
+            this.defenseIgnoreHolder = 0;
+        }
+        if(isUpgraded)
+        {
+            if(hougu.get(NPname + "2u").equals("True"))
+            {
+                String preEffect = hougu.get(NPname + "4u");
+                applyEffect(preEffect, enemy, charge, false, NPlevel, true);
+                return;
+            }
+        }
+        if(hougu.get(NPname + "2").equals("True"))
+        {
+            String preEffect = hougu.get(NPname + "2");
+            applyEffect(preEffect, enemy, charge, false, NPlevel, false);
+            return;
+        }
+    }
+
+    public void activatePreEffect(int charge, Servant enemy, int NPlevel){
+        String NPname = servantsMap.get(this.name + "5");
+
+        if(isUpgraded)
+        {
+            if(hougu.get(NPname + "1u").equals("True"))
+            {
+                String preEffect = hougu.get(NPname + "3u");
+                applyEffect(preEffect, enemy, charge, true, NPlevel, true);
+                return;
+            }
+        }
+        if(hougu.get(NPname + "1").equals("True"))
+        {
+            String preEffect = hougu.get(NPname + "3");
+            applyEffect(preEffect, enemy, charge, true, NPlevel, false);
+            return;
+        }
+    }
+
+    public void applyEffect(String effectName, Servant Enemy, int charge, boolean prePost, int NPlevel, boolean upgradeAccess){
+
+        if(effectName.equals("Ignores Defense"))
+        {
+            this.defenseIgnoreHolder = Enemy.getDefMOD();
+            Enemy.setDefMOD(0);
+        }
+
+        if(effectName.equals("AtkUp"))
+        {
+            this.ATK += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("Defense Down"))
+        {
+            Enemy.setDefMOD(Enemy.getDefMOD() - getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess));
+        }
+
+        if(effectName.equals("Special Attack"))
+        {
+
+        }
+    }
+
+    public double getModifierNum(int charge, int NPlevel, boolean prePost, String effectName, boolean upgradeAccess){
+        double modifier = -1;
+        String access;
+        double [] accessArray;
+
+
+
+        if(prePost)
+            access = "7";
+        else
+            access = "8";
+
+        if(upgradeAccess)
+            access += "u";
+
+        if(hougu.get(effectName + access).equals("NPLevel"))
+        {
+            accessArray = damagePattern.get(effectName + "1" + access);
+            modifier = accessArray[NPlevel];
+        }
+        else
+        {
+            accessArray = damagePattern.get(effectName + access);
+            modifier = accessArray[(charge/100) -1];
+        }
+
+        return modifier;
+    }
+
+    public double [] getNPdmgPattern(){
+        double [] arrToReturn;
+
+        String NPname = servantsMap.get(this.name + "5");
+
+        if(upgradelist.contains(NPname) && isUpgraded)
+        {
+            arrToReturn = damagePattern.get(hougu.get(NPname + "0u"));
+        }
+        else
+            arrToReturn = damagePattern.get(hougu.get(NPname + "0"));
+
+        return arrToReturn;
+    }
+
+
+
     public double getArtsMOD() {
         return artsMOD;
     }
+
+    public String getName(){ return this.name; }
+
+    public int getATK(){ return this.ATK; }
 
     public void addArtsMOD(double c) {
         artsMOD += c;
@@ -91,6 +228,14 @@ public class Servant implements Parcelable{
         return cardMOD;
     }
 
+    public double getDefMOD() {
+        return defMOD;
+    }
+
+    public void setDefMOD(double defMOD) {
+        this.defMOD = defMOD;
+    }
+
     public void addCardMOD(double c) {
         cardMOD += c;
     }
@@ -115,6 +260,7 @@ public class Servant implements Parcelable{
         this.ATK = ATK;
         this.attribute = FGODamage.servantsMap.get(name + "4");
         this.className = className;
+        this.name = name;
         this.skill1 = FGODamage.servantsMap.get(name + "0");
         this.skill2 = FGODamage.servantsMap.get(name + "1");
         this.skill3 = FGODamage.servantsMap.get(name + "2");
@@ -292,6 +438,7 @@ public class Servant implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ATK);
+        dest.writeString(name);
         dest.writeString(attribute);
         dest.writeString(className);
         dest.writeString(skill1);

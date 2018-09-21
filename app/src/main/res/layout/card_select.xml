@@ -76,6 +76,27 @@
         app:layout_constraintLeft_toRightOf="@+id/NPlvl1"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="129dp" />
+    <TextView
+        android:id="@+id/overcharge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Charge:"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox1"
+        app:layout_constraintTop_toBottomOf="@id/card1spinner"
+        />
+    <Spinner
+        android:id="@+id/charge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card1spinner"
+        app:layout_constraintLeft_toRightOf="@+id/overcharge1"
+        />
 
 
     <Spinner
@@ -125,6 +146,28 @@
         app:layout_constraintLeft_toRightOf="@+id/NPlvl2"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="129dp" />
+    <TextView
+        android:id="@+id/overcharge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Charge:"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox2"
+        app:layout_constraintTop_toBottomOf="@id/card2spinner"
+        />
+    <Spinner
+        android:id="@+id/charge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card2spinner"
+        app:layout_constraintLeft_toRightOf="@+id/overcharge2"
+        />
+
 
 
 
@@ -174,6 +217,29 @@
         app:layout_constraintLeft_toRightOf="@+id/NPlvl3"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="129dp" />
+    <TextView
+        android:id="@+id/overcharge3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Charge:"
+        android:textSize="15dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox3"
+        app:layout_constraintTop_toBottomOf="@id/card3spinner"
+        />
+    <Spinner
+        android:id="@+id/charge3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card3spinner"
+        app:layout_constraintLeft_toRightOf="@+id/overcharge3"
+        />
+
+
 
     <Button
         android:id="@+id/next"

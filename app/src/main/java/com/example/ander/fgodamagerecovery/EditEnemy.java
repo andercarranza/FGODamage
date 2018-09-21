@@ -224,7 +224,7 @@ public class EditEnemy extends AppCompatActivity implements View.OnClickListener
         nameArray.add("Okita Souji");
         nameArray.add("Fergus");
         nameArray.add("Nero Bride");
-        nameArray.add("Morded");
+        nameArray.add("Mordred");
         nameArray.add("Shiki Void");
         nameArray.add("Rama");
         nameArray.notifyDataSetChanged();

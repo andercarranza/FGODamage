@@ -3,6 +3,7 @@ package com.example.ander.fgodamagerecovery;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,14 +12,16 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.ander.fgodamagerecovery.Objects.Servant;
+
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 
 public class CardSelect extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-    Spinner card1, card2, card3, NPlevel1, NPlevel2, NPlevel3;
-    ArrayAdapter<String> cardLineup, oneThruFive;
+    Spinner card1, card2, card3, NPlevel1, NPlevel2, NPlevel3, charge1, charge2, charge3;
+    ArrayAdapter<String> cardLineup, oneThruFive, chargePercent;
     String servant1, servant2, servant3;
-    TextView text1,text2,text3;
+    TextView text1,text2,text3, chargetxt1, chargetxt2, chargetxt3;
     CheckBox check1, check2, check3;
     Button calculate;
 
@@ -46,6 +49,12 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         NPlevel1 = (Spinner)findViewById(R.id.NPlvl1);
         NPlevel2 = (Spinner)findViewById(R.id.NPlvl2);
         NPlevel3 = (Spinner)findViewById(R.id.NPlvl3);
+        charge1 = (Spinner)findViewById(R.id.charge1);
+        charge2 = (Spinner)findViewById(R.id.charge2);
+        charge3 = (Spinner)findViewById(R.id.charge3);
+        chargetxt1 = (TextView)findViewById(R.id.overcharge1);
+        chargetxt2 = (TextView)findViewById(R.id.overcharge2);
+        chargetxt3 = (TextView)findViewById(R.id.overcharge3);
 
         cardLineup = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         cardLineup.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -75,6 +84,15 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         oneThruFive.add("3");
         oneThruFive.add("4");
         oneThruFive.add("5");
+
+        chargePercent = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        chargePercent.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        charge1.setAdapter(chargePercent);
+        charge2.setAdapter(chargePercent);
+        charge3.setAdapter(chargePercent);
+        chargePercent.add("100%");
+        chargePercent.add("200%");
+        chargePercent.add("300%");
 
 
         final Bundle passThis = new Bundle();
@@ -248,6 +266,43 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             }
         });
 
+        charge1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int charge = (charge1.getSelectedItemPosition() + 1) * 100;
+                passThis.putString("card1Charge", "" + charge);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                passThis.putString("card1Charge", "100");
+            }
+        });
+        charge2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int charge = (charge2.getSelectedItemPosition() + 1) * 100;
+                passThis.putString("card2Charge", "" + charge);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                passThis.putString("card2Charge", "100");
+            }
+        });
+        charge3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int charge = (charge3.getSelectedItemPosition() + 1) * 100;
+                passThis.putString("card3Charge", "" + charge);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                passThis.putString("card3Charge", "100");
+            }
+        });
+
         check1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -288,6 +343,17 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         calculate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                Servant enemy = new Servant(-1, passThis.getString("enemy_1"), passThis.getString("enemy_2"));
+                Log.d("servant 1 nm", servant1);
+                Log.d("servant 2 nm", servant2);
+                Log.d("servant 3 nm", servant3);
+                Servant servant1a = new Servant(passThis.getInt("serv_1c"), servant1 , passThis.getString("serv_1b"));
+                Servant servant2a = new Servant(passThis.getInt("serv_2c"), servant2 , passThis.getString("serv_2b"));
+                Servant servant3a = new Servant(passThis.getInt("serv_3c"), servant3 , passThis.getString("serv_3b"));
+                passToCalcPage.putExtra("EnemyObj", enemy);
+                passToCalcPage.putExtra("Servant1Obj", servant1a);
+                passToCalcPage.putExtra("Servant2Obj", servant2a);
+                passToCalcPage.putExtra("Servant3Obj", servant3a);
                 passToCalcPage.putExtras(passThis);
                 startActivity(passToCalcPage);
             }
@@ -312,6 +378,8 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
     public void set1Visible(int servNum){
         text1.setVisibility(View.VISIBLE);
         NPlevel1.setVisibility(View.VISIBLE);
+        charge1.setVisibility(View.VISIBLE);
+        chargetxt1.setVisibility(View.VISIBLE);
         switch(servNum)
         {
             case 1:
@@ -339,6 +407,8 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
     public void set2Visible(int servNum){
         text2.setVisibility(View.VISIBLE);
         NPlevel2.setVisibility(View.VISIBLE);
+        charge2.setVisibility(View.VISIBLE);
+        chargetxt2.setVisibility(View.VISIBLE);
         switch(servNum)
         {
             case 1:
@@ -365,6 +435,8 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
     public void set3Visible(int servNum){
         text3.setVisibility(View.VISIBLE);
         NPlevel3.setVisibility(View.VISIBLE);
+        charge3.setVisibility(View.VISIBLE);
+        chargetxt3.setVisibility(View.VISIBLE);
         switch(servNum)
         {
             case 1:
@@ -392,17 +464,23 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         text1.setVisibility(View.INVISIBLE);
         NPlevel1.setVisibility(View.INVISIBLE);
         check1.setVisibility(View.INVISIBLE);
+        charge1.setVisibility(View.INVISIBLE);
+        chargetxt1.setVisibility(View.INVISIBLE);
     }
 
     public void set2InVisible(){
         text2.setVisibility(View.INVISIBLE);
         NPlevel2.setVisibility(View.INVISIBLE);
         check2.setVisibility(View.INVISIBLE);
+        charge2.setVisibility(View.INVISIBLE);
+        chargetxt2.setVisibility(View.INVISIBLE);
     }
 
     public void set3InVisible(){
         text3.setVisibility(View.INVISIBLE);
         NPlevel3.setVisibility(View.INVISIBLE);
         check3.setVisibility(View.INVISIBLE);
+        charge3.setVisibility(View.INVISIBLE);
+        chargetxt3.setVisibility(View.INVISIBLE);
     }
 }

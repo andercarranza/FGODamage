@@ -294,7 +294,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Okita Souji");
         nameArray.add("Fergus");
         nameArray.add("Nero Bride");
-        nameArray.add("Morded");
+        nameArray.add("Mordred");
         nameArray.add("Shiki Void");
         nameArray.add("Rama");
         nameArray.notifyDataSetChanged();

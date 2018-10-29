@@ -15,6 +15,7 @@ public class Effects {
     public static final Map <String, String> effectsMap;
     public static final Map <String, double[]> damagePattern;
     public static final Map <String, String> hougu;
+    public static final Map <String, List<String>> hiddenTraits;
     public static double teamBusterBonus = 0, teamAtkBonus = 0, teamArtsBonus = 0, teamQuickBonus = 0, teamNPBonus = 0, teamCritBonus = 0;
     public static int teamDamagePlus = 0;
 
@@ -1811,8 +1812,24 @@ public class Effects {
         List<String> list9 = new ArrayList<String>();
         list9.add("Shuten-Douji");
         list9.add("Ibaraki-Douji");
-        
+        list9.add("Tomoe");
+        list9.add("Skeleton");
+        list9.add("Zombie");
+        list9.add("Ghost");
+        list9.add("Werewolf");
+        list9.add("Lamia");
+        list9.add("Daemon");
+        list9.add("Gazer");
+        list9.add("Bicorn");
+        list9.add("Oni");
+        list9.add("Sea Fiend");
+        list9.add("Hermit Crab");
+        filedUnder.put("Demonic", list9);
 
+        List<String> list10 = new ArrayList<String>();
+
+
+        hiddenTraits = Collections.unmodifiableMap(filedUnder);
 
         Map <String, double[]> patterns = new HashMap<String, double[]>();
         double [] arr = {0,0,0,0,0};
@@ -1954,15 +1971,15 @@ public class Effects {
         noble.put("Laus Saint Claudius5","Arts");
         noble.put("Laus Saint Claudius8","24");
 
-        noble.put("Blamung0","1");
-        noble.put("Blamung0u","2");
-        noble.put("Blamung1","True");
-        noble.put("Blamung2","false");
-        noble.put("Blamung3","Special Attack");
-        noble.put("Blamung4","1");
-        noble.put("Blamung5","Buster");
-        noble.put("Blamung6","Dragon");
-        noble.put("Blamung7","22");
+        noble.put("Balmung0","1");
+        noble.put("Balmung0u","2");
+        noble.put("Balmung1","True");
+        noble.put("Balmung2","false");
+        noble.put("Balmung3","Special Attack");
+        noble.put("Balmung4","1");
+        noble.put("Balmung5","Buster");
+        noble.put("Balmung6","Dragon");
+        noble.put("Balmung7","22");
 
         noble.put("Crocea Mors0","9");
         noble.put("Crocea Mors1","False");
@@ -1979,6 +1996,8 @@ public class Effects {
         noble.put("Photon Ray4","Defense Down");
         noble.put("Photon Ray5","Buster");
         noble.put("Photon Ray8","23");
+        noble.put("Photon Ray2u","True");
+        noble.put("Photon Ray4u","Defense Down");
         noble.put("Photon Ray8u","24");
 
         noble.put("Saint War Order0","0");
@@ -2033,18 +2052,18 @@ public class Effects {
         //Euryales special attack is not overcharge dependant
         noble.put("Eye of the Euryale0","12");
         noble.put("Eye of the Euryale0u","13");
-        noble.put("Eye of the Euryale1","False");
-        noble.put("Eye of the Euryale11","True");
+        noble.put("Eye of the Euryale1","True");
         noble.put("Eye of the Euryale2","False");
-        noble.put("Eye of the Euryale3","Null");
-        noble.put("Eye of the Euryale13","Special Attack");
+        noble.put("Eye of the Euryale3","Special Attack");
         noble.put("Eye of the Euryale4","Null");
         noble.put("Eye of the Euryale5","Arts");
-        noble.put("Eye of the Euryale16","Male");
+        noble.put("Eye of the Euryale6","Male");
+        noble.put("Eye of the Euryale7","NPLevel");
         noble.put("Eye of the Euryale17","28");
-        noble.put("Eye of the Euryale11u","True");
-        noble.put("Eye of the Euryale13u","Special Attack");
-        noble.put("Eye of the Euryale16u","Male");
+        noble.put("Eye of the Euryale1u","True");
+        noble.put("Eye of the Euryale3u","Special Attack");
+        noble.put("Eye of the Euryale6u","Male");
+        noble.put("Eye of the Euryale7u","NPLevel");
         noble.put("Eye of the Euryale17u","29");
 
         noble.put("Stella0","11");
@@ -2118,7 +2137,7 @@ public class Effects {
         noble.put("Queen Anne's Revenge4","10");
         noble.put("Queen Anne's Revenge5","Buster");
 
-        //check if all allies or only self
+        //all allies
         noble.put("Chariot of Boudica0","0");
         noble.put("Chariot of Boudica1","0");
         noble.put("Chariot of Boudica2","0");
@@ -2528,11 +2547,11 @@ public class Effects {
         noble.put("Maria the Ripper0u","19");
         noble.put("Maria the Ripper1","True");
         noble.put("Maria the Ripper2","9");
-        noble.put("Maria the Ripper3","Special Attack PowerMod");
-        noble.put("Maria the Ripper3a","Ignores Defense");
+        //noble.put("Maria the Ripper3","Special Attack");
+        noble.put("Maria the Ripper3","Ignores Defense");
         noble.put("Maria the Ripper4","9");
         noble.put("Maria the Ripper5","Quick");
-        noble.put("Maria the Ripper6","Female");
+        noble.put("Maria the Ripper6","PowerMod");
         noble.put("Maria the Ripper7","36");
 
         noble.put("Clarent Blood Arthur0","1");
@@ -2746,7 +2765,7 @@ public class Effects {
         noble.put("Sanat Kumara5","Arts");
         noble.put("Sanat Kumara8","42");
 
-        //here
+
         noble.put("Brahmastra0","11");
         noble.put("Brahmastra1","True");
         noble.put("Brahmastra2","6");
@@ -2866,7 +2885,7 @@ public class Effects {
         noble.put("Golden Drive, Good Night0","9");
         noble.put("Golden Drive, Good Night1","True");
         noble.put("Golden Drive, Good Night2","6");
-        noble.put("Golden Drive, Good Night3","Quick Up");
+        noble.put("Golden Drive, Good Night3","QuickUp");
         noble.put("Golden Drive, Good Night4","6");
         noble.put("Golden Drive, Good Night5","Quick");
         noble.put("Golden Drive, Good Night7","44");
@@ -2916,7 +2935,7 @@ public class Effects {
         noble.put("Arondight Overload0","10");
         noble.put("Arondight Overload1","True");
         noble.put("Arondight Overload2","True");
-        noble.put("Arondight Overload3","Arts Up");
+        noble.put("Arondight Overload3","ArtsUp");
         noble.put("Arondight Overload4","Dmg Rcvd Plus");
         noble.put("Arondight Overload5","Arts");
         noble.put("Arondight Overload7","26");

@@ -338,6 +338,24 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             }
         });
 
+        if(check1.isChecked()){
+            passThis.putString("card1Upgrade", "Yes");
+        }else{
+            passThis.putString("card1Upgrade", "No");
+        }
+
+        if(check2.isChecked()){
+            passThis.putString("card2Upgrade", "Yes");
+        }else{
+            passThis.putString("card2Upgrade", "No");
+        }
+
+        if(check3.isChecked()){
+            passThis.putString("card3Upgrade", "Yes");
+        }else{
+            passThis.putString("card3Upgrade", "No");
+        }
+
         final Intent passToCalcPage = new Intent(this, Calculate.class);
 
         calculate.setOnClickListener(new View.OnClickListener(){

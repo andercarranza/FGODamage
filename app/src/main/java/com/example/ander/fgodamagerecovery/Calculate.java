@@ -3,22 +3,26 @@ package com.example.ander.fgodamagerecovery;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.ander.fgodamagerecovery.Objects.Effects;
+import com.example.ander.fgodamagerecovery.Objects.FGODamage;
 import com.example.ander.fgodamagerecovery.Objects.Servant;
 
 import java.util.List;
 import java.util.Map;
 
+import static com.example.ander.fgodamagerecovery.Objects.Effects.hougu;
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
 
 public class Calculate  extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
     String card1Type;
-    Servant servant1, servant2, servant3;
+    Servant servant1, servant2, servant3, dealer;
+
     int chargeStack = -100;
     public static int atk, cardNum, NPdmgMult = 1, criticalModifier = 1,
             isCrit = 0, isNPcard = 0, isSuperEffective = 0; //critmodifier is 1 if not, 2 if yes. isCrit 1 if crit 0 if not. same for np
@@ -35,8 +39,11 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
     // public static int dmgPlusAdd = 0; //dmg that is added like divinity and wavers 3rd skill
     public static int enemyDmgCutAdd = 0; //dmg cut like wavers second skill and mashus first, might implement in the future
     public static double busterChainMod = 0; //is .2 if it is a buster card in a buster chain, does not have to be buster brave
-    public static String classname, name, cardType, strIsbuster, classnameEnemy, nameEnemy;
+    //public static String classname, name, cardType, strIsbuster, classnameEnemy, nameEnemy;
     public static boolean isBuster, isNP = false;
+    public static double teamAtkBonus = 0;
+    public static double teamDmgAdd = 0;
+    public static boolean dragonApplied = false; //keep track is ascalon is used
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +60,12 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
         TextView text2 = (TextView)findViewById(R.id.text2);
         TextView text3 = (TextView)findViewById(R.id.text3);
         TextView text4 = (TextView)findViewById(R.id.text4);
+        TextView text5 = (TextView)findViewById(R.id.text5);
+        TextView text6 = (TextView)findViewById(R.id.text6);
+        TextView text7 = (TextView)findViewById(R.id.text7);
 
         text1.setText(enemy.getName() + " " + enemy.getClassName());
-        text2.setText(servant1.getATK() + " " + servant1.getName() + " " + servant1.getClassName());
+
         text3.setText(servant2.getATK() + " " + servant2.getName() + " " + servant2.getClassName());
         text4.setText(servant3.getATK() + " " + servant3.getName() + " " + servant3.getClassName());
 
@@ -80,7 +90,7 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
         String card3Level = recieved.getString("card3Level");
         String card3Upgrade = recieved.getString("card3Upgrade");
         String card3Charge = recieved.getString("card3Charge");
-        if(card3Upgrade.equals("Yes"))
+        if(card3Upgrade.equals("Yes")) //these checks could go very wrong, better to have upgrade tied to servant
             servant3.setUpgrade(true);
 
         boolean skill1Active = false, skill2Active = false, skill3Active = false;
@@ -89,17 +99,27 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
         int cardNum = 1;
         checkNP(card1Type);
         if(isNP)
+        {
+            if(card1Type.equals("Ascalon"))
+                dragonApplied = true;
             chargeStack += 100;
-        Servant dealer = getServantToSend(card1Servant);
+        }
+        dealer = getServantToSend(card1Servant);
         int [] card1Damages = damageNums(dealer, enemy, card1Type, cardNum, card1Level, card1Charge);
+        text2.setText("Card 1: " + dealer.getName() + ", " + card1Type);
         cardNum = 2;
         checkNP(card2Type);
         if(isNP)
+        {
+            if(card2Type.equals("Ascalon"))
+                dragonApplied = true;
             chargeStack += 100;
+        }
         else
             chargeStack = -100;
         dealer = getServantToSend(card2Servant);
         int [] card2Damages = damageNums(dealer, enemy, card2Type, cardNum, card2Level, card2Charge);
+        text3.setText("Card 2: " + dealer.getName() + ", " + card2Type);
         cardNum = 3;
         checkNP(card3Type);
         if(isNP)
@@ -108,7 +128,11 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
             chargeStack = -100;
         dealer = getServantToSend(card3Servant);
         int [] card3Damages = damageNums(dealer, enemy, card3Type, cardNum, card3Level, card3Charge);
+        text4.setText("Card 3: " + dealer.getName() + ", " + card3Type);
 
+        text5.setText(card1Damages[0] + "-" + card1Damages[1]);
+        text6.setText(card2Damages[0] + "-" + card2Damages[1]);
+        text7.setText(card3Damages[0] + "-" + card3Damages[1]);
 
     }
 
@@ -118,16 +142,22 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
     //will return an array with 2 numbers, high value and low value
     public int[] damageNums( Servant dealer, Servant enemy, String cardType, int cardNum, String level, String charge){
         int[] results = new int[2];
+        double defChanges = 0, cardModReal = 0;
+        int NPchargePerc = Integer.parseInt(charge) + chargeStack;
         if(isNP)
         {
             //put effect activation in here
-            double [] dmgArray = dealer.getNPdmgPattern();
-            NPdmgMult = (int)dmgArray[Integer.parseInt(level)] * 100;
-            int NPchargePerc = Integer.parseInt(charge) + chargeStack;
+
+            Log.d("RAGE", servant1.getName());
+            double [] dmgArray;
+            dmgArray = dealer.getNPdmgPattern();
+            NPdmgMult = (int)dmgArray[Integer.parseInt(level) - 1];
+
+            dealer.activatePreEffect(NPchargePerc, enemy, Integer.parseInt(level));
         }
         if(card1Type.equals("Buster"))
             firstcardBonus = .5;
-        if(cardType.equals("Arts"))
+        if(cardType.equals("Arts") || (isNP && hougu.get(dealer.getNPname() + "5").equals("Arts")))
         {
             if(cardNum == 1)
                 cardDV = 1.00;
@@ -135,8 +165,11 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
                 cardDV = 1.20;
             if(cardNum == 3)
                 cardDV = 1.40;
+
+            defChanges += enemy.getArtsDef();
+            cardModReal += dealer.getArtsMOD();
         }
-        if(cardType.equals("Buster"))
+        if(cardType.equals("Buster") || (isNP && hougu.get(dealer.getNPname() + "5").equals("Buster")))
         {
             if(cardNum == 1)
                 cardDV = 1.50;
@@ -144,8 +177,11 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
                 cardDV = 1.80;
             if(cardNum == 3)
                 cardDV = 2.10;
+
+            defChanges += enemy.getBusterDef();
+            cardModReal += dealer.getBusterMOD();
         }
-        if(cardType.equals("Quick"))
+        if(cardType.equals("Quick") || (isNP && hougu.get(dealer.getNPname() + "5").equals("Quick")))
         {
             if(cardNum == 1)
                 cardDV = .80;
@@ -153,26 +189,35 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
                 cardDV = .96;
             if(cardNum == 3)
                 cardDV = 1.12;
+
+            defChanges += enemy.getQuickDef();
+            cardModReal += dealer.getQuickMOD();
         }
+        if(!isNP)
+            NPdmgMult = 1;
 
         double low = (dealer.getATK() * NPdmgMult *(firstcardBonus +
-                (cardDV *(1+ dealer.getCardMOD())))) * dealer.getClassMultiplier() * dealer.getClassAdv(enemy)
-                * dealer.getAtrributeAdv(enemy)* .9 * .23 *(1 + dealer.getAtkMod() - enemy.getDefMOD())
-                * dealer.getCritDamageMod() * extraCardModifier * (1 - specialDefMod) *
+                (cardDV *(1+ cardModReal)))) * dealer.getClassMultiplier() * dealer.getClassAdv(enemy)
+                * dealer.getAtrributeAdv(enemy)* .9 * .23 *(1 + (dealer.getAtkMod() + teamAtkBonus) - (enemy.getDefMOD() - defChanges))
+                * criticalModifier * extraCardModifier * (1 - specialDefMod) *
                 (1 + dealer.getPowerMod() + selfDamageMod + (dealer.getCritDamageMod() * isCrit) +
                         (dealer.getNpDamageMod() * isNPcard) * (1 + ((superEffectiveModifier -1) * isSuperEffective)))
-                + dealer.getDmgPlusAdd() + enemyDmgCutAdd + (dealer.getATK() * busterChainMod);
+                + dealer.getDmgPlusAdd() + teamDmgAdd + enemyDmgCutAdd + (dealer.getATK() * busterChainMod);
+
+        Log.d("RAGE", "check: " + dealer.getAtrributeAdv(enemy));
         double high = (dealer.getATK() * NPdmgMult *(firstcardBonus +
-                (cardDV *(1+ dealer.getCardMOD())))) * dealer.getClassMultiplier() * dealer.getClassAdv(enemy)
-                * dealer.getAtrributeAdv(enemy)* 1.1 * .23 *(1 + dealer.getAtkMod() - enemy.getDefMOD())
-                * dealer.getCritDamageMod() * extraCardModifier * (1 - specialDefMod) *
+                (cardDV *(1+ cardModReal)))) * dealer.getClassMultiplier() * dealer.getClassAdv(enemy)
+                * dealer.getAtrributeAdv(enemy)* 1.1 * .23 *(1 + (dealer.getAtkMod() + teamAtkBonus) - (enemy.getDefMOD() - defChanges))
+                * criticalModifier * extraCardModifier * (1 - specialDefMod) *
                 (1 + dealer.getPowerMod() + selfDamageMod + (dealer.getCritDamageMod() * isCrit) +
                         (dealer.getNpDamageMod() * isNPcard) * (1 + ((superEffectiveModifier -1) * isSuperEffective)))
-                + dealer.getDmgPlusAdd() + enemyDmgCutAdd + (dealer.getATK() * busterChainMod);
+                + dealer.getDmgPlusAdd() + teamDmgAdd + enemyDmgCutAdd + (dealer.getATK() * busterChainMod);
         int lowInt = (int) Math.round(low);
         int highInt = (int) Math.round(high);
         results[0] = lowInt;
         results[1] = highInt;
+        if(isNP)
+            dealer.activatePostEffect(NPchargePerc, enemy, Integer.parseInt(level));
         return results;
     }
 
@@ -184,16 +229,27 @@ public class Calculate  extends AppCompatActivity implements View.OnClickListene
 
     }
 
-    public Servant getServantToSend(String servName)
+    public Servant getServantToSend(String numParse)
     {
-        Servant sending = null;
-        if(servName == servant1.getName())
-            sending = servant1;
-        if(servName == servant2.getName())
-            sending = servant2;
-        if(servName == servant3.getName())
+        int servNum = Integer.parseInt(numParse);
+        if(servNum == 1)
+        {
+            Log.d("RAGE", "Matched servant 1 name");
+            return servant1;
+        }
+        if(servNum == 2)
+        {
+            Log.d("RAGE", "Matched servant 2 name");
+            return servant2;
+        }
+        if(servNum == 3)
+        {
+            Log.d("RAGE", "Matched servant 3 name");
             return servant3;
-        return sending;
+        }
+
+        Log.d("RAGE", "Didnt match anything");
+        return null;
     }
 
     @Override

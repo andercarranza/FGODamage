@@ -2,8 +2,8 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -41,6 +41,8 @@
         android:textSize="20dp"
         android:textColor="@color/Black"
         app:layout_constraintTop_toBottomOf="@id/test"/>
+
+
     <TextView
         android:id="@+id/text2"
         android:layout_width="328dp"
@@ -57,6 +59,23 @@
         android:textColor="@color/Black"
         app:layout_constraintTop_toBottomOf="@id/text1"/>
     <TextView
+        android:id="@+id/text5"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="no text"
+        android:textSize="30dp"
+        android:textColor="@color/fgoBabyBlue"
+        app:layout_constraintTop_toBottomOf="@id/text2"/>
+
+
+    <TextView
         android:id="@+id/text3"
         android:layout_width="328dp"
         android:layout_height="30dp"
@@ -70,7 +89,24 @@
         android:text="no text"
         android:textSize="20dp"
         android:textColor="@color/Black"
-        app:layout_constraintTop_toBottomOf="@id/text2"/>
+        app:layout_constraintTop_toBottomOf="@id/text5"/>
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="no text"
+        android:textSize="30dp"
+        android:textColor="@color/fgoBabyBlue"
+        app:layout_constraintTop_toBottomOf="@id/text3"/>
+
+
     <TextView
         android:id="@+id/text4"
         android:layout_width="328dp"
@@ -85,7 +121,25 @@
         android:text="no text"
         android:textSize="20dp"
         android:textColor="@color/Black"
-        app:layout_constraintTop_toBottomOf="@id/text3"/>
+        app:layout_constraintTop_toBottomOf="@id/text6"/>
+    <TextView
+        android:id="@+id/text7"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="no text"
+        android:textSize="30dp"
+        android:textColor="@color/fgoBabyBlue"
+        app:layout_constraintTop_toBottomOf="@id/text4"/>
+
+
+
 
 
 

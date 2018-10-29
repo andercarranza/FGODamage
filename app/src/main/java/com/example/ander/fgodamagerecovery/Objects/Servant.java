@@ -2,8 +2,14 @@ package com.example.ander.fgodamagerecovery.Objects;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
+
+import com.example.ander.fgodamagerecovery.Calculate;
+
+import java.util.List;
 
 import static com.example.ander.fgodamagerecovery.Objects.Effects.effectsMap;
+import static com.example.ander.fgodamagerecovery.Objects.Effects.hiddenTraits;
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 import static com.example.ander.fgodamagerecovery.Objects.Effects.damagePattern;
@@ -13,6 +19,11 @@ public class Servant implements Parcelable{
     private int ATK;
     //public ServantType servInfo;
     private String attribute;
+    private double superEffectiveModifier;
+    private int isPoisoned;
+    private double busterDef = 0;
+    private double artsDef = 0;
+    private double quickDef = 0;
     private String name;
     private boolean isUpgraded = false;
     private String className;
@@ -46,6 +57,36 @@ public class Servant implements Parcelable{
         busterMOD = in.readDouble();
         quickMOD = in.readDouble();
         dmgPlusAdd = in.readInt();
+        superEffectiveModifier = in.readDouble();
+        isPoisoned = in.readInt();
+        busterDef = in.readDouble();
+        artsDef = in.readDouble();
+        quickDef = in.readDouble();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(ATK);
+        dest.writeString(name);
+        dest.writeString(attribute);
+        dest.writeString(className);
+        dest.writeString(skill1);
+        dest.writeString(skill2);
+        dest.writeString(skill3);
+        dest.writeDouble(critDamageMod);
+        dest.writeDouble(npDamageMod);
+        dest.writeDouble(atkMod);
+        dest.writeDouble(cardMOD);
+        dest.writeDouble(powerMod);
+        dest.writeDouble(artsMOD);
+        dest.writeDouble(busterMOD);
+        dest.writeDouble(quickMOD);
+        dest.writeInt(dmgPlusAdd);
+        dest.writeDouble(superEffectiveModifier);
+        dest.writeInt(isPoisoned);
+        dest.writeDouble(busterDef);
+        dest.writeDouble(artsDef);
+        dest.writeDouble(quickDef);
     }
 
     public static final Creator<Servant> CREATOR = new Creator<Servant>() {
@@ -70,7 +111,7 @@ public class Servant implements Parcelable{
         }
         if(isUpgraded)
         {
-            if(hougu.get(NPname + "2u").equals("True"))
+            if(hougu.containsKey(NPname + "2u") && hougu.get(NPname + "2u").equals("True"))
             {
                 String preEffect = hougu.get(NPname + "4u");
                 applyEffect(preEffect, enemy, charge, false, NPlevel, true);
@@ -90,7 +131,7 @@ public class Servant implements Parcelable{
 
         if(isUpgraded)
         {
-            if(hougu.get(NPname + "1u").equals("True"))
+            if(hougu.containsKey(NPname + "1u") && hougu.get(NPname + "1u").equals("True"))
             {
                 String preEffect = hougu.get(NPname + "3u");
                 applyEffect(preEffect, enemy, charge, true, NPlevel, true);
@@ -109,13 +150,84 @@ public class Servant implements Parcelable{
 
         if(effectName.equals("Ignores Defense"))
         {
+            String NPname = servantsMap.get(this.name + "5");
+            if(hougu.get(NPname + "6").equals("PowerMod"))
+            {
+                if(servantsMap.get(Enemy.getName() + "3").equals("Female"))
+                    this.powerMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            }
             this.defenseIgnoreHolder = Enemy.getDefMOD();
             Enemy.setDefMOD(0);
         }
 
+        if(effectName.equals("NPdamageMod"))
+        {
+            this.npDamageMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("BusterUp"))
+        {
+            this.busterMOD += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("QuickUp"))
+        {
+            this.quickMOD += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("ArtsUp"))
+        {
+            this.artsMOD += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("CritUp"))
+        {
+            this.critDamageMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("NP Strength"))
+        {
+
+            String NPname = servantsMap.get(this.name + "5");
+            this.npDamageMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            if(hougu.get(NPname + "6").equals("Servant"))
+            {
+                List<String> hiddenChecker = hiddenTraits.get("Servant");
+                if(!hiddenChecker.contains(Enemy.getName()))
+                {
+                    this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, false);
+                }
+            }
+        }
+
+        if(effectName.equals("TeamAtkBonus"))
+        {
+            Calculate.teamAtkBonus += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("Dmg Rcvd Plus"))
+        {
+            Calculate.teamDmgAdd += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("Buster Def Down"))
+        {
+            Enemy.setBusterDef(Enemy.getBusterDef() - getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess));
+        }
+
+        if(effectName.equals("Arts Def Down"))
+        {
+            Enemy.setArtsDef(Enemy.getArtsDef() - getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess));
+        }
+
+        if(effectName.equals("Quick Def Down"))
+        {
+            Enemy.setQuickDef(Enemy.getQuickDef() - getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess));
+        }
+
         if(effectName.equals("AtkUp"))
         {
-            this.ATK += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            this.atkMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
         }
 
         if(effectName.equals("Defense Down"))
@@ -125,7 +237,43 @@ public class Servant implements Parcelable{
 
         if(effectName.equals("Special Attack"))
         {
-
+            String NPname = servantsMap.get(this.name + "5");
+            String upgraded = "";
+            if(upgradeAccess)
+                upgraded = "u";
+            List<String> attribute = hiddenTraits.get(hougu.get(NPname + "6" + upgraded));
+            //move this so that it gets activated as well as the other one
+            if(hougu.get(NPname + "6").equals("Servant"))
+            {
+                List<String> hiddenChecker = hiddenTraits.get("Servant");
+                if(!hiddenChecker.contains(Enemy.getName()))
+                {
+                    this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, false);
+                }
+            }
+            else if(hougu.get(NPname + "6").equals("Poisoned"))
+            {
+                if(Enemy.isPoisoned == 1)
+                    this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            }
+            else if(hougu.get(NPname + "6" + upgraded).equals("Female"))
+            {
+                if(servantsMap.get(Enemy.getName() + "3").equals("Female"))
+                    this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            }
+            else if(hougu.get(NPname + "6" + upgraded).equals("Male"))
+            {
+                if(servantsMap.get(Enemy.getName() + "3").equals("Male"))
+                    this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            }
+            else if(hougu.get(NPname + "6" + upgraded).equals("Dragon") || Calculate.dragonApplied)
+            {
+                this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            }
+            else if(attribute.contains(Enemy.getName()))
+            {
+                this.superEffectiveModifier += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            }
         }
     }
 
@@ -133,7 +281,7 @@ public class Servant implements Parcelable{
         double modifier = -1;
         String access;
         double [] accessArray;
-
+        String NP = getNPname();
 
 
         if(prePost)
@@ -144,14 +292,14 @@ public class Servant implements Parcelable{
         if(upgradeAccess)
             access += "u";
 
-        if(hougu.get(effectName + access).equals("NPLevel"))
+        if(hougu.get(NP + access).equals("NPLevel"))
         {
-            accessArray = damagePattern.get(effectName + "1" + access);
+            accessArray = damagePattern.get(hougu.get(NP + "1" + access));
             modifier = accessArray[NPlevel];
         }
         else
         {
-            accessArray = damagePattern.get(effectName + access);
+            accessArray = damagePattern.get(hougu.get(NP + access));
             modifier = accessArray[(charge/100) -1];
         }
 
@@ -160,20 +308,65 @@ public class Servant implements Parcelable{
 
     public double [] getNPdmgPattern(){
         double [] arrToReturn;
-
+        Log.d("RAGE", "declared array");
         String NPname = servantsMap.get(this.name + "5");
-
-        if(upgradelist.contains(NPname) && isUpgraded)
+        Log.d("RAGE", "got NP name");
+        if(upgradelist.contains(NPname) && this.isUpgraded)
         {
-            arrToReturn = damagePattern.get(hougu.get(NPname + "0u"));
+            Log.d("RAGE", "inside if statement");
+            if(hougu.containsKey(hougu.get(NPname + "0u")))
+                arrToReturn = damagePattern.get(hougu.get(NPname + "0u"));
+            else
+                arrToReturn = damagePattern.get(hougu.get(NPname + "0"));
         }
         else
+        {
+            Log.d("RAGE", "inside else");
             arrToReturn = damagePattern.get(hougu.get(NPname + "0"));
-
+        }
+        Log.d("RAGE", "returning array");
         return arrToReturn;
     }
 
+    public double getBusterDef() {
+        return busterDef;
+    }
 
+    public void setBusterDef(double busterDef) {
+        this.busterDef = busterDef;
+    }
+
+    public double getArtsDef() {
+        return artsDef;
+    }
+
+    public void setArtsDef(double artsDef) {
+        this.artsDef = artsDef;
+    }
+
+    public double getQuickDef() {
+        return quickDef;
+    }
+
+    public void setQuickDef(double quickDef) {
+        this.quickDef = quickDef;
+    }
+
+    public double getSuperEffectiveModifier() {
+        return superEffectiveModifier;
+    }
+
+    public void setSuperEffectiveModifier(double superEffectiveModifier) {
+        this.superEffectiveModifier = superEffectiveModifier;
+    }
+
+    public int isPoisoned() {
+        return isPoisoned;
+    }
+
+    public void setPoisoned(boolean poisoned) {
+        isPoisoned = 1;
+    }
 
     public double getArtsMOD() {
         return artsMOD;
@@ -184,23 +377,23 @@ public class Servant implements Parcelable{
     public int getATK(){ return this.ATK; }
 
     public void addArtsMOD(double c) {
-        artsMOD += c;
+        this.artsMOD += c;
     }
 
     public double getBusterMOD() {
-        return busterMOD;
+        return this.busterMOD;
     }
 
     public void addBusterMOD(double c) {
-        busterMOD += c;
+        this.busterMOD += c;
     }
 
     public double getQuickMOD() {
-        return quickMOD;
+        return this.quickMOD;
     }
 
     public void addQuickMOD(double c) {
-        quickMOD += c;
+        this.quickMOD += c;
     }
 
     public void addCritDamageMod(double c) {
@@ -215,6 +408,10 @@ public class Servant implements Parcelable{
     }
     public void addNpDamageMod(double c) {
         npDamageMod += c;
+    }
+
+    public String getNPname(){
+        return servantsMap.get(this.name + "5");
     }
 
     public double getAtkMod() {
@@ -264,6 +461,151 @@ public class Servant implements Parcelable{
         this.skill1 = FGODamage.servantsMap.get(name + "0");
         this.skill2 = FGODamage.servantsMap.get(name + "1");
         this.skill3 = FGODamage.servantsMap.get(name + "2");
+        activateClassSkills(name);
+    }
+
+    public void activateClassSkills(String name){
+
+        String nameMod = "6";
+
+        while(servantsMap.containsKey(name + nameMod)){
+            String classSkillName = servantsMap.get(name + nameMod);
+
+
+            if(classSkillName.equals("Riding EX"))
+                this.quickMOD += .12;
+
+            if(classSkillName.equals("Riding A++"))
+                this.quickMOD += .115;
+
+            if(classSkillName.equals("Riding A+"))
+                this.quickMOD += .11;
+
+            if(classSkillName.equals("Riding A"))
+                this.quickMOD += .1;
+
+            if(classSkillName.equals("Riding B"))
+                this.quickMOD += .08;
+
+            if(classSkillName.equals("Riding C+"))
+                this.quickMOD += .07;
+
+            if(classSkillName.equals("Riding C"))
+                this.quickMOD += .06;
+
+            if(classSkillName.equals("Riding E"))
+                this.quickMOD += .02;
+
+
+            if(classSkillName.equals("Divinity A"))
+                this.dmgPlusAdd += 200;
+
+            if(classSkillName.equals("Divinity B"))
+                this.dmgPlusAdd += 175;
+
+            if(classSkillName.equals("Divinity C"))
+                this.dmgPlusAdd += 150;
+
+            if(classSkillName.equals("Divinity D"))
+                this.dmgPlusAdd += 125;
+
+            if(classSkillName.equals("Divinity E-"))
+                this.dmgPlusAdd += 95;
+
+            if(classSkillName.equals("Divinity E"))
+                this.dmgPlusAdd += 100;
+
+
+
+            if(classSkillName.equals("Madness Enhancement EX"))
+                this.busterMOD += .12;
+
+            if(classSkillName.equals("Madness Enhancement A+"))
+                this.busterMOD += .11;
+
+            if(classSkillName.equals("Madness Enhancement A"))
+                this.busterMOD += .10;
+
+            if(classSkillName.equals("Madness Enhancement B"))
+                this.busterMOD += .08;
+
+            if(classSkillName.equals("Madness Enhancement C"))
+                this.busterMOD += .06;
+
+            if(classSkillName.equals("Madness Enhancement D"))
+                this.busterMOD += .04;
+
+            if(classSkillName.equals("Madness Enhancement E"))
+                this.busterMOD += .02;
+
+            if(classSkillName.equals("Madness Enhancement E-"))
+                this.busterMOD += .01;
+
+
+            if(classSkillName.equals("Independent Action A+"))
+                this.critDamageMod += .11;
+
+            if(classSkillName.equals("Independent Action A"))
+                this.critDamageMod += .1;
+
+            if(classSkillName.equals("Independent Action B"))
+                this.critDamageMod += .08;
+
+            if(classSkillName.equals("Independent Action C"))
+                this.critDamageMod += .06;
+
+
+            if(classSkillName.equals("Oblivion Correction B"))
+                this.critDamageMod += .08;
+
+            if(classSkillName.equals("Oblivion Correction A"))
+                this.critDamageMod += .1;
+
+
+            if(classSkillName.equals("Independent Manifestation C"))
+                this.critDamageMod += .06;
+
+
+            if(classSkillName.equals("Connection to the Root A"))
+            {
+                this.busterMOD += .06;
+                this.artsMOD += .06;
+                this.quickMOD += .06;
+            }
+
+
+            if(classSkillName.equals("Core of the Goddesss EX"))
+                this.dmgPlusAdd += 300;
+
+            if(classSkillName.equals("Core of the Goddesss C"))
+                this.dmgPlusAdd += 200;
+
+
+            if(classSkillName.equals("Territory Creation A+"))
+                this.artsMOD += .11;
+
+            if(classSkillName.equals("Territory Creation A"))
+                this.artsMOD += .1;
+
+            if(classSkillName.equals("Territory Creation B"))
+                this.artsMOD += .08;
+
+            if(classSkillName.equals("Territory Creation C+"))
+                this.artsMOD += .07;
+
+            if(classSkillName.equals("Territory Creation C"))
+                this.artsMOD += .06;
+
+            if(classSkillName.equals("Territory Creation D"))
+                this.artsMOD += .04;
+
+            if(nameMod.equals("6"))
+                nameMod = "7";
+            if(nameMod.equals("7"))
+                nameMod = "8";
+            if(nameMod.equals("8"))
+                nameMod = "9";
+        }
     }
 
     public double getClassMultiplier() {
@@ -435,23 +777,4 @@ public class Servant implements Parcelable{
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(ATK);
-        dest.writeString(name);
-        dest.writeString(attribute);
-        dest.writeString(className);
-        dest.writeString(skill1);
-        dest.writeString(skill2);
-        dest.writeString(skill3);
-        dest.writeDouble(critDamageMod);
-        dest.writeDouble(npDamageMod);
-        dest.writeDouble(atkMod);
-        dest.writeDouble(cardMOD);
-        dest.writeDouble(powerMod);
-        dest.writeDouble(artsMOD);
-        dest.writeDouble(busterMOD);
-        dest.writeDouble(quickMOD);
-        dest.writeInt(dmgPlusAdd);
-    }
 }

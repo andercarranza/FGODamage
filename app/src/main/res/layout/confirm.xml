@@ -12,17 +12,19 @@
         android:layout_height="fill_parent"
         android:isScrollContainer="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <!-- ENEMY -->
+            <!--
             <TextView
                 android:id="@+id/Enemy_Header"
                 android:layout_width="match_parent"
@@ -77,7 +79,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/enemy_2"/>
-
+            -->
 
             <!-- SERVANT1 -->
             <TextView
@@ -86,70 +88,72 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:textSize="20sp"
                 android:padding="20dp"
-                android:textAppearance="@android:style/TextAppearance"
-                app:layout_constraintTop_toBottomOf="@+id/editEnemyBtn"
                 android:text="Servant 1"
-                />
+                android:textAppearance="@android:style/TextAppearance"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/servant1a"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 1 Name not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Servant1_Header"/>
+                app:layout_constraintTop_toBottomOf="@+id/Servant1_Header" />
+
             <TextView
                 android:id="@+id/servant1b"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 1 Class not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant1a"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant1a" />
+
             <TextView
                 android:id="@+id/servant1c"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 1 ATK not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant1b"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant1b" />
+
             <Button
                 android:id="@+id/editServant1Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="Edit"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant1c"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant1c" />
 
 
             <!-- SERVANT2 -->
@@ -159,70 +163,73 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:textSize="20sp"
                 android:padding="20dp"
-                android:textAppearance="@android:style/TextAppearance"
-                app:layout_constraintTop_toBottomOf="@+id/editServant1Btn"
                 android:text="Servant 2"
-                />
+                android:textAppearance="@android:style/TextAppearance"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/editServant1Btn" />
+
             <TextView
                 android:id="@+id/servant2a"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 2 Name not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Servant2_Header"/>
+                app:layout_constraintTop_toBottomOf="@+id/Servant2_Header" />
+
             <TextView
                 android:id="@+id/servant2b"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 2 Class not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant2a"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant2a" />
+
             <TextView
                 android:id="@+id/servant2c"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 2 ATK not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant2b"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant2b" />
+
             <Button
                 android:id="@+id/editServant2Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="Edit"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant2c"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant2c" />
 
 
             <!-- SERVANT3 -->
@@ -232,86 +239,111 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:textSize="20sp"
                 android:padding="20dp"
-                android:textAppearance="@android:style/TextAppearance"
-                app:layout_constraintTop_toBottomOf="@+id/editServant2Btn"
                 android:text="Servant 3"
-                />
+                android:textAppearance="@android:style/TextAppearance"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/editServant2Btn" />
+
             <TextView
                 android:id="@+id/servant3a"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
-                android:text="Servant 1 Name not found"
+                android:text="Servant 3 Name not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Servant3_Header"/>
+                app:layout_constraintTop_toBottomOf="@+id/Servant3_Header" />
+
             <TextView
                 android:id="@+id/servant3b"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 3 Class not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant3a"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant3a" />
+
             <TextView
                 android:id="@+id/servant3c"
                 android:layout_width="328dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 3 ATK not found"
                 android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant3b"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant3b" />
+
             <Button
                 android:id="@+id/editServant3Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="Edit"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/servant3c"/>
+                app:layout_constraintTop_toBottomOf="@+id/servant3c" />
             <!-- endservants -->
 
-
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            >
             <Button
                 android:id="@+id/next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/next"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Save Team"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editServant3Btn"
+                android:orientation="horizontal"/>
+
+            <Button
+                android:id="@+id/enemy_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Select Enemy"
+                android:orientation="horizontal"
+
+                app:layout_constraintLeft_toRightOf="@+id/next" />
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

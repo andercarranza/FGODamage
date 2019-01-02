@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/servant1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/servant2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/servant3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/deleteParty"
+                android:layout_width="65sp"
+                android:layout_height="40sp"
+                android:text="Delete"
+                android:textSize="9sp"
+                />
+
+            <Button
+                android:id="@+id/selectParty"
+                android:layout_width="65sp"
+                android:layout_height="40sp"
+                android:layout_alignParentRight="true"
+                android:text="Select"
+                android:textSize="9sp" />
+
+            <Button
+                android:id="@+id/editParty"
+                android:layout_width="65sp"
+                android:layout_height="40sp"
+                android:layout_marginRight="66sp"
+                android:layout_alignParentRight="true"
+                android:text="Edit"
+                android:textSize="9sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

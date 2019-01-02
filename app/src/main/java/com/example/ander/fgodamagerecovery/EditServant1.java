@@ -14,12 +14,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ander.fgodamagerecovery.Objects.Servant;
+
 //servantnumber not needed
 
 public class EditServant1 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     int servantNumber, servantAttack, servant1c, servant2c, servant3c;
     Spinner spinnerClass, spinnerServname;
     String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, servant3a, servant3b;
+    Servant servant1, servant2, servant3;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
     @Override
@@ -79,7 +82,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
         Bundle servant = servantInfo.getExtras();
-        if(servantInfo.hasExtra("serv_1a"))
+        /*if(servantInfo.hasExtra("serv_1a"))
         {
             servant1a = servantInfo.getStringExtra("serv_1a");
             servant1b = servantInfo.getStringExtra("serv_1b");
@@ -98,7 +101,11 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
             servant3a = servantInfo.getStringExtra("serv_3a");
             servant3b = servantInfo.getStringExtra("serv_3b");
             servant3c = servantInfo.getIntExtra("serv_3c", -1);
-        }
+        }*/
+
+        servant1 = servantInfo.getParcelableExtra("serv_1a");
+        servant2 = servantInfo.getParcelableExtra("serv_2a");
+        servant3 = servantInfo.getParcelableExtra("serv_3a");
 
         final int servantToEdit = servantInfo.getIntExtra("serv_edit", 0);
         final Intent display = new Intent(this, Confirm.class);
@@ -138,17 +145,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
-                        passThis.putString("serv_1a", thisServ);
-                        passThis.putString("serv_1b", servantClass);
-                        passThis.putInt("serv_1c", servantAttack);
-                        passThis.putString("serv_3a", servant3a);
-                        passThis.putString("serv_3b", servant3b);
-                        passThis.putInt("serv_3c", servant3c);
-                        passThis.putString("serv_2a", servant2a);
-                        passThis.putString("serv_2b", servant2b);
-                        passThis.putInt("serv_2c", servant2c);
-                        passThis.putString("enemy_1", enemy_1);
-                        passThis.putString("enemy_2", enemy_2);
+                        Servant servant1altered = new Servant(servantAttack, thisServ, servantClass);
+                        display.putExtra("serv_1a", servant1altered);
+                        display.putExtra("serv_2a", servant2);
+                        display.putExtra("serv_3a", servant3);
                         display.putExtras(passThis);
                         startActivity(display);
                         break;
@@ -164,17 +164,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
-                        passThis.putString("serv_2a", thisServ);
-                        passThis.putString("serv_2b", servantClass);
-                        passThis.putInt("serv_2c", servantAttack);
-                        passThis.putString("serv_3a", servant3a);
-                        passThis.putString("serv_3b", servant3b);
-                        passThis.putInt("serv_3c", servant3c);
-                        passThis.putString("serv_1a", servant1a);
-                        passThis.putString("serv_1b", servant1b);
-                        passThis.putInt("serv_1c", servant1c);
-                        passThis.putString("enemy_1", enemy_1);
-                        passThis.putString("enemy_2", enemy_2);
+                        Servant servant2altered = new Servant(servantAttack, thisServ, servantClass);
+                        display.putExtra("serv_1a", servant1);
+                        display.putExtra("serv_2a", servant2altered);
+                        display.putExtra("serv_3a", servant3);
                         display.putExtras(passThis);
                         startActivity(display);
                         break;
@@ -190,17 +183,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
-                        passThis.putString("serv_3a", thisServ);
-                        passThis.putString("serv_3b", servantClass);
-                        passThis.putInt("serv_3c", servantAttack);
-                        passThis.putString("serv_1a", servant1a);
-                        passThis.putString("serv_1b", servant1b);
-                        passThis.putInt("serv_1c", servant1c);
-                        passThis.putString("serv_2a", servant2a);
-                        passThis.putString("serv_2b", servant2b);
-                        passThis.putInt("serv_2c", servant2c);
-                        passThis.putString("enemy_1", enemy_1);
-                        passThis.putString("enemy_2", enemy_2);
+                        Servant servant3altered = new Servant(servantAttack, thisServ, servantClass);
+                        display.putExtra("serv_1a", servant1);
+                        display.putExtra("serv_2a", servant2);
+                        display.putExtra("serv_3a", servant3altered);
                         display.putExtras(passThis);
                         startActivity(display);
                         break;

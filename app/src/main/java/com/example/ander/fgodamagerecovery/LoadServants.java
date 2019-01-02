@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.ander.fgodamagerecovery.Objects.Servant;
+
 /**
  * Created by Christian on 4/9/2018.
  */
@@ -21,7 +23,8 @@ import android.widget.Toast;
 public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     int servantNumber, servantAttack, servant1c, servant2c;
     Spinner spinnerClass, spinnerServname;
-    String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b;
+    String thisServ, servantClass;
+    Servant servant1a, servant2a;
     EditText textBox;
     ArrayAdapter<String> classArray, nameArray;
     @Override
@@ -77,22 +80,18 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         final Intent servantInfo = getIntent();
         //servantInfo.getExtras();
-        final String enemy_1 = servantInfo.getStringExtra("enemy_1");
-        final String enemy_2 = servantInfo.getStringExtra("enemy_2");
+        //final String enemy_1 = servantInfo.getStringExtra("enemy_1");
+        //final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
-        Bundle servant = servantInfo.getExtras();
+        final Bundle servant = servantInfo.getExtras();
         if(servantInfo.hasExtra("serv_1a"))
         {
-            servant1a = servantInfo.getStringExtra("serv_1a");
-            servant1b = servantInfo.getStringExtra("serv_1b");
-            servant1c = servantInfo.getIntExtra("serv_1c", -1);
+            servant1a = servantInfo.getParcelableExtra("serv_1a");
             //Log.d("servantAttack", String.valueOf(servant1c));
         }
         if(servantInfo.hasExtra("serv_2a"))
         {
-            servant2a = servantInfo.getStringExtra("serv_2a");
-            servant2b = servantInfo.getStringExtra("serv_2b");
-            servant2c = servantInfo.getIntExtra("serv_2c", -1);
+            servant2a = servantInfo.getParcelableExtra("serv_2a");
             //Log.d("servantAttack", String.valueOf(servant2c));
         }
         //retrieve servant number
@@ -139,11 +138,8 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         loadNextServant.putExtra("servant", 2);
-                        loadNextServant.putExtra("serv_1a", thisServ);
-                        loadNextServant.putExtra("serv_1b", servantClass);
-                        loadNextServant.putExtra("serv_1c", servantAttack);
-                        loadNextServant.putExtra("enemy_1", enemy_1);
-                        loadNextServant.putExtra("enemy_2", enemy_2);
+                        Servant servant1 = new Servant(servantAttack, thisServ, servantClass);
+                        loadNextServant.putExtra("serv_1a", servant1);
                         startActivity(loadNextServant);
                         break;
                     case 2:
@@ -159,14 +155,10 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         }
 
                         loadNextServant.putExtra("servant", 3);
-                        loadNextServant.putExtra("serv_2a", thisServ);
-                        loadNextServant.putExtra("serv_2b", servantClass);
-                        loadNextServant.putExtra("serv_2c", servantAttack);
+                        Servant servant2 = new Servant(servantAttack, thisServ, servantClass);
                         loadNextServant.putExtra("serv_1a", servant1a);
-                        loadNextServant.putExtra("serv_1b", servant1b);
-                        loadNextServant.putExtra("serv_1c", servant1c);
-                        loadNextServant.putExtra("enemy_1", enemy_1);
-                        loadNextServant.putExtra("enemy_2", enemy_2);
+                        loadNextServant.putExtra("serv_2a", servant2);
+
                         startActivity(loadNextServant);
                         break;
                     case 3:
@@ -181,17 +173,12 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         Bundle passThis = new Bundle();
-                        passThis.putString("serv_3a", thisServ);
-                        passThis.putString("serv_3b", servantClass);
-                        passThis.putInt("serv_3c", servantAttack);
-                        passThis.putString("serv_1a", servant1a);
-                        passThis.putString("serv_1b", servant1b);
-                        passThis.putInt("serv_1c", servant1c);
-                        passThis.putString("serv_2a", servant2a);
-                        passThis.putString("serv_2b", servant2b);
-                        passThis.putInt("serv_2c", servant2c);
-                        passThis.putString("enemy_1", enemy_1);
-                        passThis.putString("enemy_2", enemy_2);
+
+                        Servant servant3 = new Servant(servantAttack, thisServ, servantClass);
+                        display.putExtra("serv_1a", servant1a);
+                        display.putExtra("serv_2a", servant2a);
+                        display.putExtra("serv_3a", servant3);
+
                         passThis.putInt("serv_edit", 0); passThis.putInt("serv_edit", 0);
                         display.putExtras(passThis);
                         startActivity(display);
@@ -456,9 +443,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, "Selected Country :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected Division :"+spinnerClass.getSelectedItem().toString()+
-                "\nSelected District :"+spinnerClass.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+
     }
 
 }

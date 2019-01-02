@@ -306,6 +306,8 @@ public class Servant implements Parcelable{
         return modifier;
     }
 
+
+
     public double [] getNPdmgPattern(){
         double [] arrToReturn;
         Log.d("RAGE", "declared array");
@@ -606,6 +608,18 @@ public class Servant implements Parcelable{
             if(nameMod.equals("8"))
                 nameMod = "9";
         }
+    }
+
+    public void setATK(int ATK) {
+        this.ATK = ATK;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
 
     public double getClassMultiplier() {

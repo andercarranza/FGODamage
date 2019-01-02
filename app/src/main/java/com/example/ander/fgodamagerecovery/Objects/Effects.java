@@ -1514,6 +1514,8 @@ public class Effects {
             effects.put("Beyond Arcadia B12", "All");
 
             effectsMap = Collections.unmodifiableMap(effects);
+
+
         }
 
         Map<String, List<String>> filedUnder = new HashMap<String, List<String>>();

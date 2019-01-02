@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoadEnemy">
+        <activity android:name=".MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +22,9 @@
         <activity android:name=".EditServant1" />
         <activity android:name=".CardSelect" />
         <activity android:name=".Calculate" />
+        <activity android:name=".LoadEnemy" />
+        <activity android:name=".SavedTeams" />
+        <activity android:name=".EditSavedClass" />
     </application>
 
 </manifest>

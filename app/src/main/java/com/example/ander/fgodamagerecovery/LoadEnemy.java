@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ander.fgodamagerecovery.Objects.Party;
+import com.example.ander.fgodamagerecovery.Objects.Servant;
 
 
 /**
@@ -26,6 +28,13 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.enemy_select);
+
+
+        Intent servantInfo = getIntent();
+        Party unPack = servantInfo.getParcelableExtra("team");
+        final Servant servant1 = unPack.getServant1();
+        final Servant servant2 = unPack.getServant2();
+        final Servant servant3 = unPack.getServant3();
 
         spinnerClass = (Spinner) findViewById(R.id.serv_class);
         spinnerClass.setOnItemSelectedListener(this);
@@ -74,14 +83,19 @@ public class LoadEnemy extends AppCompatActivity implements View.OnClickListener
         });
 
 
-        final Intent loadServants = new Intent(this, LoadServants.class);
+        final Intent selectCards = new Intent(this, CardSelect.class);
 
         Next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                loadServants.putExtra("servant", 1);
-                loadServants.putExtra("enemy_1", enemyServant);
-                loadServants.putExtra("enemy_2", enemyClass);
-                startActivity(loadServants);
+                //selectCards.putExtra("servant", 1);
+                Bundle passThis = new Bundle();
+                passThis.putString("enemy_1", enemyServant);
+                passThis.putString("enemy_2", enemyClass);
+                selectCards.putExtras(passThis);
+                selectCards.putExtra("serv_1a", servant1);
+                selectCards.putExtra("serv_2a", servant2);
+                selectCards.putExtra("serv_3a", servant3);
+                startActivity(selectCards);
                 //this.overridePendingTransition(0, 0);
             }
 

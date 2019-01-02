@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import static java.lang.Math.abs;
+import static java.lang.Integer.*;
+
+import static java.lang.Math.*;
 import com.example.ander.fgodamagerecovery.Objects.Effects;
 import com.example.ander.fgodamagerecovery.Objects.FGODamage;
 import com.example.ander.fgodamagerecovery.Objects.Servant;

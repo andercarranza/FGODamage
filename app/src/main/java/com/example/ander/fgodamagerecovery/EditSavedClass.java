@@ -1,4 +1,3 @@
-
 package com.example.ander.fgodamagerecovery;
 
 import android.content.Context;
@@ -13,23 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.gson.Gson;
 
 import com.example.ander.fgodamagerecovery.Objects.Party;
 import com.example.ander.fgodamagerecovery.Objects.Servant;
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Christian on 4/9/2018.
- */
-
-public class Confirm extends AppCompatActivity {
-
+public class EditSavedClass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +44,14 @@ public class Confirm extends AppCompatActivity {
         TextView servant3c = (TextView)findViewById(R.id.servant3c);
 
         final Bundle recieved = servantInfo.getExtras();
+        Party unPack = servantInfo.getParcelableExtra("team");
+
         //enemyName.setText(recieved.getString("enemy_1"));
         //enemyClass.setText(recieved.getString("enemy_2"));
-        final Servant servant1 = servantInfo.getParcelableExtra("serv_1a");
-        final Servant servant2 = servantInfo.getParcelableExtra("serv_2a");
-        final Servant servant3 = servantInfo.getParcelableExtra("serv_3a");
+        final int position = recieved.getInt("position");
+        final Servant servant1 = unPack.getServant1();
+        final Servant servant2 = unPack.getServant2();
+        final Servant servant3 = unPack.getServant3();
 
         servant1a.setText(servant1.getName());
         servant1b.setText(servant1.getClassName());
@@ -76,79 +72,52 @@ public class Confirm extends AppCompatActivity {
         //Button toCardSelect = (Button)findViewById(R.id.next);
 
         Button save = (Button)findViewById(R.id.next);
+        save.setText("Save & Back");
         Button enemySel = (Button)findViewById(R.id.enemy_select);
-        final Intent passToSelectEnemy = new Intent(this, LoadEnemy.class);
+        enemySel.setText("Save & Select Enemy");
+        final Intent passToSavedTeams = new Intent(this, SavedTeams.class);
         final Intent passToEditServant1 = new Intent(this, EditServant1.class);
-        final Intent passToConfirm2 = new Intent(this, CardSelect.class);
+        final Intent passToEnemySelect = new Intent(this, LoadEnemy.class);
         final Context context = this;
         final Context appContext = this.getApplicationContext();
         //actual damage calculation (do after edit)
         save.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                //try to load object
-                //catch the right exception
-                //if not there add object
-                SharedPreferences appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(appContext);
+
+                SharedPreferences appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
                 SharedPreferences.Editor prefsEditor = appSharedPrefs.edit();
                 Gson gson = new Gson();
-                Type type = new TypeToken<List<Party>>(){}.getType();
+                Type type = new TypeToken<List<Party>>() {}.getType();
                 String jsonParties = appSharedPrefs.getString("PartyList", null);
-                if(jsonParties != null){
-                    ArrayList<Party> partyDir = gson.fromJson(jsonParties, type);
-                    Party addingThis = new Party(servant1, servant2, servant3);
-                    partyDir.add(addingThis);
-                    String partyJson = gson.toJson(partyDir);
-                    //prefsEditor = appSharedPrefs.edit();
-                    prefsEditor.remove("PartyList").commit();
-                    prefsEditor.putString("PartyList", partyJson);
-                    prefsEditor.commit();
-                    Toast.makeText(Confirm.this, "Team Saved!", Toast.LENGTH_LONG).show();
-                    Log.d("Saving...", "Saved to found file");
-                }
-                else{
-                    ArrayList<Party> partyDir = new ArrayList<>();
-                    Party addingThis = new Party(servant1, servant2, servant3);
-                    partyDir.add(addingThis);
-                    String partyJson = gson.toJson(partyDir);
-                    prefsEditor.putString("PartyList", partyJson);
-                    prefsEditor.commit();
-                    Toast.makeText(Confirm.this, "Team Saved!", Toast.LENGTH_LONG).show();
-                    Log.d("Saving...", "Saved to new file");
-                }
-
-                /*try {
-                    try{
-                        FileInputStream inputFile = context.openFileInput("savedTeams");
-                        ObjectInputStream ois = new ObjectInputStream(inputFile);
-                        ArrayList<Party> allParties = new ArrayList<>();
-                        allParties = (ArrayList<Party>) ois.readObject();
-                        Party addingThis = new Party(servant1, servant2, servant3);
-                        allParties.add(addingThis);
-                        inputFile.close();
-                        ois.close();
-                        Toast.makeText(Confirm.this, "Team Saved!", Toast.LENGTH_LONG).show();
-                        Log.d("Saving...", "Saved to found file");
-                    }
-                    catch(FileNotFoundException e)
-                    {
-                        FileOutputStream outputFile = context.openFileOutput("savedTeams", Context.MODE_PRIVATE);
-                        ObjectOutputStream ois = new ObjectOutputStream(outputFile);
-                        ArrayList<Party> allParties = new ArrayList<>();
-                        Party addingThis = new Party(servant1, servant2, servant3);
-                        allParties.add(addingThis);
-                        ois.writeObject(allParties);
-                        outputFile.close();
-                        ois.close();
-                        Toast.makeText(Confirm.this, "Team Saved!", Toast.LENGTH_LONG).show();
-                        Log.d("Saving...", "Saved to new file");
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("Saving...", "Unable to save to any file");
-                }*/
+                ArrayList<Party> partyDir = gson.fromJson(jsonParties, type);
                 Party addingThis = new Party(servant1, servant2, servant3);
-                passToSelectEnemy.putExtra("team", (Parcelable) addingThis);
-                startActivity(passToSelectEnemy);
+                partyDir.set(position,addingThis);
+                String partyJson = gson.toJson(partyDir);
+                //prefsEditor = appSharedPrefs.edit();
+                prefsEditor.remove("PartyList").commit();
+                prefsEditor.putString("PartyList", partyJson);
+                prefsEditor.commit();
+                startActivity(passToSavedTeams);
+            }
+        });
+        enemySel.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+
+                SharedPreferences appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+                SharedPreferences.Editor prefsEditor = appSharedPrefs.edit();
+                Gson gson = new Gson();
+                Type type = new TypeToken<List<Party>>() {}.getType();
+                String jsonParties = appSharedPrefs.getString("PartyList", null);
+                ArrayList<Party> partyDir = gson.fromJson(jsonParties, type);
+                Party addingThis = new Party(servant1, servant2, servant3);
+                partyDir.set(position,addingThis);
+                String partyJson = gson.toJson(partyDir);
+                //prefsEditor = appSharedPrefs.edit();
+                prefsEditor.remove("PartyList").commit();
+                prefsEditor.putString("PartyList", partyJson);
+                prefsEditor.commit();
+                passToEnemySelect.putExtra("team", (Parcelable)addingThis);
+                startActivity(passToEnemySelect);
             }
         });
 
@@ -190,16 +159,9 @@ public class Confirm extends AppCompatActivity {
                 startActivity(passToEditServant1);
             }
         });
-        /*toCardSelect.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                //passThis.putInt("serv_edit", 3);
-                passToConfirm2.putExtras(passThis);
-                startActivity(passToConfirm2);
-            }
-        });*/
+
         //Log.d("servantName", servantInfo.getStringExtra("enemy_1"));
     }
-
 
 }
 

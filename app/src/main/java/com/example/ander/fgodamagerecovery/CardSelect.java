@@ -20,7 +20,7 @@ import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 public class CardSelect extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     Spinner card1, card2, card3, NPlevel1, NPlevel2, NPlevel3, charge1, charge2, charge3;
     ArrayAdapter<String> cardLineup, oneThruFive, chargePercent;
-    String servant1, servant2, servant3;
+    Servant servant1, servant2, servant3;
     TextView text1,text2,text3, chargetxt1, chargetxt2, chargetxt3;
     CheckBox check1, check2, check3;
     Button calculate;
@@ -32,9 +32,9 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.card_select);
         Intent servantInfo = getIntent();
         final Bundle recieved = servantInfo.getExtras();
-        servant1 = recieved.getString("serv_1a");
-        servant2 = recieved.getString("serv_2a");
-        servant3 = recieved.getString("serv_3a");
+        servant1 = servantInfo.getParcelableExtra("serv_1a");
+        servant2 = servantInfo.getParcelableExtra("serv_2a");
+        servant3 = servantInfo.getParcelableExtra("serv_3a");
 
         calculate = (Button)findViewById(R.id.next);
         check1 = (CheckBox)findViewById(R.id.checkBox1);
@@ -61,18 +61,18 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         card1.setAdapter(cardLineup);
         card2.setAdapter(cardLineup);
         card3.setAdapter(cardLineup);
-        cardLineup.add(servant1 + " - Buster");
-        cardLineup.add(servant1 + " - Arts");
-        cardLineup.add(servant1 + " - Quick");
-        cardLineup.add(servant1 + " - " + servantsMap.get(servant1 + "5"));
-        cardLineup.add(servant2 + " - Buster");
-        cardLineup.add(servant2 + " - Arts");
-        cardLineup.add(servant2 + " - Quick");
-        cardLineup.add(servant2 + " - " + servantsMap.get(servant2 + "5"));
-        cardLineup.add(servant3 + " - Buster");
-        cardLineup.add(servant3 + " - Arts");
-        cardLineup.add(servant3 + " - Quick");
-        cardLineup.add(servant3 + " - " + servantsMap.get(servant3 + "5"));
+        cardLineup.add(servant1.getName() + " - Buster");
+        cardLineup.add(servant1.getName() + " - Arts");
+        cardLineup.add(servant1.getName() + " - Quick");
+        cardLineup.add(servant1.getName() + " - " + servantsMap.get(servant1.getName() + "5"));
+        cardLineup.add(servant2.getName() + " - Buster");
+        cardLineup.add(servant2.getName() + " - Arts");
+        cardLineup.add(servant2.getName() + " - Quick");
+        cardLineup.add(servant2.getName() + " - " + servantsMap.get(servant2.getName() + "5"));
+        cardLineup.add(servant3.getName() + " - Buster");
+        cardLineup.add(servant3.getName() + " - Arts");
+        cardLineup.add(servant3.getName() + " - Quick");
+        cardLineup.add(servant3.getName() + " - " + servantsMap.get(servant3.getName() + "5"));
 
         oneThruFive = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         oneThruFive.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -96,7 +96,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
 
 
         final Bundle passThis = new Bundle();
-        passThis.putString("serv_3a", recieved.getString("serv_3a"));
+        /*passThis.putString("serv_3a", recieved.getString("serv_3a"));
         passThis.putString("serv_3b", recieved.getString("serv_3b"));
         passThis.putInt("serv_3c", recieved.getInt("serv_3c"));
         passThis.putString("serv_1a", recieved.getString("serv_1a"));
@@ -104,7 +104,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         passThis.putInt("serv_1c", recieved.getInt("serv_1c"));
         passThis.putString("serv_2a", recieved.getString("serv_2a"));
         passThis.putString("serv_2b", recieved.getString("serv_2b"));
-        passThis.putInt("serv_2c", recieved.getInt("serv_2c"));
+        passThis.putInt("serv_2c", recieved.getInt("serv_2c"));*/
         passThis.putString("enemy_1", recieved.getString("enemy_1"));
         passThis.putString("enemy_2", recieved.getString("enemy_2"));
 
@@ -362,16 +362,16 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
                 Servant enemy = new Servant(-1, passThis.getString("enemy_1"), passThis.getString("enemy_2"));
-                Log.d("servant 1 nm", servant1);
+                /*Log.d("servant 1 nm", servant1);
                 Log.d("servant 2 nm", servant2);
                 Log.d("servant 3 nm", servant3);
                 Servant servant1a = new Servant(passThis.getInt("serv_1c"), servant1 , passThis.getString("serv_1b"));
                 Servant servant2a = new Servant(passThis.getInt("serv_2c"), servant2 , passThis.getString("serv_2b"));
-                Servant servant3a = new Servant(passThis.getInt("serv_3c"), servant3 , passThis.getString("serv_3b"));
+                Servant servant3a = new Servant(passThis.getInt("serv_3c"), servant3 , passThis.getString("serv_3b"));*/
                 passToCalcPage.putExtra("EnemyObj", enemy);
-                passToCalcPage.putExtra("Servant1Obj", servant1a);
-                passToCalcPage.putExtra("Servant2Obj", servant2a);
-                passToCalcPage.putExtra("Servant3Obj", servant3a);
+                passToCalcPage.putExtra("Servant1Obj", servant1);
+                passToCalcPage.putExtra("Servant2Obj", servant2);
+                passToCalcPage.putExtra("Servant3Obj", servant3);
                 passToCalcPage.putExtras(passThis);
                 startActivity(passToCalcPage);
             }

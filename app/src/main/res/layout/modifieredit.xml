@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,242 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="Results"
-                android:textColor="@color/Black"
-                android:textSize="35dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/Black"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/test" />
-
-
-            <TextView
-                android:id="@+id/text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/Black"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text1" />
-
-            <TextView
-                android:id="@+id/text5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/fgoBabyBlue"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text2" />
-
-            <CheckBox
-                android:id="@+id/attack1Crit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Crit"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/text3"
-                app:layout_constraintLeft_toRightOf="@+id/text5"
-                app:layout_constraintTop_toBottomOf="@id/text2" />
-
-
-            <TextView
-                android:id="@+id/text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/Black"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text5" />
-
-            <TextView
-                android:id="@+id/text6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/fgoBabyBlue"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text3" />
-
-            <CheckBox
-                android:id="@+id/attack2Crit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Crit"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/text4"
-                app:layout_constraintLeft_toRightOf="@+id/text6"
-                app:layout_constraintTop_toBottomOf="@id/text3" />
-
-
-            <TextView
-                android:id="@+id/text4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/Black"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text6" />
-
-            <TextView
-                android:id="@+id/text7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/fgoBabyBlue"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text4" />
-
-            <CheckBox
-                android:id="@+id/attack3Crit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Crit"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/extraLabel"
-                app:layout_constraintLeft_toRightOf="@+id/text7"
-                app:layout_constraintTop_toBottomOf="@id/text4" />
-
-            <TextView
-                android:id="@+id/extraLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="no extra attack"
-                android:textColor="@color/Black"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text7" />
-
-            <TextView
-                android:id="@+id/extraValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="no extra attack"
-                android:textColor="@color/fgoBabyBlue"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/extraLabel" />
-
-            <TextView
-                android:id="@+id/totalLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="Total Damage"
-                android:textColor="@color/Black"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/extraValue" />
-
-            <TextView
-                android:id="@+id/totalNums"
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -264,41 +30,54 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:gravity="center"
-                android:text="no text"
-                android:textColor="@color/colorAccent"
+                android:text="Modifiers"
+                android:textColor="@color/red"
                 android:textSize="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/totalLabel" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/servant1NM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="40dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Servant 1 name"
                 android:textColor="@color/Black"
                 android:textSize="30dp"
-                app:layout_constraintTop_toBottomOf="@id/totalNums" />
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
             <TextView
                 android:id="@+id/servant1ATKmod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="40dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="14dp"
                 android:gravity="center"
                 android:text="ATK mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@id/servant1CRITmod"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/totalNums" />
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <EditText
+                android:id="@+id/servant1ATKmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1ATKmod"
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
             <TextView
                 android:id="@+id/servant1CRITmod"
@@ -311,8 +90,23 @@
                 android:text="Crit mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@id/servant1NPDMGmod"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1ATKmod" />
+                app:layout_constraintTop_toBottomOf="@id/servant1ATKmodedit" />
+
+            <EditText
+                android:id="@+id/servant1CRITmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1CRITmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1ATKmodedit" />
 
             <TextView
                 android:id="@+id/servant1NPDMGmod"
@@ -321,12 +115,28 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="7dp"
                 android:gravity="center"
                 android:text="NP damage mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@id/servant1POWERmod"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1CRITmod" />
+                app:layout_constraintTop_toBottomOf="@id/servant1CRITmodedit" />
+
+            <EditText
+                android:id="@+id/servant1NPDMGmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1NPDMGmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1CRITmodedit" />
 
             <TextView
                 android:id="@+id/servant1POWERmod"
@@ -335,12 +145,28 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Power mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@id/servant1ARTSmod"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
                 app:layout_constraintTop_toBottomOf="@id/servant1NPDMGmod" />
+
+            <EditText
+                android:id="@+id/servant1POWERmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1POWERmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1NPDMGmodedit" />
 
             <TextView
                 android:id="@+id/servant1ARTSmod"
@@ -349,12 +175,28 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Arts mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@id/servant1BUSTERmod"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
                 app:layout_constraintTop_toBottomOf="@id/servant1POWERmod" />
+
+            <EditText
+                android:id="@+id/servant1ARTSmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1ARTSmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1POWERmodedit" />
 
             <TextView
                 android:id="@+id/servant1BUSTERmod"
@@ -363,12 +205,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="14dp"
                 android:gravity="center"
                 android:text="Buster mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
                 app:layout_constraintTop_toBottomOf="@id/servant1ARTSmod" />
+
+            <EditText
+                android:id="@+id/servant1BUSTERmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1BUSTERmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1ARTSmodedit" />
 
             <TextView
                 android:id="@+id/servant1QUICKmod"
@@ -377,12 +234,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Quick mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
                 app:layout_constraintTop_toBottomOf="@id/servant1BUSTERmod" />
+
+            <EditText
+                android:id="@+id/servant1QUICKmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1QUICKmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1BUSTERmodedit" />
 
             <TextView
                 android:id="@+id/servant1DMGPLUSADD"
@@ -391,12 +263,29 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="DamagePlusAdd: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
                 app:layout_constraintTop_toBottomOf="@id/servant1QUICKmod" />
+
+            <EditText
+                android:id="@+id/servant1DMGPLUSADDedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant1DMGPLUSADD"
+                app:layout_constraintTop_toBottomOf="@id/servant1QUICKmodedit"
+                app:layout_constraintBottom_toBottomOf="@id/servant1DMGPLUSADD"/>
 
             <TextView
                 android:id="@+id/servant2NM"
@@ -417,15 +306,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Atk mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@id/servant1DMGPLUSADDedit" />
+
+            <EditText
+                android:id="@+id/servant2ATKmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2ATKmod"
+                app:layout_constraintTop_toBottomOf="@id/servant1DMGPLUSADDedit" />
 
             <TextView
                 android:id="@+id/servant2CRITmod"
@@ -434,12 +337,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:text="Crit mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2ATKmod" />
+
+            <EditText
+                android:id="@+id/servant2CRITmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2CRITmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2ATKmodedit" />
 
             <TextView
                 android:id="@+id/servant2NPDMGmod"
@@ -448,12 +366,28 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:text="NP damage mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2CRITmod" />
+
+            <EditText
+                android:id="@+id/servant2NPDMGmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2NPDMGmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2CRITmodedit"
+                app:layout_constraintBottom_toBottomOf="@id/servant2NPDMGmod"/>
 
             <TextView
                 android:id="@+id/servant2POWERmod"
@@ -462,12 +396,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="Power mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2NPDMGmod" />
+
+            <EditText
+                android:id="@+id/servant2POWERmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2POWERmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2NPDMGmodedit" />
 
             <TextView
                 android:id="@+id/servant2ARTSmod"
@@ -476,12 +425,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Arts mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2POWERmod" />
+
+            <EditText
+                android:id="@+id/servant2ARTSmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2ARTSmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2POWERmodedit" />
 
             <TextView
                 android:id="@+id/servant2BUSTERmod"
@@ -490,12 +454,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Buster mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2ARTSmod" />
+
+            <EditText
+                android:id="@+id/servant2BUSTERmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2BUSTERmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2ARTSmodedit" />
 
             <TextView
                 android:id="@+id/servant2QUICKmod"
@@ -504,12 +483,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Quick mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2BUSTERmod" />
+
+            <EditText
+                android:id="@+id/servant2QUICKmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2QUICKmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2BUSTERmodedit" />
 
             <TextView
                 android:id="@+id/servant2DMGPLUSADD"
@@ -518,12 +512,28 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="DamagePlusAdd: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2QUICKmod" />
+
+            <EditText
+                android:id="@+id/servant2DMGPLUSADDedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant2DMGPLUSADD"
+                app:layout_constraintTop_toBottomOf="@id/servant2QUICKmodedit"
+                app:layout_constraintBottom_toBottomOf="@id/servant2DMGPLUSADD"/>
 
             <TextView
                 android:id="@+id/servant3NM"
@@ -536,22 +546,36 @@
                 android:text="Servant 3 name"
                 android:textColor="@color/Black"
                 android:textSize="30dp"
-                app:layout_constraintTop_toBottomOf="@id/servant2DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@id/servant2DMGPLUSADDedit" />
 
             <TextView
                 android:id="@+id/servant3ATKmod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Atk mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2DMGPLUSADD" />
+
+            <EditText
+                android:id="@+id/servant3ATKmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3ATKmod"
+                app:layout_constraintTop_toBottomOf="@id/servant2DMGPLUSADDedit" />
 
             <TextView
                 android:id="@+id/servant3CRITmod"
@@ -560,12 +584,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Crit mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3ATKmod" />
+
+            <EditText
+                android:id="@+id/servant3CRITmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3CRITmod"
+                app:layout_constraintTop_toBottomOf="@id/servant3ATKmodedit" />
 
             <TextView
                 android:id="@+id/servant3NPDMGmod"
@@ -574,12 +613,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="NP damage mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3CRITmod" />
+
+            <EditText
+                android:id="@+id/servant3NPDMGmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3NPDMGmod"
+                app:layout_constraintTop_toBottomOf="@id/servant3CRITmodedit" />
 
             <TextView
                 android:id="@+id/servant3POWERmod"
@@ -588,12 +642,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Power mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3NPDMGmod" />
+
+            <EditText
+                android:id="@+id/servant3POWERmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3POWERmod"
+                app:layout_constraintTop_toBottomOf="@id/servant3NPDMGmodedit" />
 
             <TextView
                 android:id="@+id/servant3ARTSmod"
@@ -602,12 +671,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Arts mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3POWERmod" />
+
+            <EditText
+                android:id="@+id/servant3ARTSmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3ARTSmod"
+                app:layout_constraintTop_toBottomOf="@id/servant3POWERmodedit" />
 
             <TextView
                 android:id="@+id/servant3BUSTERmod"
@@ -616,12 +700,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Buster mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3ARTSmod" />
+
+            <EditText
+                android:id="@+id/servant3BUSTERmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3BUSTERmod"
+                app:layout_constraintTop_toBottomOf="@id/servant3ARTSmodedit" />
 
             <TextView
                 android:id="@+id/servant3QUICKmod"
@@ -630,12 +729,28 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Quick mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3BUSTERmod" />
+
+            <EditText
+                android:id="@+id/servant3QUICKmodedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3QUICKmod"
+                app:layout_constraintTop_toBottomOf="@id/servant3BUSTERmodedit" />
+
 
             <TextView
                 android:id="@+id/servant3DMGPLUSADD"
@@ -644,6 +759,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="DamagePlusAdd: "
                 android:textColor="@color/Black"
@@ -651,51 +767,43 @@
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3QUICKmod" />
 
-            <Button
-                android:id="@+id/backBtn"
+            <EditText
+                android:id="@+id/servant3DMGPLUSADDedit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/servant3DMGPLUSADD"
+                app:layout_constraintTop_toBottomOf="@id/servant3QUICKmodedit" />
+
+            <Button
+                android:id="@+id/recalcBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:orientation="horizontal"
-                android:text="Reset Modifiers and Back"
+                android:text="Recalculate"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@+id/servant3DMGPLUSADD" />
 
             <Button
-                android:id="@+id/editBtn"
+                android:id="@+id/cardSelBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:orientation="horizontal"
-                android:text="Edit Modifiers"
+                android:text="Card Select"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/backBtn"
+                app:layout_constraintLeft_toRightOf="@+id/recalcBtn"
                 app:layout_constraintTop_toBottomOf="@+id/servant3DMGPLUSADD" />
-
-            <Button
-                android:id="@+id/keepBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal"
-                android:text="Keep Modifiers and Back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/backBtn"
-                app:layout_constraintTop_toBottomOf="@+id/backBtn" />
-
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

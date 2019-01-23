@@ -11,6 +11,7 @@ import java.util.List;
 import static com.example.ander.fgodamagerecovery.Objects.Effects.effectsMap;
 import static com.example.ander.fgodamagerecovery.Objects.Effects.hiddenTraits;
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.skill1Level;
 import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 import static com.example.ander.fgodamagerecovery.Objects.Effects.damagePattern;
 import static com.example.ander.fgodamagerecovery.Objects.Effects.hougu;
@@ -25,7 +26,7 @@ public class Servant implements Parcelable{
     private double artsDef = 0;
     private double quickDef = 0;
     private String name;
-    private boolean isUpgraded = false;
+    private int isUpgraded = 0, NPhasUpgrade, skill1lvl, skill2lvl, skill3lvl, NPlvl;
     private String className;
     private String skill1, skill2, skill3;
     private double critDamageMod = 0, npDamageMod = 0, atkMod = 0, cardMOD = 0, powerMod = 0, artsMOD = 0, busterMOD = 0, quickMOD = 0, defenseIgnoreHolder = 0, defMOD = 0;
@@ -35,7 +36,7 @@ public class Servant implements Parcelable{
         this.critDamageMod = critDamageMod;
     }
 
-    public void setUpgrade(Boolean check)
+    public void setUpgrade(int check)
     {
         this.isUpgraded = check;
     }
@@ -62,6 +63,12 @@ public class Servant implements Parcelable{
         busterDef = in.readDouble();
         artsDef = in.readDouble();
         quickDef = in.readDouble();
+        isUpgraded = in.readInt();
+        NPhasUpgrade = in.readInt();
+        skill1lvl = in.readInt();
+        skill2lvl = in.readInt();
+        skill3lvl = in.readInt();
+        NPlvl = in.readInt();
     }
 
     @Override
@@ -87,6 +94,12 @@ public class Servant implements Parcelable{
         dest.writeDouble(busterDef);
         dest.writeDouble(artsDef);
         dest.writeDouble(quickDef);
+        dest.writeInt(isUpgraded);
+        dest.writeInt(NPhasUpgrade);
+        dest.writeInt(skill1lvl);
+        dest.writeInt(skill2lvl);
+        dest.writeInt(skill3lvl);
+        dest.writeInt(NPlvl);
     }
 
     public static final Creator<Servant> CREATOR = new Creator<Servant>() {
@@ -109,7 +122,7 @@ public class Servant implements Parcelable{
             enemy.setDefMOD(this.defenseIgnoreHolder);
             this.defenseIgnoreHolder = 0;
         }
-        if(isUpgraded)
+        if(isUpgraded == 1)
         {
             if(hougu.containsKey(NPname + "2u") && hougu.get(NPname + "2u").equals("True"))
             {
@@ -129,7 +142,7 @@ public class Servant implements Parcelable{
     public void activatePreEffect(int charge, Servant enemy, int NPlevel){
         String NPname = servantsMap.get(this.name + "5");
 
-        if(isUpgraded)
+        if(isUpgraded == 1)
         {
             if(hougu.containsKey(NPname + "1u") && hougu.get(NPname + "1u").equals("True"))
             {
@@ -151,7 +164,7 @@ public class Servant implements Parcelable{
         if(effectName.equals("Ignores Defense"))
         {
             String NPname = servantsMap.get(this.name + "5");
-            if(hougu.get(NPname + "6").equals("PowerMod"))
+            if(hougu.get(NPname + "6") != null)
             {
                 if(servantsMap.get(Enemy.getName() + "3").equals("Female"))
                     this.powerMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
@@ -310,12 +323,12 @@ public class Servant implements Parcelable{
 
     public double [] getNPdmgPattern(){
         double [] arrToReturn;
-        Log.d("RAGE", "declared array");
+
         String NPname = servantsMap.get(this.name + "5");
-        Log.d("RAGE", "got NP name");
-        if(upgradelist.contains(NPname) && this.isUpgraded)
+
+        if(upgradelist.contains(NPname) && this.isUpgraded == 1)
         {
-            Log.d("RAGE", "inside if statement");
+
             if(hougu.containsKey(hougu.get(NPname + "0u")))
                 arrToReturn = damagePattern.get(hougu.get(NPname + "0u"));
             else
@@ -323,11 +336,21 @@ public class Servant implements Parcelable{
         }
         else
         {
-            Log.d("RAGE", "inside else");
             arrToReturn = damagePattern.get(hougu.get(NPname + "0"));
         }
-        Log.d("RAGE", "returning array");
         return arrToReturn;
+    }
+
+    public boolean hasUpgrade(){
+        if(this.NPhasUpgrade == 1)
+            return true;
+        return false;
+    }
+
+    public boolean isUpgraded(){
+        if(this.isUpgraded == 1)
+            return true;
+        return false;
     }
 
     public double getBusterDef() {
@@ -455,7 +478,81 @@ public class Servant implements Parcelable{
         dmgPlusAdd += c;
     }
 
-    public Servant(int ATK, String name, String className) {
+    public int getNPlvl() {
+        return NPlvl;
+    }
+
+    public void setNPlvl(int NPlvl) {
+        this.NPlvl = NPlvl;
+    }
+
+    public int getSkill1lvl() {
+        return skill1lvl;
+    }
+
+    public void setSkill1lvl(int skill1lvl) {
+        this.skill1lvl = skill1lvl;
+    }
+
+    public int getSkill2lvl() {
+        return skill2lvl;
+    }
+
+    public void setSkill2lvl(int skill2lvl) {
+        this.skill2lvl = skill2lvl;
+    }
+
+    public int getSkill3lvl() {
+        return skill3lvl;
+    }
+
+    public void setSkill3lvl(int skill3lvl) {
+        this.skill3lvl = skill3lvl;
+    }
+
+    public boolean isNPupgraded(){
+        if(this.isUpgraded == 1)
+            return true;
+        return false;
+    }
+
+    public void setNpDamageMod(double npDamageMod) {
+        this.npDamageMod = npDamageMod;
+    }
+
+    public void setAtkMod(double atkMod) {
+        this.atkMod = atkMod;
+    }
+
+    public void setPowerMod(double powerMod) {
+        this.powerMod = powerMod;
+    }
+
+    public void setArtsMOD(double artsMOD) {
+        this.artsMOD = artsMOD;
+    }
+
+    public void setBusterMOD(double busterMOD) {
+        this.busterMOD = busterMOD;
+    }
+
+    public void setQuickMOD(double quickMOD) {
+        this.quickMOD = quickMOD;
+    }
+
+    public void setDmgPlusAdd(int dmgPlusAdd) {
+        this.dmgPlusAdd = dmgPlusAdd;
+    }
+
+    public int getIsUpgraded() {
+        return isUpgraded;
+    }
+
+    public void setIsUpgraded(int isUpgraded) {
+        this.isUpgraded = isUpgraded;
+    }
+
+    public Servant(int ATK, String name, String className, int skill1, int skill2, int skill3, int upgradeInt, int NPlvl) {
         this.ATK = ATK;
         this.attribute = FGODamage.servantsMap.get(name + "4");
         this.className = className;
@@ -463,6 +560,13 @@ public class Servant implements Parcelable{
         this.skill1 = FGODamage.servantsMap.get(name + "0");
         this.skill2 = FGODamage.servantsMap.get(name + "1");
         this.skill3 = FGODamage.servantsMap.get(name + "2");
+        if(upgradelist.contains(servantsMap.get(this.name + "5")))
+            this.NPhasUpgrade = 1;
+        this.isUpgraded = upgradeInt;
+        this.skill1lvl = skill1;
+        this.skill2lvl = skill2;
+        this.skill3lvl = skill3;
+        this.NPlvl = NPlvl;
         activateClassSkills(name);
     }
 

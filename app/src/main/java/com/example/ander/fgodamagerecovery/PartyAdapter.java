@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 
 import com.example.ander.fgodamagerecovery.Objects.Party;
+import com.example.ander.fgodamagerecovery.Objects.Servant;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -42,7 +43,6 @@ public class PartyAdapter extends ArrayAdapter {
         super(context, R.layout.listview_row, partyList);
         this.context = context;
         this.partyList = partyList;
-        Log.d("test", "past creating partyadapter");
     }
 
     public View getView(final int position, View view, ViewGroup parent) {
@@ -56,9 +56,13 @@ public class PartyAdapter extends ArrayAdapter {
         TextView servant2 = (TextView) rowView.findViewById(R.id.servant2);
         TextView servant3 = (TextView) rowView.findViewById(R.id.servant3);
 
-        servant1.setText(partyList.get(position).getServant1().getName());
-        servant2.setText(partyList.get(position).getServant2().getName());
-        servant3.setText(partyList.get(position).getServant3().getName());
+        Servant servanta = partyList.get(position).getServant1();
+        Servant servantb = partyList.get(position).getServant2();
+        Servant servantc = partyList.get(position).getServant3();
+
+        servant1.setText(servanta.getName() + " NP" + servanta.getNPlvl() + "   Skills: " + servanta.getSkill1lvl() + "/" + servanta.getSkill2lvl() + "/" + servanta.getSkill3lvl());
+        servant2.setText(servantb.getName() + " NP" + servantb.getNPlvl() + "   Skills: " + servantb.getSkill1lvl() + "/" + servantb.getSkill2lvl() + "/" + servantb.getSkill3lvl());
+        servant3.setText(servantc.getName() + " NP" + servantc.getNPlvl() + "   Skills: " + servantc.getSkill1lvl() + "/" + servantc.getSkill2lvl() + "/" + servantc.getSkill3lvl());
 
         Button deleteBtn = (Button) rowView.findViewById(R.id.deleteParty);
         Button editBtn = (Button) rowView.findViewById(R.id.editParty);

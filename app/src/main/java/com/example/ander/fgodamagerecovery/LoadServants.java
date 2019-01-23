@@ -9,24 +9,30 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ander.fgodamagerecovery.Objects.Servant;
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 
 /**
  * Created by Christian on 4/9/2018.
  */
 
 public class LoadServants extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-    int servantNumber, servantAttack, servant1c, servant2c;
-    Spinner spinnerClass, spinnerServname;
+    int servantNumber, servantAttack, servant1c, servant2c, skill1, skill2, skill3, upgradeInt, NPlvl;
+    Spinner spinnerClass, spinnerServname, spinnerNPlvl;
     String thisServ, servantClass;
     Servant servant1a, servant2a;
     EditText textBox;
-    ArrayAdapter<String> classArray, nameArray;
+    TextView NPname;
+    ArrayAdapter<String> classArray, nameArray, oneThruFive, oneThruTen;
+    CheckBox NPupgrade;
+    Spinner skill1LVL, skill2LVL, skill3LVL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,37 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
         classArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         classArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        NPupgrade = (CheckBox) findViewById(R.id.checkBox1);
+        skill1LVL = (Spinner) findViewById(R.id.skill1Spinner);
+        skill2LVL = (Spinner) findViewById(R.id.skill2Spinner);
+        skill3LVL = (Spinner) findViewById(R.id.skill3Spinner);
+        spinnerNPlvl = (Spinner) findViewById(R.id.NPlvlspinner);
+        NPname = (TextView) findViewById(R.id.NPname);
+
+        oneThruFive = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        oneThruFive.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        oneThruTen = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        oneThruTen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        skill1LVL.setAdapter(oneThruTen);
+        skill2LVL.setAdapter(oneThruTen);
+        skill3LVL.setAdapter(oneThruTen);
+        spinnerNPlvl.setAdapter(oneThruFive);
+        oneThruFive.add("1");
+        oneThruFive.add("2");
+        oneThruFive.add("3");
+        oneThruFive.add("4");
+        oneThruFive.add("5");
+        oneThruTen.add("1");
+        oneThruTen.add("2");
+        oneThruTen.add("3");
+        oneThruTen.add("4");
+        oneThruTen.add("5");
+        oneThruTen.add("6");
+        oneThruTen.add("7");
+        oneThruTen.add("8");
+        oneThruTen.add("9");
+        oneThruTen.add("10");
+
 
         spinnerClass.setAdapter(classArray);
 
@@ -68,13 +105,72 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
                 thisServ  = (String) parent.getItemAtPosition(position);
-
+                NPname.setText(servantsMap.get(thisServ + "5") + " lvl:");
+                if(upgradelist.contains(servantsMap.get(thisServ + "5")))
+                    NPupgrade.setVisibility(View.VISIBLE);
+                else
+                    NPupgrade.setVisibility(View.INVISIBLE);
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        spinnerNPlvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                NPlvl= position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                NPlvl = 1;
+            }
+        });
+
+        skill1LVL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                skill1 = position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                skill1 = 1;
+            }
+        });
+
+        skill2LVL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                skill2 = position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                skill2 = 1;
+            }
+        });
+        skill3LVL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                skill3 = position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                skill3 = 1;
+            }
+        });
+
+        NPupgrade.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(NPupgrade.isChecked()){
+                    upgradeInt = 1;
+                }else{
+                    upgradeInt = 0;
+                }
             }
         });
 
@@ -138,7 +234,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         loadNextServant.putExtra("servant", 2);
-                        Servant servant1 = new Servant(servantAttack, thisServ, servantClass);
+                        Servant servant1 = new Servant(servantAttack, thisServ, servantClass, skill1, skill2, skill3, upgradeInt, NPlvl);
                         loadNextServant.putExtra("serv_1a", servant1);
                         startActivity(loadNextServant);
                         break;
@@ -155,7 +251,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         }
 
                         loadNextServant.putExtra("servant", 3);
-                        Servant servant2 = new Servant(servantAttack, thisServ, servantClass);
+                        Servant servant2 = new Servant(servantAttack, thisServ, servantClass, skill1, skill2, skill3, upgradeInt, NPlvl);
                         loadNextServant.putExtra("serv_1a", servant1a);
                         loadNextServant.putExtra("serv_2a", servant2);
 
@@ -174,7 +270,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
                         }
                         Bundle passThis = new Bundle();
 
-                        Servant servant3 = new Servant(servantAttack, thisServ, servantClass);
+                        Servant servant3 = new Servant(servantAttack, thisServ, servantClass, skill1, skill2, skill3, upgradeInt, NPlvl);
                         display.putExtra("serv_1a", servant1a);
                         display.putExtra("serv_2a", servant2a);
                         display.putExtra("serv_3a", servant3);
@@ -198,6 +294,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
 
 
         thisServ = (String) spinnerServname.getItemAtPosition(0);
+        NPname.setText(servantsMap.get(thisServ + "5") + " lvl:");
 
     }
 

@@ -44,38 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/selectCardsTitle"
         app:layout_constraintVertical_bias="0.026" />
 
-    <TextView
-        android:id="@+id/NP1label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Level:"
-        android:textSize="15dp"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="@+id/card1spinner"
-        app:layout_constraintTop_toBottomOf="@id/card1spinner"
-        />
-    <Spinner
-        android:id="@+id/NPlvl1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:visibility="invisible"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@id/card1spinner"
-        app:layout_constraintLeft_toRightOf="@+id/NP1label"
-        />
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upgraded"
-        android:layout_marginLeft="8dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/card1spinner"
-        app:layout_constraintLeft_toRightOf="@+id/NPlvl1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="129dp" />
+
     <TextView
         android:id="@+id/overcharge1"
         android:layout_width="wrap_content"
@@ -84,7 +53,7 @@
         android:text="Charge:"
         android:textSize="15dp"
         android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/checkBox1"
+        app:layout_constraintLeft_toLeftOf="@+id/card1spinner"
         app:layout_constraintTop_toBottomOf="@id/card1spinner"
         />
     <Spinner
@@ -114,38 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card1spinner"
         app:layout_constraintVertical_bias="0.026" />
-    <TextView
-        android:id="@+id/NP2label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Level:"
-        android:textSize="15dp"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="@+id/card2spinner"
-        app:layout_constraintTop_toBottomOf="@id/card2spinner"
-        />
-    <Spinner
-        android:id="@+id/NPlvl2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:visibility="invisible"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@id/card2spinner"
-        app:layout_constraintLeft_toRightOf="@+id/NP2label"
-        />
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upgraded"
-        android:layout_marginLeft="8dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/card2spinner"
-        app:layout_constraintLeft_toRightOf="@+id/NPlvl2"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="129dp" />
+
     <TextView
         android:id="@+id/overcharge2"
         android:layout_width="wrap_content"
@@ -154,7 +92,7 @@
         android:text="Charge:"
         android:textSize="15dp"
         android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/checkBox2"
+        app:layout_constraintLeft_toLeftOf="@+id/card2spinner"
         app:layout_constraintTop_toBottomOf="@id/card2spinner"
         />
     <Spinner
@@ -185,38 +123,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card2spinner"
         app:layout_constraintVertical_bias="0.026" />
-    <TextView
-        android:id="@+id/NP3label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Level:"
-        android:textSize="15dp"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="@+id/card3spinner"
-        app:layout_constraintTop_toBottomOf="@id/card3spinner"
-        />
-    <Spinner
-        android:id="@+id/NPlvl3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:visibility="invisible"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@id/card3spinner"
-        app:layout_constraintLeft_toRightOf="@+id/NP3label"
-        />
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upgraded"
-        android:layout_marginLeft="8dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/card3spinner"
-        app:layout_constraintLeft_toRightOf="@+id/NPlvl3"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="129dp" />
+
     <TextView
         android:id="@+id/overcharge3"
         android:layout_width="wrap_content"
@@ -225,7 +132,7 @@
         android:text="Charge:"
         android:textSize="15dp"
         android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/checkBox3"
+        app:layout_constraintLeft_toLeftOf="@+id/card3spinner"
         app:layout_constraintTop_toBottomOf="@id/card3spinner"
         />
     <Spinner

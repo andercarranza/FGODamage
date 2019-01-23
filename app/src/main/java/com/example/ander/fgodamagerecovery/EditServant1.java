@@ -3,38 +3,82 @@ package com.example.ander.fgodamagerecovery;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ander.fgodamagerecovery.Objects.Party;
 import com.example.ander.fgodamagerecovery.Objects.Servant;
+
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
+import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 
 //servantnumber not needed
 
 public class EditServant1 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-    int servantNumber, servantAttack, servant1c, servant2c, servant3c;
-    Spinner spinnerClass, spinnerServname;
+    int servantNumber, servantAttack, servant1c, servant2c, servant3c, skill1, skill2, skill3, upgradeInt, NPlvl;;
+    Spinner spinnerClass, spinnerServname, spinnerNPlvl;
     String thisServ, servantClass, servant1a, servant1b, servant2a, servant2b, servant3a, servant3b;
     Servant servant1, servant2, servant3;
     EditText textBox;
-    ArrayAdapter<String> classArray, nameArray;
+    ArrayAdapter<String> classArray, nameArray, oneThruFive, oneThruTen;
+    Spinner skill1LVL, skill2LVL, skill3LVL;
+    TextView NPname;
+    CheckBox NPupgrade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servant_select);
-        Log.d("Test", "Does this work?");
         spinnerClass = (Spinner) findViewById(R.id.serv_class);
         spinnerClass.setOnItemSelectedListener(this);
 
+        final Intent servantInfo = getIntent();
+        servant1 = servantInfo.getParcelableExtra("serv_1a");
+        servant2 = servantInfo.getParcelableExtra("serv_2a");
+        servant3 = servantInfo.getParcelableExtra("serv_3a");
+
         classArray = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         classArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        NPupgrade = (CheckBox) findViewById(R.id.checkBox1);
+        skill1LVL = (Spinner) findViewById(R.id.skill1Spinner);
+        skill2LVL = (Spinner) findViewById(R.id.skill2Spinner);
+        skill3LVL = (Spinner) findViewById(R.id.skill3Spinner);
+        spinnerNPlvl = (Spinner) findViewById(R.id.NPlvlspinner);
+        NPname = (TextView) findViewById(R.id.NPname);
+
+        oneThruFive = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        oneThruFive.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        oneThruTen = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        oneThruTen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        skill1LVL.setAdapter(oneThruTen);
+        skill2LVL.setAdapter(oneThruTen);
+        skill3LVL.setAdapter(oneThruTen);
+        spinnerNPlvl.setAdapter(oneThruFive);
+        oneThruFive.add("1");
+        oneThruFive.add("2");
+        oneThruFive.add("3");
+        oneThruFive.add("4");
+        oneThruFive.add("5");
+        oneThruTen.add("1");
+        oneThruTen.add("2");
+        oneThruTen.add("3");
+        oneThruTen.add("4");
+        oneThruTen.add("5");
+        oneThruTen.add("6");
+        oneThruTen.add("7");
+        oneThruTen.add("8");
+        oneThruTen.add("9");
+        oneThruTen.add("10");
+
 
         spinnerClass.setAdapter(classArray);
 
@@ -66,7 +110,11 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
                 thisServ  = (String) parent.getItemAtPosition(position);
-
+                NPname.setText(servantsMap.get(thisServ + "5") + " lvl:");
+                if(upgradelist.contains(servantsMap.get(thisServ + "5")))
+                    NPupgrade.setVisibility(View.VISIBLE);
+                else
+                    NPupgrade.setVisibility(View.INVISIBLE);
                 //Servant enemy = new Servant(0, enemyServant, enemyClass);
 
             }
@@ -76,50 +124,130 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        final Intent servantInfo = getIntent();
+        spinnerNPlvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                NPlvl= position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                NPlvl = 1;
+            }
+        });
+
+        skill1LVL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                skill1 = position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                skill1 = 1;
+            }
+        });
+
+        skill2LVL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                skill2 = position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                skill2 = 1;
+            }
+        });
+        skill3LVL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                skill3 = position +1;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                skill3 = 1;
+            }
+        });
+
+        NPupgrade.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(NPupgrade.isChecked()){
+                    upgradeInt = 1;
+                }else{
+                    upgradeInt = 0;
+                }
+            }
+        });
+
+
         //servantInfo.getExtras();
         final String enemy_1 = servantInfo.getStringExtra("enemy_1");
         final String enemy_2 = servantInfo.getStringExtra("enemy_2");
         //Log.d("servantName", s);
-        Bundle servant = servantInfo.getExtras();
-        /*if(servantInfo.hasExtra("serv_1a"))
-        {
-            servant1a = servantInfo.getStringExtra("serv_1a");
-            servant1b = servantInfo.getStringExtra("serv_1b");
-            servant1c = servantInfo.getIntExtra("serv_1c", -1);
-            //Log.d("servantAttack", String.valueOf(servant1c));
-        }
-        if(servantInfo.hasExtra("serv_2a"))
-        {
-            servant2a = servantInfo.getStringExtra("serv_2a");
-            servant2b = servantInfo.getStringExtra("serv_2b");
-            servant2c = servantInfo.getIntExtra("serv_2c", -1);
-            //Log.d("servantAttack", String.valueOf(servant2c));
-        }
-        if(servantInfo.hasExtra("serv_3a"))
-        {
-            servant3a = servantInfo.getStringExtra("serv_3a");
-            servant3b = servantInfo.getStringExtra("serv_3b");
-            servant3c = servantInfo.getIntExtra("serv_3c", -1);
-        }*/
+        final Bundle servant = servantInfo.getExtras();
+        final int position = servant.getInt("partyToChange");
 
-        servant1 = servantInfo.getParcelableExtra("serv_1a");
-        servant2 = servantInfo.getParcelableExtra("serv_2a");
-        servant3 = servantInfo.getParcelableExtra("serv_3a");
+
 
         final int servantToEdit = servantInfo.getIntExtra("serv_edit", 0);
         final Intent display = new Intent(this, Confirm.class);
+        final Intent backToEditSaved = new Intent(this, EditSavedClass.class);
 
         //display servant number
         switch (servantToEdit){
             case 1:
                 nextServant.setText("Servant 1");
+                spinnerClass.setSelection(getIndex(spinnerClass, servant1.getClassName()));
+                spinnerServname.setSelection(getIndex(spinnerServname, servant1.getName()));
+                spinnerNPlvl.setSelection(servant1.getNPlvl() - 1);
+                skill1LVL.setSelection(servant1.getSkill1lvl() - 1);
+                skill2LVL.setSelection(servant1.getSkill2lvl() - 1);
+                skill3LVL.setSelection(servant1.getSkill3lvl() - 1);
+                textBox.setText(servant1.getATK() + "");
+                if(servant1.isNPupgraded())
+                    NPupgrade.setChecked(true);
+                else
+                    NPupgrade.setChecked(false);
+                if(upgradelist.contains(servantsMap.get(servant1.getName() + "5")))
+                    NPupgrade.setVisibility(View.VISIBLE);
+                else
+                    NPupgrade.setVisibility(View.INVISIBLE);
                 break;
             case 2:
                 nextServant.setText("Servant 2");
+                spinnerClass.setSelection(getIndex(spinnerClass, servant2.getClassName()));
+                spinnerServname.setSelection(getIndex(spinnerServname, servant2.getName()));
+                spinnerNPlvl.setSelection(servant2.getNPlvl() - 1);
+                skill1LVL.setSelection(servant2.getSkill1lvl() - 1);
+                skill2LVL.setSelection(servant2.getSkill2lvl() - 1);
+                skill3LVL.setSelection(servant2.getSkill3lvl() - 1);
+                textBox.setText(servant2.getATK() + "");
+                if(servant2.isNPupgraded())
+                    NPupgrade.setChecked(true);
+                else
+                    NPupgrade.setChecked(false);
+                if(upgradelist.contains(servantsMap.get(servant2.getName() + "5")))
+                    NPupgrade.setVisibility(View.VISIBLE);
+                else
+                    NPupgrade.setVisibility(View.INVISIBLE);
                 break;
             case 3:
                 nextServant.setText("Servant 3");
+                spinnerClass.setSelection(getIndex(spinnerClass, servant3.getClassName()));
+                spinnerServname.setSelection(getIndex(spinnerServname, servant3.getName()));
+                spinnerNPlvl.setSelection(servant3.getNPlvl() - 1);
+                skill1LVL.setSelection(servant3.getSkill1lvl() - 1);
+                skill2LVL.setSelection(servant3.getSkill2lvl() - 1);
+                skill3LVL.setSelection(servant3.getSkill3lvl() - 1);
+                textBox.setText(servant3.getATK() + "");
+                if(servant3.isNPupgraded())
+                    NPupgrade.setChecked(true);
+                else
+                    NPupgrade.setChecked(false);
+                if(upgradelist.contains(servantsMap.get(servant3.getName() + "5")))
+                    NPupgrade.setVisibility(View.VISIBLE);
+                else
+                    NPupgrade.setVisibility(View.INVISIBLE);
                 break;
             default:
                 break;
@@ -145,7 +273,17 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
-                        Servant servant1altered = new Servant(servantAttack, thisServ, servantClass);
+                        Servant servant1altered = new Servant(servantAttack, thisServ, servantClass,skill1,skill2,skill3, upgradeInt, NPlvl);
+                        if(servantInfo.hasExtra("fromSaved"))
+                        {
+                            Log.d("inside found fromSaved", "executing code");
+                            Party passingThis = new Party(servant1altered, servant2, servant3);
+                            passThis.putInt("position", position);
+                            backToEditSaved.putExtra("team", (Parcelable)passingThis);
+                            backToEditSaved.putExtras(passThis);
+                            startActivity(backToEditSaved);
+                            break;
+                        }
                         display.putExtra("serv_1a", servant1altered);
                         display.putExtra("serv_2a", servant2);
                         display.putExtra("serv_3a", servant3);
@@ -164,7 +302,17 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
-                        Servant servant2altered = new Servant(servantAttack, thisServ, servantClass);
+                        Servant servant2altered = new Servant(servantAttack, thisServ, servantClass,skill1,skill2,skill3, upgradeInt, NPlvl);
+                        if(servantInfo.hasExtra("fromSaved"))
+                        {
+                            Log.d("inside found fromSaved", "executing code");
+                            Party passingThis = new Party(servant1, servant2altered, servant3);
+                            passThis.putInt("position", position);
+                            backToEditSaved.putExtra("team", (Parcelable)passingThis);
+                            backToEditSaved.putExtras(passThis);
+                            startActivity(backToEditSaved);
+                            break;
+                        }
                         display.putExtra("serv_1a", servant1);
                         display.putExtra("serv_2a", servant2altered);
                         display.putExtra("serv_3a", servant3);
@@ -183,7 +331,17 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                         //modify servant info
-                        Servant servant3altered = new Servant(servantAttack, thisServ, servantClass);
+                        Servant servant3altered = new Servant(servantAttack, thisServ, servantClass,skill1,skill2,skill3, upgradeInt, NPlvl);
+                        if(servantInfo.hasExtra("fromSaved"))
+                        {
+                            Log.d("inside found fromSaved", "executing code");
+                            Party passingThis = new Party(servant1, servant2, servant3altered);
+                            passThis.putInt("position", position);
+                            backToEditSaved.putExtra("team", (Parcelable)passingThis);
+                            backToEditSaved.putExtras(passThis);
+                            startActivity(backToEditSaved);
+                            break;
+                        }
                         display.putExtra("serv_1a", servant1);
                         display.putExtra("serv_2a", servant2);
                         display.putExtra("serv_3a", servant3altered);
@@ -207,7 +365,20 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
 
 
         thisServ = (String) spinnerServname.getItemAtPosition(0);
+        NPname.setText(servantsMap.get(thisServ + "5") + " lvl:");
 
+    }
+
+    private int getIndex(Spinner spinner, String myString){
+
+        int index = 0;
+
+        for (int i=0;i<spinner.getCount();i++){
+            if (spinner.getItemAtPosition(i).equals(myString)){
+                index = i;
+            }
+        }
+        return index;
     }
 
     private void fillNameArray(){

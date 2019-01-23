@@ -1275,7 +1275,7 @@ public class FGODamage {
             if(cardNum == 3)
                 cardDV = 1.12;
         }
-        Servant myServ = new Servant(atk, name, classname);
+        /*Servant myServ = new Servant(atk, name, classname);
         if(skill1Active)
             Effects.activateSkill(servantsMap.get(name + "0"), skill1Level, myServ);
         if(skill2Active)
@@ -1294,7 +1294,7 @@ public class FGODamage {
                         (myServ.getNpDamageMod() * isNPcard) * (1 + ((superEffectiveModifier -1) * isSuperEffective)))
                 + myServ.getDmgPlusAdd() + enemyDmgCutAdd + (atk * busterChainMod);
         //the times one at the start is to make the high and low points easier to calculate. just mulitply the final result by .9 and 1.1 for low and high bounds
-        System.out.println(endDamage);
+        System.out.println(endDamage);*/
 
     }
 

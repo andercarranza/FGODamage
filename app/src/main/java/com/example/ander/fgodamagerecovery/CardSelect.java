@@ -22,7 +22,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
     ArrayAdapter<String> cardLineup, oneThruFive, chargePercent;
     Servant servant1, servant2, servant3;
     TextView text1,text2,text3, chargetxt1, chargetxt2, chargetxt3;
-    CheckBox check1, check2, check3;
+    //CheckBox check1, check2, check3;
     Button calculate;
 
 
@@ -37,18 +37,18 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         servant3 = servantInfo.getParcelableExtra("serv_3a");
 
         calculate = (Button)findViewById(R.id.next);
-        check1 = (CheckBox)findViewById(R.id.checkBox1);
-        check2 = (CheckBox)findViewById(R.id.checkBox2);
-        check3 = (CheckBox)findViewById(R.id.checkBox3);
-        text1 = (TextView)findViewById(R.id.NP1label);
-        text2 = (TextView)findViewById(R.id.NP2label);
-        text3 = (TextView)findViewById(R.id.NP3label);
+        //check1 = (CheckBox)findViewById(R.id.checkBox1);
+        //check2 = (CheckBox)findViewById(R.id.checkBox2);
+        //check3 = (CheckBox)findViewById(R.id.checkBox3);
+        //text1 = (TextView)findViewById(R.id.NP1label);
+        //text2 = (TextView)findViewById(R.id.NP2label);
+        //text3 = (TextView)findViewById(R.id.NP3label);
         card1 = (Spinner)findViewById(R.id.card1spinner);
         card2 = (Spinner)findViewById(R.id.card2spinner);
         card3 = (Spinner)findViewById(R.id.card3spinner);
-        NPlevel1 = (Spinner)findViewById(R.id.NPlvl1);
-        NPlevel2 = (Spinner)findViewById(R.id.NPlvl2);
-        NPlevel3 = (Spinner)findViewById(R.id.NPlvl3);
+        //NPlevel1 = (Spinner)findViewById(R.id.NPlvl1);
+        //NPlevel2 = (Spinner)findViewById(R.id.NPlvl2);
+        //NPlevel3 = (Spinner)findViewById(R.id.NPlvl3);
         charge1 = (Spinner)findViewById(R.id.charge1);
         charge2 = (Spinner)findViewById(R.id.charge2);
         charge3 = (Spinner)findViewById(R.id.charge3);
@@ -74,7 +74,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         cardLineup.add(servant3.getName() + " - Quick");
         cardLineup.add(servant3.getName() + " - " + servantsMap.get(servant3.getName() + "5"));
 
-        oneThruFive = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        /*oneThruFive = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         oneThruFive.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NPlevel1.setAdapter(oneThruFive);
         NPlevel2.setAdapter(oneThruFive);
@@ -83,7 +83,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         oneThruFive.add("2");
         oneThruFive.add("3");
         oneThruFive.add("4");
-        oneThruFive.add("5");
+        oneThruFive.add("5");*/
 
         chargePercent = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         chargePercent.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -96,15 +96,6 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
 
 
         final Bundle passThis = new Bundle();
-        /*passThis.putString("serv_3a", recieved.getString("serv_3a"));
-        passThis.putString("serv_3b", recieved.getString("serv_3b"));
-        passThis.putInt("serv_3c", recieved.getInt("serv_3c"));
-        passThis.putString("serv_1a", recieved.getString("serv_1a"));
-        passThis.putString("serv_1b", recieved.getString("serv_1b"));
-        passThis.putInt("serv_1c", recieved.getInt("serv_1c"));
-        passThis.putString("serv_2a", recieved.getString("serv_2a"));
-        passThis.putString("serv_2b", recieved.getString("serv_2b"));
-        passThis.putInt("serv_2c", recieved.getInt("serv_2c"));*/
         passThis.putString("enemy_1", recieved.getString("enemy_1"));
         passThis.putString("enemy_2", recieved.getString("enemy_2"));
 
@@ -228,7 +219,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-        NPlevel1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        /*NPlevel1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int NPlvl = NPlevel1.getSelectedItemPosition() + 1;
@@ -264,7 +255,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             public void onNothingSelected(AdapterView<?> parent) {
                 passThis.putString("card3Level", "1");
             }
-        });
+        });*/
 
         charge1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
@@ -303,7 +294,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-        check1.setOnClickListener(new View.OnClickListener() {
+        /*check1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -354,14 +345,14 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             passThis.putString("card3Upgrade", "Yes");
         }else{
             passThis.putString("card3Upgrade", "No");
-        }
+        }*/
 
         final Intent passToCalcPage = new Intent(this, Calculate.class);
 
         calculate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Servant enemy = new Servant(-1, passThis.getString("enemy_1"), passThis.getString("enemy_2"));
+                Servant enemy = new Servant(-1, passThis.getString("enemy_1"), passThis.getString("enemy_2"),0,0,0, 0, 0);
                 /*Log.d("servant 1 nm", servant1);
                 Log.d("servant 2 nm", servant2);
                 Log.d("servant 3 nm", servant3);
@@ -394,11 +385,11 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
     }
 
     public void set1Visible(int servNum){
-        text1.setVisibility(View.VISIBLE);
-        NPlevel1.setVisibility(View.VISIBLE);
+        //text1.setVisibility(View.VISIBLE);
+        //NPlevel1.setVisibility(View.VISIBLE);
         charge1.setVisibility(View.VISIBLE);
         chargetxt1.setVisibility(View.VISIBLE);
-        switch(servNum)
+        /*switch(servNum)
         {
             case 1:
                 if(upgradelist.contains(servantsMap.get(servant1 + "5")))
@@ -418,15 +409,16 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
                 else
                     check1.setVisibility(View.INVISIBLE);
                 break;
-        }
+        }*/
         //check1.setVisibility(View.VISIBLE);
     }
 
     public void set2Visible(int servNum){
-        text2.setVisibility(View.VISIBLE);
-        NPlevel2.setVisibility(View.VISIBLE);
+        //text2.setVisibility(View.VISIBLE);
+        //NPlevel2.setVisibility(View.VISIBLE);
         charge2.setVisibility(View.VISIBLE);
         chargetxt2.setVisibility(View.VISIBLE);
+        /*
         switch(servNum)
         {
             case 1:
@@ -447,14 +439,15 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
                 else
                     check2.setVisibility(View.INVISIBLE);
                 break;
-        }
+        }*/
     }
 
     public void set3Visible(int servNum){
-        text3.setVisibility(View.VISIBLE);
-        NPlevel3.setVisibility(View.VISIBLE);
+        //text3.setVisibility(View.VISIBLE);
+        //NPlevel3.setVisibility(View.VISIBLE);
         charge3.setVisibility(View.VISIBLE);
         chargetxt3.setVisibility(View.VISIBLE);
+        /*
         switch(servNum)
         {
             case 1:
@@ -475,29 +468,29 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
                 else
                     check3.setVisibility(View.INVISIBLE);
                 break;
-        }
+        }*/
     }
 
     public void set1InVisible(){
-        text1.setVisibility(View.INVISIBLE);
-        NPlevel1.setVisibility(View.INVISIBLE);
-        check1.setVisibility(View.INVISIBLE);
+        //text1.setVisibility(View.INVISIBLE);
+        //NPlevel1.setVisibility(View.INVISIBLE);
+        //check1.setVisibility(View.INVISIBLE);
         charge1.setVisibility(View.INVISIBLE);
         chargetxt1.setVisibility(View.INVISIBLE);
     }
 
     public void set2InVisible(){
-        text2.setVisibility(View.INVISIBLE);
-        NPlevel2.setVisibility(View.INVISIBLE);
-        check2.setVisibility(View.INVISIBLE);
+        //text2.setVisibility(View.INVISIBLE);
+        //NPlevel2.setVisibility(View.INVISIBLE);
+        //check2.setVisibility(View.INVISIBLE);
         charge2.setVisibility(View.INVISIBLE);
         chargetxt2.setVisibility(View.INVISIBLE);
     }
 
     public void set3InVisible(){
-        text3.setVisibility(View.INVISIBLE);
-        NPlevel3.setVisibility(View.INVISIBLE);
-        check3.setVisibility(View.INVISIBLE);
+        //text3.setVisibility(View.INVISIBLE);
+        //NPlevel3.setVisibility(View.INVISIBLE);
+        //check3.setVisibility(View.INVISIBLE);
         charge3.setVisibility(View.INVISIBLE);
         chargetxt3.setVisibility(View.INVISIBLE);
     }

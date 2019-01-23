@@ -34,14 +34,17 @@ public class EditSavedClass extends AppCompatActivity {
         TextView servant1a = (TextView)findViewById(R.id.servant1a);
         TextView servant1b = (TextView)findViewById(R.id.servant1b);
         TextView servant1c = (TextView)findViewById(R.id.servant1c);
+        TextView servant1d = (TextView)findViewById(R.id.servant1d);
 
         TextView servant2a = (TextView)findViewById(R.id.servant2a);
         TextView servant2b = (TextView)findViewById(R.id.servant2b);
         TextView servant2c = (TextView)findViewById(R.id.servant2c);
+        TextView servant2d = (TextView)findViewById(R.id.servant2d);
 
         TextView servant3a = (TextView)findViewById(R.id.servant3a);
         TextView servant3b = (TextView)findViewById(R.id.servant3b);
         TextView servant3c = (TextView)findViewById(R.id.servant3c);
+        TextView servant3d = (TextView)findViewById(R.id.servant3d);
 
         final Bundle recieved = servantInfo.getExtras();
         Party unPack = servantInfo.getParcelableExtra("team");
@@ -53,17 +56,20 @@ public class EditSavedClass extends AppCompatActivity {
         final Servant servant2 = unPack.getServant2();
         final Servant servant3 = unPack.getServant3();
 
-        servant1a.setText(servant1.getName());
+        servant1a.setText(servant1.getName() + " NP" + servant1.getNPlvl());
         servant1b.setText(servant1.getClassName());
         servant1c.setText("ATK: " + String.valueOf(servant1.getATK()));
+        servant1d.setText("Skills: " + servant1.getSkill1lvl() + "/" + servant1.getSkill2lvl() + "/" + servant1.getSkill3lvl());
 
-        servant2a.setText(servant2.getName());
+        servant2a.setText(servant2.getName() + " NP" + servant2.getNPlvl());
         servant2b.setText(servant2.getClassName());
         servant2c.setText("ATK: " + String.valueOf(servant2.getATK()));
+        servant2d.setText("Skills: " + servant2.getSkill1lvl() + "/" + servant2.getSkill2lvl() + "/" + servant2.getSkill3lvl());
 
-        servant3a.setText(servant3.getName());
+        servant3a.setText(servant3.getName() + " NP" + servant3.getNPlvl());
         servant3b.setText(servant3.getClassName());
         servant3c.setText("ATK: " + String.valueOf(servant3.getATK()));
+        servant3d.setText("Skills: " + servant3.getSkill1lvl() + "/" + servant3.getSkill2lvl() + "/" + servant3.getSkill3lvl());
 
         //Button editEnemy = (Button)findViewById(R.id.editEnemyBtn);
         Button editServant1 = (Button)findViewById(R.id.editServant1Btn);
@@ -141,6 +147,8 @@ public class EditSavedClass extends AppCompatActivity {
         editServant1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 passThis.putInt("serv_edit", 1);
+                passThis.putInt("partyToChange", position);
+                passToEditServant1.putExtra("fromSaved", 1);
                 passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
             }
@@ -148,6 +156,8 @@ public class EditSavedClass extends AppCompatActivity {
         editServant2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 passThis.putInt("serv_edit", 2);
+                passThis.putInt("partyToChange", position);
+                passToEditServant1.putExtra("fromSaved", 1);
                 passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
             }
@@ -155,6 +165,8 @@ public class EditSavedClass extends AppCompatActivity {
         editServant3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 passThis.putInt("serv_edit", 3);
+                passThis.putInt("partyToChange", position);
+                passToEditServant1.putExtra("fromSaved", 1);
                 passToEditServant1.putExtras(passThis);
                 startActivity(passToEditServant1);
             }

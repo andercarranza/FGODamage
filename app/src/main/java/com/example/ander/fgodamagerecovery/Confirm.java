@@ -41,14 +41,17 @@ public class Confirm extends AppCompatActivity {
         TextView servant1a = (TextView)findViewById(R.id.servant1a);
         TextView servant1b = (TextView)findViewById(R.id.servant1b);
         TextView servant1c = (TextView)findViewById(R.id.servant1c);
+        TextView servant1d = (TextView)findViewById(R.id.servant1d);
 
         TextView servant2a = (TextView)findViewById(R.id.servant2a);
         TextView servant2b = (TextView)findViewById(R.id.servant2b);
         TextView servant2c = (TextView)findViewById(R.id.servant2c);
+        TextView servant2d = (TextView)findViewById(R.id.servant2d);
 
         TextView servant3a = (TextView)findViewById(R.id.servant3a);
         TextView servant3b = (TextView)findViewById(R.id.servant3b);
         TextView servant3c = (TextView)findViewById(R.id.servant3c);
+        TextView servant3d = (TextView)findViewById(R.id.servant3d);
 
         final Bundle recieved = servantInfo.getExtras();
         //enemyName.setText(recieved.getString("enemy_1"));
@@ -57,17 +60,20 @@ public class Confirm extends AppCompatActivity {
         final Servant servant2 = servantInfo.getParcelableExtra("serv_2a");
         final Servant servant3 = servantInfo.getParcelableExtra("serv_3a");
 
-        servant1a.setText(servant1.getName());
+        servant1a.setText(servant1.getName() + " NP" + servant1.getNPlvl());
         servant1b.setText(servant1.getClassName());
         servant1c.setText("ATK: " + String.valueOf(servant1.getATK()));
+        servant1d.setText("Skills: " + servant1.getSkill1lvl() + "/" + servant1.getSkill2lvl() + "/" + servant1.getSkill3lvl());
 
-        servant2a.setText(servant2.getName());
+        servant2a.setText(servant2.getName() + " NP" + servant2.getNPlvl());
         servant2b.setText(servant2.getClassName());
         servant2c.setText("ATK: " + String.valueOf(servant2.getATK()));
+        servant2d.setText("Skills: " + servant2.getSkill1lvl() + "/" + servant2.getSkill2lvl() + "/" + servant2.getSkill3lvl());
 
-        servant3a.setText(servant3.getName());
+        servant3a.setText(servant3.getName() + " NP" + servant3.getNPlvl());
         servant3b.setText(servant3.getClassName());
         servant3c.setText("ATK: " + String.valueOf(servant3.getATK()));
+        servant3d.setText("Skills: " + servant3.getSkill1lvl() + "/" + servant3.getSkill2lvl() + "/" + servant3.getSkill3lvl());
 
         //Button editEnemy = (Button)findViewById(R.id.editEnemyBtn);
         Button editServant1 = (Button)findViewById(R.id.editServant1Btn);
@@ -79,7 +85,7 @@ public class Confirm extends AppCompatActivity {
         Button enemySel = (Button)findViewById(R.id.enemy_select);
         final Intent passToSelectEnemy = new Intent(this, LoadEnemy.class);
         final Intent passToEditServant1 = new Intent(this, EditServant1.class);
-        final Intent passToConfirm2 = new Intent(this, CardSelect.class);
+        //final Intent passToEnemySelect = new Intent(this, LoadEnemy.class);
         final Context context = this;
         final Context appContext = this.getApplicationContext();
         //actual damage calculation (do after edit)
@@ -116,41 +122,13 @@ public class Confirm extends AppCompatActivity {
                     Log.d("Saving...", "Saved to new file");
                 }
 
-                /*try {
-                    try{
-                        FileInputStream inputFile = context.openFileInput("savedTeams");
-                        ObjectInputStream ois = new ObjectInputStream(inputFile);
-                        ArrayList<Party> allParties = new ArrayList<>();
-                        allParties = (ArrayList<Party>) ois.readObject();
-                        Party addingThis = new Party(servant1, servant2, servant3);
-                        allParties.add(addingThis);
-                        inputFile.close();
-                        ois.close();
-                        Toast.makeText(Confirm.this, "Team Saved!", Toast.LENGTH_LONG).show();
-                        Log.d("Saving...", "Saved to found file");
-                    }
-                    catch(FileNotFoundException e)
-                    {
-                        FileOutputStream outputFile = context.openFileOutput("savedTeams", Context.MODE_PRIVATE);
-                        ObjectOutputStream ois = new ObjectOutputStream(outputFile);
-                        ArrayList<Party> allParties = new ArrayList<>();
-                        Party addingThis = new Party(servant1, servant2, servant3);
-                        allParties.add(addingThis);
-                        ois.writeObject(allParties);
-                        outputFile.close();
-                        ois.close();
-                        Toast.makeText(Confirm.this, "Team Saved!", Toast.LENGTH_LONG).show();
-                        Log.d("Saving...", "Saved to new file");
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("Saving...", "Unable to save to any file");
-                }*/
                 Party addingThis = new Party(servant1, servant2, servant3);
                 passToSelectEnemy.putExtra("team", (Parcelable) addingThis);
                 startActivity(passToSelectEnemy);
             }
         });
+
+        enemySel.setVisibility(View.INVISIBLE);
 
 
 

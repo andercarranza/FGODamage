@@ -14,32 +14,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f1e3950-3f41-4b66-96dd-06ce6fcab549" name="Default" comment="damage calculations now show up&#10;worked through all NP effects except pirates and angra">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Party.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/delete_popup.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/listview_row.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/saved_parties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2f1e3950-3f41-4b66-96dd-06ce6fcab549" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/ModifierEdits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/modifieredit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_select.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_select.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/confirm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/confirm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,99 +56,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/MainMenu.java">
+      <file leaf-file-name="Servant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="500">
+              <caret line="518" column="52" selection-start-line="518" selection-start-column="52" selection-end-line="518" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#15824#15825#0" expanded="true" />
+                <element signature="e#15868#15869#0" expanded="true" />
+                <element signature="e#15904#15905#0" expanded="true" />
+                <element signature="e#15952#15953#0" expanded="true" />
+                <element signature="e#15992#15993#0" expanded="true" />
+                <element signature="e#16038#16039#0" expanded="true" />
+                <element signature="e#16076#16077#0" expanded="true" />
+                <element signature="e#16126#16127#0" expanded="true" />
+                <element signature="e#16168#16169#0" expanded="true" />
+                <element signature="e#16216#16217#0" expanded="true" />
+                <element signature="e#16256#16257#0" expanded="true" />
+                <element signature="e#16305#16306#0" expanded="true" />
+                <element signature="e#16349#16350#0" expanded="true" />
+                <element signature="e#15758#15759#0" expanded="true" />
+                <element signature="e#15791#15792#0" expanded="true" />
+                <element signature="e#15840#15841#0" expanded="true" />
+                <element signature="e#15884#15885#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Confirm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java">
+      <file leaf-file-name="Calculate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1258">
-              <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+            <state relative-caret-position="1308">
+              <caret line="290" column="41" selection-start-line="290" selection-start-column="41" selection-end-line="290" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3790#7594#0" expanded="true" />
-                <element signature="e#7593#7594#0" expanded="true" />
-                <element signature="e#8176#8425#0" expanded="true" />
-                <element signature="e#8424#8425#0" expanded="true" />
-                <element signature="e#8468#8717#0" expanded="true" />
-                <element signature="e#8716#8717#0" expanded="true" />
-                <element signature="e#8760#9009#0" expanded="true" />
-                <element signature="e#9008#9009#0" expanded="true" />
+                <element signature="e#10138#10964#0" expanded="true" />
+                <element signature="e#10963#10964#0" expanded="true" />
+                <element signature="e#11009#11835#0" expanded="true" />
+                <element signature="e#11834#11835#0" expanded="true" />
+                <element signature="e#11880#12706#0" expanded="true" />
+                <element signature="e#12705#12706#0" expanded="true" />
+                <element signature="e#12748#13860#0" expanded="true" />
+                <element signature="e#13859#13860#0" expanded="true" />
+                <element signature="e#13907#14452#0" expanded="true" />
+                <element signature="e#14451#14452#0" expanded="true" />
+                <element signature="e#14499#15044#0" expanded="true" />
+                <element signature="e#15043#15044#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardSelect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java">
+      <file leaf-file-name="ModifierEdits.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/ModifierEdits.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-926">
-              <caret line="70" column="86" selection-start-line="70" selection-start-column="86" selection-end-line="70" selection-end-column="86" />
-              <folding>
-                <element signature="e#15184#16278#0" expanded="true" />
-                <element signature="e#16277#16278#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditSavedClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="118" column="73" selection-start-line="118" selection-start-column="73" selection-end-line="118" selection-end-column="73" />
+            <state relative-caret-position="398">
+              <caret line="153" column="98" selection-start-line="153" selection-start-column="98" selection-end-line="153" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3701#4699#0" expanded="true" />
-                <element signature="e#4698#4699#0" expanded="true" />
-                <element signature="e#4734#5732#0" expanded="true" />
-                <element signature="e#5731#5732#0" expanded="true" />
-                <element signature="e#6314#6563#0" expanded="true" />
-                <element signature="e#6562#6563#0" expanded="true" />
-                <element signature="e#6606#6855#0" expanded="true" />
-                <element signature="e#6854#6855#0" expanded="true" />
-                <element signature="e#6898#7147#0" expanded="true" />
-                <element signature="e#7146#7147#0" expanded="true" />
+                <element signature="e#4157#4550#0" expanded="true" />
+                <element signature="e#4549#4550#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadEnemy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java">
+      <file leaf-file-name="modifieredit.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/modifieredit.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loadservsmenu.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/loadservsmenu.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="193">
+              <caret line="265" column="47" selection-start-line="265" selection-start-column="47" selection-end-line="265" selection-end-column="47" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -162,11 +135,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirm.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm.xml">
+      <file leaf-file-name="CardSelect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5575">
+              <caret line="481" column="32" selection-start-line="481" selection-start-column="32" selection-end-line="481" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calculatelayout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="55" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="55" />
+            <state relative-caret-position="489">
+              <caret line="545" column="43" selection-start-line="545" selection-start-column="43" selection-end-line="545" selection-end-column="43" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2">
@@ -174,29 +159,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SavedTeams.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java">
+      <file leaf-file-name="EditServant1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="57" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1876#2234#0" expanded="true" />
-                <element signature="e#2233#2234#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-663">
+              <caret line="264" column="24" selection-start-line="264" selection-start-column="24" selection-end-line="269" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartyAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java">
+      <file leaf-file-name="servant_select.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="318">
+              <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="125" selection-end-column="62" />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -216,6 +196,16 @@
       <find>check1</find>
       <find>card1ser</find>
       <find>getq</find>
+      <find>NPup</find>
+      <find>servant1a</find>
+      <find>getnpda</find>
+      <find>getnpdmg</find>
+      <find>level</find>
+      <find>ignores de</find>
+      <find>igno</find>
+      <find>reci</find>
+      <find>servant1crit</find>
+      <find>recie</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2477,13 +2467,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/confirm.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/MainMenu.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/loadservsmenu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Party.java" />
@@ -2491,16 +2475,27 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/saved_parties.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/listview_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/delete_popup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/testactivity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/confirm.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/card_select.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/modifieredit.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/ModifierEdits.java" />
       </list>
     </option>
   </component>
@@ -2515,6 +2510,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2565,7 +2561,12 @@
             <path>
               <item name="FGODamage" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="ander" type="462c0819:PsiDirectoryNode" />
+              <item name="fgodamagerecovery" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FGODamage" type="1abcf292:AndroidViewProjectNode" />
@@ -2582,12 +2583,6 @@
               <item name="FGODamage" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="FGODamage" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
@@ -2598,9 +2593,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2774,7 +2768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540781877337</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added ability to add, edit, delete teams">
+      <created>1546395282597</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1546395282597</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2787,17 +2788,17 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32916266" />
       <window_info anchor="right" id="Preview" order="3" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32916266" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32916266" />
-      <window_info anchor="bottom" id="Logcat" order="7" visible="true" weight="0.33974975" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" sideWeight="0.49946696" visible="true" weight="0.3416747" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1380597" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32916266" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1380597" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49946696" weight="0.32916266" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -2850,7 +2851,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="damage calculations now show up&#10;worked through all NP effects except pirates and angra" />
-    <option name="LAST_COMMIT_MESSAGE" value="damage calculations now show up&#10;worked through all NP effects except pirates and angra" />
+    <MESSAGE value="added ability to add, edit, delete teams" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ability to add, edit, delete teams" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2858,55 +2860,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/saved_parties.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5865">
-          <caret line="345" column="23" selection-start-line="345" selection-start-column="23" selection-end-line="345" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_select.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="59" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2943,6 +2900,18 @@
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#10138#10964#0" expanded="true" />
+            <element signature="e#10963#10964#0" expanded="true" />
+            <element signature="e#11009#11835#0" expanded="true" />
+            <element signature="e#11834#11835#0" expanded="true" />
+            <element signature="e#11880#12706#0" expanded="true" />
+            <element signature="e#12705#12706#0" expanded="true" />
+            <element signature="e#12748#13860#0" expanded="true" />
+            <element signature="e#13859#13860#0" expanded="true" />
+            <element signature="e#13907#14452#0" expanded="true" />
+            <element signature="e#14451#14452#0" expanded="true" />
+            <element signature="e#14499#15044#0" expanded="true" />
+            <element signature="e#15043#15044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2972,11 +2941,6 @@
           <caret line="308" selection-start-line="308" selection-end-line="308" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#19253#19254#0" expanded="true" />
-            <element signature="e#19293#19294#0" expanded="true" />
-            <element signature="e#19325#19326#0" expanded="true" />
-            <element signature="e#19375#19376#0" expanded="true" />
-            <element signature="e#19417#19418#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3040,47 +3004,8 @@
           <caret line="319" column="69" selection-start-line="319" selection-start-column="69" selection-end-line="319" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#19253#19254#0" expanded="true" />
-            <element signature="e#19293#19294#0" expanded="true" />
-            <element signature="e#19325#19326#0" expanded="true" />
-            <element signature="e#19375#19376#0" expanded="true" />
-            <element signature="e#19417#19418#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="449" column="29" selection-start-line="449" selection-start-column="29" selection-end-line="449" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -3088,25 +3013,8 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/add_icon.png">
       <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_select.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="65" column="59" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
@@ -3122,23 +3030,6 @@
         <state relative-caret-position="459">
           <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_row.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="48" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/widget/ArrayAdapter.java">
@@ -3158,49 +3049,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9111">
-          <caret line="612" column="33" selection-start-line="612" selection-start-column="33" selection-end-line="612" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#19253#19254#0" expanded="true" />
-            <element signature="e#19293#19294#0" expanded="true" />
-            <element signature="e#19325#19326#0" expanded="true" />
-            <element signature="e#19375#19376#0" expanded="true" />
-            <element signature="e#19417#19418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4820">
-          <caret line="445" selection-start-line="445" selection-end-line="445" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-926">
-          <caret line="70" column="86" selection-start-line="70" selection-start-column="86" selection-end-line="70" selection-end-column="86" />
-          <folding>
-            <element signature="e#15184#16278#0" expanded="true" />
-            <element signature="e#16277#16278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/saved_parties.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -3215,49 +3063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="52" selection-start-column="52" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1258">
-          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3790#7594#0" expanded="true" />
-            <element signature="e#7593#7594#0" expanded="true" />
-            <element signature="e#8176#8425#0" expanded="true" />
-            <element signature="e#8424#8425#0" expanded="true" />
-            <element signature="e#8468#8717#0" expanded="true" />
-            <element signature="e#8716#8717#0" expanded="true" />
-            <element signature="e#8760#9009#0" expanded="true" />
-            <element signature="e#9008#9009#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="55" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="55" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="57" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1876#2234#0" expanded="true" />
-            <element signature="e#2233#2234#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3265,56 +3070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="118" column="73" selection-start-line="118" selection-start-column="73" selection-end-line="118" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3701#4699#0" expanded="true" />
-            <element signature="e#4698#4699#0" expanded="true" />
-            <element signature="e#4734#5732#0" expanded="true" />
-            <element signature="e#5731#5732#0" expanded="true" />
-            <element signature="e#6314#6563#0" expanded="true" />
-            <element signature="e#6562#6563#0" expanded="true" />
-            <element signature="e#6606#6855#0" expanded="true" />
-            <element signature="e#6854#6855#0" expanded="true" />
-            <element signature="e#6898#7147#0" expanded="true" />
-            <element signature="e#7146#7147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -3326,6 +3081,252 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/testactivity.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enemy_select.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_select.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/SavedTeams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/PartyAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="129" column="61" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Confirm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1164">
+          <caret line="75" column="116" lean-forward="true" selection-start-line="75" selection-start-column="116" selection-end-line="75" selection-end-column="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="306" column="12" selection-start-line="306" selection-start-column="12" selection-end-line="320" selection-end-column="50" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/FGODamage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10263">
+          <caret line="1296" column="40" selection-start-line="1296" selection-start-column="40" selection-end-line="1296" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Effects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1213">
+          <caret line="1939" column="48" selection-start-line="1939" selection-start-column="44" selection-end-line="1939" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditSavedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="90" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3703#4701#0" expanded="true" />
+            <element signature="e#4700#4701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadEnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="94" column="16" lean-forward="true" selection-start-line="94" selection-start-column="16" selection-end-line="97" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/LoadServants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="164" column="17" selection-start-line="164" selection-start-column="17" selection-end-line="167" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6474#6747#0" expanded="true" />
+            <element signature="e#6746#6747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/servant_select.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="125" selection-end-column="62" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Objects/Servant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="518" column="52" selection-start-line="518" selection-start-column="52" selection-end-line="518" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15824#15825#0" expanded="true" />
+            <element signature="e#15868#15869#0" expanded="true" />
+            <element signature="e#15904#15905#0" expanded="true" />
+            <element signature="e#15952#15953#0" expanded="true" />
+            <element signature="e#15992#15993#0" expanded="true" />
+            <element signature="e#16038#16039#0" expanded="true" />
+            <element signature="e#16076#16077#0" expanded="true" />
+            <element signature="e#16126#16127#0" expanded="true" />
+            <element signature="e#16168#16169#0" expanded="true" />
+            <element signature="e#16216#16217#0" expanded="true" />
+            <element signature="e#16256#16257#0" expanded="true" />
+            <element signature="e#16305#16306#0" expanded="true" />
+            <element signature="e#16349#16350#0" expanded="true" />
+            <element signature="e#15758#15759#0" expanded="true" />
+            <element signature="e#15791#15792#0" expanded="true" />
+            <element signature="e#15840#15841#0" expanded="true" />
+            <element signature="e#15884#15885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/EditServant1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663">
+          <caret line="264" column="24" selection-start-line="264" selection-start-column="24" selection-end-line="269" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/calculatelayout.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="545" column="43" selection-start-line="545" selection-start-column="43" selection-end-line="545" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/modifieredit.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="265" column="47" selection-start-line="265" selection-start-column="47" selection-end-line="265" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/CardSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5575">
+          <caret line="481" column="32" selection-start-line="481" selection-start-column="32" selection-end-line="481" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/Calculate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1308">
+          <caret line="290" column="41" selection-start-line="290" selection-start-column="41" selection-end-line="290" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10138#10964#0" expanded="true" />
+            <element signature="e#10963#10964#0" expanded="true" />
+            <element signature="e#11009#11835#0" expanded="true" />
+            <element signature="e#11834#11835#0" expanded="true" />
+            <element signature="e#11880#12706#0" expanded="true" />
+            <element signature="e#12705#12706#0" expanded="true" />
+            <element signature="e#12748#13860#0" expanded="true" />
+            <element signature="e#13859#13860#0" expanded="true" />
+            <element signature="e#13907#14452#0" expanded="true" />
+            <element signature="e#14451#14452#0" expanded="true" />
+            <element signature="e#14499#15044#0" expanded="true" />
+            <element signature="e#15043#15044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ander/fgodamagerecovery/ModifierEdits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="153" column="98" selection-start-line="153" selection-start-column="98" selection-end-line="153" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4157#4550#0" expanded="true" />
+            <element signature="e#4549#4550#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

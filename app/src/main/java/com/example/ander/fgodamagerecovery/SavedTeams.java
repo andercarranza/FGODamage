@@ -47,7 +47,7 @@ public class SavedTeams extends AppCompatActivity {
         PartyAdapter whatever = new PartyAdapter(this, partyDir);
         Log.d("test", "past declring party adatper");
         listView = (ListView) findViewById(R.id.all_parties_listview);
-        listView.setAdapter(whatever);
+        listView.setAdapter(whatever); //casues problems if there are no teams saved
         final Intent passToSelectEnemy = new Intent(this, LoadEnemy.class);
         Log.d("test", "about to set listview clicklistener");
         listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {

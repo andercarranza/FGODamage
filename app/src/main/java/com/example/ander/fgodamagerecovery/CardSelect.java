@@ -20,7 +20,7 @@ import static com.example.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
 public class CardSelect extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     Spinner card1, card2, card3, NPlevel1, NPlevel2, NPlevel3, charge1, charge2, charge3;
     ArrayAdapter<String> cardLineup, oneThruFive, chargePercent;
-    Servant servant1, servant2, servant3;
+    Servant servant1, servant2, servant3, enemy;
     TextView text1,text2,text3, chargetxt1, chargetxt2, chargetxt3;
     //CheckBox check1, check2, check3;
     Button calculate;
@@ -35,6 +35,9 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         servant1 = servantInfo.getParcelableExtra("serv_1a");
         servant2 = servantInfo.getParcelableExtra("serv_2a");
         servant3 = servantInfo.getParcelableExtra("serv_3a");
+        enemy = servantInfo.getParcelableExtra("enemyObj");
+
+        Log.d("Defense", enemy.getDefMOD() + "");
 
         calculate = (Button)findViewById(R.id.next);
         //check1 = (CheckBox)findViewById(R.id.checkBox1);
@@ -96,8 +99,8 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
 
 
         final Bundle passThis = new Bundle();
-        passThis.putString("enemy_1", recieved.getString("enemy_1"));
-        passThis.putString("enemy_2", recieved.getString("enemy_2"));
+        //passThis.putString("enemy_1", recieved.getString("enemy_1"));
+        //passThis.putString("enemy_2", recieved.getString("enemy_2"));
 
         card1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
@@ -352,7 +355,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         calculate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Servant enemy = new Servant(-1, passThis.getString("enemy_1"), passThis.getString("enemy_2"),0,0,0, 0, 0);
+                //Servant enemy = new Servant(-1, passThis.getString("enemy_1"), passThis.getString("enemy_2"),0,0,0, 0, 0);
                 /*Log.d("servant 1 nm", servant1);
                 Log.d("servant 2 nm", servant2);
                 Log.d("servant 3 nm", servant3);

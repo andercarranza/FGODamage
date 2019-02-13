@@ -34,7 +34,7 @@ import static com.example.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
 public class Calculate extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     String card1Type, card2Type, card3Type;
-    Servant servant1, servant2, servant3, dealer;
+    Servant servant1, servant2, servant3, dealer, enemy;
     TextView text1, text2, text3, text4, text5, text6, text7, extraValue, totalDamagios;
     CheckBox critActivate1, critActivate2, critActivate3;
     int chargeStack = -100, totalLow, totalHigh;
@@ -57,6 +57,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
     //public static String classname, name, cardType, strIsbuster, classnameEnemy, nameEnemy;
     public static boolean isBuster, isNP = false;
     public static double teamAtkBonus = 0;
+    public static double teamCritBonus = 0;
     public static double teamDmgAdd = 0;
     public static boolean dragonApplied = false; //keep track is ascalon is used
 
@@ -66,11 +67,12 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.calculatelayout);
         Intent servantInfo = getIntent();
         final Bundle recieved = servantInfo.getExtras();
-        final Servant enemy = servantInfo.getParcelableExtra("EnemyObj");
+        enemy = servantInfo.getParcelableExtra("EnemyObj");
         servant1 = servantInfo.getParcelableExtra("Servant1Obj");
         servant2 = servantInfo.getParcelableExtra("Servant2Obj");
         servant3 = servantInfo.getParcelableExtra("Servant3Obj");
 
+        Log.d("Defense", enemy.getDefMOD() + "");
 
         text1 = (TextView) findViewById(R.id.text1);
         text2 = (TextView) findViewById(R.id.text2);
@@ -85,6 +87,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         TextView servant1NM = (TextView) findViewById(R.id.servant1NM);
         TextView servant2NM = (TextView) findViewById(R.id.servant2NM);
         TextView servant3NM = (TextView) findViewById(R.id.servant3NM);
+        TextView enemyNM = (TextView) findViewById(R.id.enemyServ);
         critActivate1 = (CheckBox) findViewById(R.id.attack1Crit);
         critActivate2 = (CheckBox) findViewById(R.id.attack2Crit);
         critActivate3 = (CheckBox) findViewById(R.id.attack3Crit);
@@ -163,6 +166,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         servant1NM.setText(servant1.getName());
         servant2NM.setText(servant2.getName());
         servant3NM.setText(servant3.getName());
+        enemyNM.setText(enemy.getName());
         text5.setText(NumberFormat.getNumberInstance(Locale.US).format(card1Damages[0]) + "-" + NumberFormat.getNumberInstance(Locale.US).format(card1Damages[1]));
         text6.setText(NumberFormat.getNumberInstance(Locale.US).format(card2Damages[0]) + "-" + NumberFormat.getNumberInstance(Locale.US).format(card2Damages[1]));
         text7.setText(NumberFormat.getNumberInstance(Locale.US).format(card3Damages[0]) + "-" + NumberFormat.getNumberInstance(Locale.US).format(card3Damages[1]));
@@ -184,6 +188,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                 if (!isNP) {
                     if (critActivate1.isChecked()) {
                         criticalModifier = 2;
+                        isCrit = 1;
                         dealer = getServantToSend(card1Servant);
                         card1Damages = damageNums(dealer, enemy, card1Type, 1, card1Charge);
                         reDisplay();
@@ -191,6 +196,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                     else
                     {
                         criticalModifier = 1;
+                        isCrit = 0;
                         dealer = getServantToSend(card1Servant);
                         card1Damages = damageNums(dealer, enemy, card1Type, 1, card1Charge);
                         reDisplay();
@@ -207,6 +213,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                 if (!isNP) {
                     if (critActivate2.isChecked()) {
                         criticalModifier = 2;
+                        isCrit = 1;
                         dealer = getServantToSend(card2Servant);
                         card2Damages = damageNums(dealer, enemy, card2Type, 2, card2Charge);
                         reDisplay();
@@ -214,6 +221,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                     else
                     {
                         criticalModifier = 1;
+                        isCrit = 0;
                         dealer = getServantToSend(card2Servant);
                         card2Damages = damageNums(dealer, enemy, card2Type, 2, card2Charge);
                         reDisplay();
@@ -230,6 +238,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                 if (!isNP) {
                     if (critActivate3.isChecked()) {
                         criticalModifier = 2;
+                        isCrit = 1;
                         dealer = getServantToSend(card3Servant);
                         card3Damages = damageNums(dealer, enemy, card3Type, 3, card3Charge);
                         reDisplay();
@@ -237,6 +246,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                     else
                     {
                         criticalModifier = 1;
+                        isCrit = 0;
                         dealer = getServantToSend(card3Servant);
                         card3Damages = damageNums(dealer, enemy, card3Type, 3, card3Charge);
                         reDisplay();
@@ -247,10 +257,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
         cardSelect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bundle passThis = new Bundle();
-                passThis.putString("enemy_1", enemy.getName());
-                passThis.putString("enemy_2", enemy.getClassName());
-                selectCards.putExtras(passThis);
+                selectCards.putExtra("enemyObj", enemy);
                 selectCards.putExtra("serv_1a", new Servant(servant1.getATK(), servant1.getName(), servant1.getClassName(), servant1.getSkill1lvl(), servant1.getSkill2lvl(), servant1.getSkill3lvl(), servant1.getIsUpgraded(), servant1.getNPlvl()));
                 selectCards.putExtra("serv_2a", new Servant(servant2.getATK(), servant2.getName(), servant2.getClassName(), servant2.getSkill1lvl(), servant2.getSkill2lvl(), servant2.getSkill3lvl(), servant2.getIsUpgraded(), servant2.getNPlvl()));
                 selectCards.putExtra("serv_3a", new Servant(servant3.getATK(), servant3.getName(), servant3.getClassName(), servant3.getSkill1lvl(), servant3.getSkill2lvl(), servant3.getSkill3lvl(), servant3.getIsUpgraded(), servant3.getNPlvl()));
@@ -260,10 +267,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
         cardSelectWMods.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bundle passThis = new Bundle();
-                passThis.putString("enemy_1", enemy.getName());
-                passThis.putString("enemy_2", enemy.getClassName());
-                selectCards.putExtras(passThis);
+                selectCards.putExtra("enemyObj", enemy);
                 selectCards.putExtra("serv_1a", servant1);
                 selectCards.putExtra("serv_2a", servant2);
                 selectCards.putExtra("serv_3a", servant3);
@@ -336,6 +340,14 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         TextView servant3BustMod = (TextView) findViewById(R.id.servant3BUSTERmod);
         TextView servant3QckMod = (TextView) findViewById(R.id.servant3QUICKmod);
         TextView servant3DMGPLS = (TextView) findViewById(R.id.servant3DMGPLUSADD);
+
+        TextView enemyDefMod = (TextView) findViewById(R.id.enemyDeflabel);
+        TextView enemySpDefMod = (TextView) findViewById(R.id.enemySpDefLabel);
+        TextView enemyDmgCut = (TextView) findViewById(R.id.enemyDmgCutLabel);
+        TextView enemyArtsDef = (TextView) findViewById(R.id.artsDefLabel);
+        TextView enemyButserDef = (TextView) findViewById(R.id.busterDefLabel);
+        TextView enemyQuickDef = (TextView) findViewById(R.id.quickDefLabel);
+
 
         if (servant1.getAtkMod() != 0) {
             servant1atkMod.setTextColor(ContextCompat.getColor(this, R.color.red));
@@ -436,6 +448,30 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
             servant3DMGPLS.setText("DamagePlusAdd: " + (servant3.getDmgPlusAdd()));
         }
 
+        if (enemy.getDefMOD() != 0) {
+            enemyDefMod.setTextColor(ContextCompat.getColor(this, R.color.red));
+            enemyDefMod.setText("Defense mod: " + (enemy.getDefMOD() * 100) + "%");
+        }
+        if (enemy.getSpecialDef() != 0) {
+            enemySpDefMod.setTextColor(ContextCompat.getColor(this, R.color.red));
+            enemySpDefMod.setText("Special Defense mod: " + (enemy.getSpecialDef() * 100) + "%");
+        }
+        if (enemy.getDmgCut() != 0) {
+            enemyDmgCut.setTextColor(ContextCompat.getColor(this, R.color.red));
+            enemyDmgCut.setText("Damage Cut: " + (enemy.getDmgCut()));
+        }
+        if (enemy.getArtsDef() != 0) {
+            enemyArtsDef.setTextColor(ContextCompat.getColor(this, R.color.red));
+            enemyArtsDef.setText("Arts Resist: " + (enemy.getArtsDef() * 100) + "%");
+        }
+        if (enemy.getBusterDef() != 0) {
+            enemyButserDef.setTextColor(ContextCompat.getColor(this, R.color.red));
+            enemyButserDef.setText("Buster Resist: " + (enemy.getBusterDef() * 100) + "%");
+        }
+        if (enemy.getQuickDef() != 0) {
+            enemyQuickDef.setTextColor(ContextCompat.getColor(this, R.color.red));
+            enemyQuickDef.setText("Quick Resist: " + (enemy.getQuickDef() * 100) + "%");
+        }
 
     }
 
@@ -506,18 +542,21 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         double low = (dealer.getATK() * NPdmgMult * (firstcardBonus +
                 (cardDV * (1 + cardModReal)))) * dealer.getClassMultiplier() * dealer.getClassAdv(enemy)
                 * dealer.getAtrributeAdv(enemy) * .9 * .23 * (1 + (dealer.getAtkMod() + teamAtkBonus) - (enemy.getDefMOD() - defChanges))
-                * criticalModifier * extraCardModifier * (1 - specialDefMod) *
-                (1 + dealer.getPowerMod() + selfDamageMod + (dealer.getCritDamageMod() * isCrit) +
+                * criticalModifier * extraCardModifier * (1 - enemy.getSpecialDef()) *
+                (1 + dealer.getPowerMod() + selfDamageMod + ((dealer.getCritDamageMod() + teamCritBonus) * isCrit) +
                         (dealer.getNpDamageMod() * isNPcard) * (1 + ((superEffectiveModifier - 1) * isSuperEffective)))
-                + dealer.getDmgPlusAdd() + teamDmgAdd + enemyDmgCutAdd + (dealer.getATK() * busterChainMod);
+                + dealer.getDmgPlusAdd() + teamDmgAdd - enemy.getDmgCut() + (dealer.getATK() * busterChainMod);
+
+        Log.d("enemygmgcut", enemy.getDmgCut() + "");
+        //Log.d("teamdmgplus", teamDmgAdd + "");
 
         double high = (dealer.getATK() * NPdmgMult * (firstcardBonus +
                 (cardDV * (1 + cardModReal)))) * dealer.getClassMultiplier() * dealer.getClassAdv(enemy)
                 * dealer.getAtrributeAdv(enemy) * 1.1 * .23 * (1 + (dealer.getAtkMod() + teamAtkBonus) - (enemy.getDefMOD() - defChanges))
-                * criticalModifier * extraCardModifier * (1 - specialDefMod) *
-                (1 + dealer.getPowerMod() + selfDamageMod + (dealer.getCritDamageMod() * isCrit) +
+                * criticalModifier * extraCardModifier * (1 - enemy.getSpecialDef()) *
+                (1 + dealer.getPowerMod() + selfDamageMod + ((dealer.getCritDamageMod() + teamCritBonus) * isCrit) +
                         (dealer.getNpDamageMod() * isNPcard) * (1 + ((superEffectiveModifier - 1) * isSuperEffective)))
-                + dealer.getDmgPlusAdd() + teamDmgAdd + enemyDmgCutAdd + (dealer.getATK() * busterChainMod);
+                + dealer.getDmgPlusAdd() + teamDmgAdd - enemy.getDmgCut() + (dealer.getATK() * busterChainMod);
         int lowInt = (int) Math.round(low);
         int highInt = (int) Math.round(high);
         results[0] = lowInt;

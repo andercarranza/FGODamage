@@ -36,6 +36,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+
+            <!-- Servant 1 START-->
+
+
             <TextView
                 android:id="@+id/servant1NM"
                 android:layout_width="wrap_content"
@@ -56,14 +60,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="14dp"
                 android:gravity="center"
                 android:text="ATK mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toTopOf="@id/servant1CRITmod"
+                app:layout_constraintBottom_toBottomOf="@id/servant1ATKmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/title" />
+                app:layout_constraintTop_toTopOf="@id/servant1ATKmodedit" />
 
             <EditText
                 android:id="@+id/servant1ATKmodedit"
@@ -90,9 +93,9 @@
                 android:text="Crit mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toTopOf="@id/servant1NPDMGmod"
+                app:layout_constraintBottom_toBottomOf="@id/servant1CRITmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1ATKmodedit" />
+                app:layout_constraintTop_toTopOf="@id/servant1CRITmodedit" />
 
             <EditText
                 android:id="@+id/servant1CRITmodedit"
@@ -115,14 +118,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="7dp"
                 android:gravity="center"
                 android:text="NP damage mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toTopOf="@id/servant1POWERmod"
+                app:layout_constraintBottom_toBottomOf="@id/servant1NPDMGmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1CRITmodedit" />
+                app:layout_constraintTop_toTopOf="@id/servant1NPDMGmodedit" />
 
             <EditText
                 android:id="@+id/servant1NPDMGmodedit"
@@ -145,14 +147,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Power mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toTopOf="@id/servant1ARTSmod"
+                app:layout_constraintBottom_toBottomOf="@id/servant1POWERmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1NPDMGmod" />
+                app:layout_constraintTop_toTopOf="@id/servant1POWERmodedit" />
 
             <EditText
                 android:id="@+id/servant1POWERmodedit"
@@ -175,14 +176,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Arts mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toTopOf="@id/servant1BUSTERmod"
+                app:layout_constraintBottom_toBottomOf="@id/servant1ARTSmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1POWERmod" />
+                app:layout_constraintTop_toTopOf="@id/servant1ARTSmodedit" />
 
             <EditText
                 android:id="@+id/servant1ARTSmodedit"
@@ -205,13 +205,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="14dp"
                 android:gravity="center"
                 android:text="Buster mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant1BUSTERmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1ARTSmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant1BUSTERmodedit" />
 
             <EditText
                 android:id="@+id/servant1BUSTERmodedit"
@@ -234,13 +234,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Quick mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant1QUICKmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1BUSTERmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant1QUICKmodedit" />
 
             <EditText
                 android:id="@+id/servant1QUICKmodedit"
@@ -263,14 +263,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="DamagePlusAdd: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant1DMGPLUSADDedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1QUICKmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant1DMGPLUSADDedit" />
 
             <EditText
                 android:id="@+id/servant1DMGPLUSADDedit"
@@ -284,8 +283,11 @@
                 android:inputType="number"
                 android:textSize="10dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant1DMGPLUSADD"
-                app:layout_constraintTop_toBottomOf="@id/servant1QUICKmodedit"
-                app:layout_constraintBottom_toBottomOf="@id/servant1DMGPLUSADD"/>
+                app:layout_constraintTop_toBottomOf="@id/servant1QUICKmodedit" />
+
+
+            <!-- Servant 2 STart-->
+
 
             <TextView
                 android:id="@+id/servant2NM"
@@ -299,7 +301,7 @@
                 android:text="Servant 2 name"
                 android:textColor="@color/Black"
                 android:textSize="30dp"
-                app:layout_constraintTop_toBottomOf="@id/servant1DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@id/servant1DMGPLUSADDedit" />
 
             <TextView
                 android:id="@+id/servant2ATKmod"
@@ -308,13 +310,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Atk mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2ATKmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant1DMGPLUSADDedit" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2ATKmodedit" />
 
             <EditText
                 android:id="@+id/servant2ATKmodedit"
@@ -337,13 +339,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:text="Crit mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2CRITmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2ATKmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2CRITmodedit" />
 
             <EditText
                 android:id="@+id/servant2CRITmodedit"
@@ -366,13 +368,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:text="NP damage mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2NPDMGmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2CRITmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2NPDMGmodedit" />
 
             <EditText
                 android:id="@+id/servant2NPDMGmodedit"
@@ -386,8 +388,7 @@
                 android:inputType="number"
                 android:textSize="10dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NPDMGmod"
-                app:layout_constraintTop_toBottomOf="@id/servant2CRITmodedit"
-                app:layout_constraintBottom_toBottomOf="@id/servant2NPDMGmod"/>
+                app:layout_constraintTop_toBottomOf="@id/servant2CRITmodedit" />
 
             <TextView
                 android:id="@+id/servant2POWERmod"
@@ -396,13 +397,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="Power mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2POWERmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2NPDMGmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2POWERmodedit" />
 
             <EditText
                 android:id="@+id/servant2POWERmodedit"
@@ -425,13 +426,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Arts mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2ARTSmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2POWERmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2ARTSmodedit" />
 
             <EditText
                 android:id="@+id/servant2ARTSmodedit"
@@ -454,13 +455,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Buster mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2BUSTERmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2ARTSmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2BUSTERmodedit" />
 
             <EditText
                 android:id="@+id/servant2BUSTERmodedit"
@@ -483,13 +484,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Quick mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2QUICKmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2BUSTERmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2QUICKmodedit" />
 
             <EditText
                 android:id="@+id/servant2QUICKmodedit"
@@ -512,13 +513,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="DamagePlusAdd: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant2DMGPLUSADDedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2QUICKmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant2DMGPLUSADDedit" />
 
             <EditText
                 android:id="@+id/servant2DMGPLUSADDedit"
@@ -532,8 +533,11 @@
                 android:inputType="number"
                 android:textSize="10dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant2DMGPLUSADD"
-                app:layout_constraintTop_toBottomOf="@id/servant2QUICKmodedit"
-                app:layout_constraintBottom_toBottomOf="@id/servant2DMGPLUSADD"/>
+                app:layout_constraintTop_toBottomOf="@id/servant2QUICKmodedit" />
+
+
+            <!-- Servant 3 START -->
+
 
             <TextView
                 android:id="@+id/servant3NM"
@@ -555,13 +559,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Atk mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3ATKmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant2DMGPLUSADD" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3ATKmodedit" />
 
             <EditText
                 android:id="@+id/servant3ATKmodedit"
@@ -584,13 +588,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Crit mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3CRITmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3ATKmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3CRITmodedit" />
 
             <EditText
                 android:id="@+id/servant3CRITmodedit"
@@ -613,13 +617,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="NP damage mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3NPDMGmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3CRITmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3NPDMGmodedit" />
 
             <EditText
                 android:id="@+id/servant3NPDMGmodedit"
@@ -642,13 +646,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Power mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3POWERmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3NPDMGmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3POWERmodedit" />
 
             <EditText
                 android:id="@+id/servant3POWERmodedit"
@@ -671,13 +675,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Arts mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3ARTSmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3POWERmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3ARTSmodedit" />
 
             <EditText
                 android:id="@+id/servant3ARTSmodedit"
@@ -700,13 +704,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Buster mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3BUSTERmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3ARTSmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3BUSTERmodedit" />
 
             <EditText
                 android:id="@+id/servant3BUSTERmodedit"
@@ -729,13 +733,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="Quick mod: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3QUICKmodedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3BUSTERmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3QUICKmodedit" />
 
             <EditText
                 android:id="@+id/servant3QUICKmodedit"
@@ -759,13 +763,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="13dp"
                 android:gravity="center"
                 android:text="DamagePlusAdd: "
                 android:textColor="@color/Black"
                 android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/servant3DMGPLUSADDedit"
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@id/servant3QUICKmod" />
+                app:layout_constraintBottom_toBottomOf="@id/servant3DMGPLUSADDedit" />
 
             <EditText
                 android:id="@+id/servant3DMGPLUSADDedit"
@@ -781,6 +785,188 @@
                 app:layout_constraintLeft_toRightOf="@+id/servant3DMGPLUSADD"
                 app:layout_constraintTop_toBottomOf="@id/servant3QUICKmodedit" />
 
+            <!-- ENEMY START-->
+
+            <TextView
+                android:id="@+id/enemyServ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Enemy name"
+                android:textColor="@color/Black"
+                android:textSize="30dp"
+                app:layout_constraintTop_toBottomOf="@id/servant3DMGPLUSADDedit" />
+
+            <TextView
+                android:id="@+id/enemyDeflabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="Defense mod: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/enemyDefMod"
+                app:layout_constraintLeft_toLeftOf="@+id/servant1NM"
+                app:layout_constraintTop_toTopOf="@id/enemyDefMod" />
+
+            <EditText
+                android:id="@+id/enemyDefMod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/enemyDeflabel"
+                app:layout_constraintTop_toBottomOf="@id/enemyServ" />
+
+            <TextView
+                android:id="@+id/enemySpDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Special Defense mod: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/enemySpDef"
+                app:layout_constraintTop_toTopOf="@id/enemySpDef" />
+
+            <EditText
+                android:id="@+id/enemySpDef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/enemySpDefLabel"
+                app:layout_constraintTop_toBottomOf="@id/enemyDefMod" />
+
+            <TextView
+                android:id="@+id/enemyDmgCutLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Damage Cut: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/enemyDmgCut"
+                app:layout_constraintTop_toTopOf="@id/enemyDmgCut" />
+
+            <EditText
+                android:id="@+id/enemyDmgCut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/enemyDmgCutLabel"
+                app:layout_constraintTop_toBottomOf="@id/enemySpDef" />
+
+            <TextView
+                android:id="@+id/artsDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Arts Resist: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/artsDef"
+                app:layout_constraintTop_toTopOf="@id/artsDef" />
+
+            <EditText
+                android:id="@+id/artsDef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/artsDefLabel"
+                app:layout_constraintTop_toBottomOf="@id/enemyDmgCut" />
+
+            <TextView
+                android:id="@+id/busterDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Buster Resist: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/busterDef"
+                app:layout_constraintTop_toTopOf="@id/busterDef" />
+
+            <EditText
+                android:id="@+id/busterDef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/busterDefLabel"
+                app:layout_constraintTop_toBottomOf="@id/artsDef" />
+
+            <TextView
+                android:id="@+id/quickDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="6dp"
+                android:gravity="center"
+                android:text="Quick Resist: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/quickDef"
+                app:layout_constraintTop_toTopOf="@id/quickDef" />
+
+            <EditText
+                android:id="@+id/quickDef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:hint="0%"
+                android:inputType="number"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/busterDefLabel"
+                app:layout_constraintTop_toBottomOf="@id/busterDef" />
+
+
             <Button
                 android:id="@+id/recalcBtn"
                 android:layout_width="wrap_content"
@@ -791,7 +977,7 @@
                 android:text="Recalculate"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@+id/servant3DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@+id/quickDef" />
 
             <Button
                 android:id="@+id/cardSelBtn"
@@ -803,7 +989,7 @@
                 android:text="Card Select"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/recalcBtn"
-                app:layout_constraintTop_toBottomOf="@+id/servant3DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@+id/quickDef" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

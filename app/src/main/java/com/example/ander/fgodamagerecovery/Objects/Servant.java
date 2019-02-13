@@ -29,8 +29,8 @@ public class Servant implements Parcelable{
     private int isUpgraded = 0, NPhasUpgrade, skill1lvl, skill2lvl, skill3lvl, NPlvl;
     private String className;
     private String skill1, skill2, skill3;
-    private double critDamageMod = 0, npDamageMod = 0, atkMod = 0, cardMOD = 0, powerMod = 0, artsMOD = 0, busterMOD = 0, quickMOD = 0, defenseIgnoreHolder = 0, defMOD = 0;
-    private int dmgPlusAdd = 0;
+    private double critDamageMod = 0, npDamageMod = 0, atkMod = 0, cardMOD = 0, powerMod = 0, artsMOD = 0, busterMOD = 0, quickMOD = 0, defenseIgnoreHolder = 0, defMOD = 0, specialDef = 0;
+    private int dmgPlusAdd = 0, dmgCut = 0;
 
     public void setCritDamageMod(double critDamageMod) {
         this.critDamageMod = critDamageMod;
@@ -69,6 +69,9 @@ public class Servant implements Parcelable{
         skill2lvl = in.readInt();
         skill3lvl = in.readInt();
         NPlvl = in.readInt();
+        specialDef = in.readDouble();
+        dmgCut = in.readInt();
+        defMOD = in.readDouble();
     }
 
     @Override
@@ -100,6 +103,9 @@ public class Servant implements Parcelable{
         dest.writeInt(skill2lvl);
         dest.writeInt(skill3lvl);
         dest.writeInt(NPlvl);
+        dest.writeDouble(specialDef);
+        dest.writeInt(dmgCut);
+        dest.writeDouble(defMOD);
     }
 
     public static final Creator<Servant> CREATOR = new Creator<Servant>() {
@@ -133,7 +139,8 @@ public class Servant implements Parcelable{
         }
         if(hougu.get(NPname + "2").equals("True"))
         {
-            String preEffect = hougu.get(NPname + "2");
+            String preEffect = hougu.get(NPname + "4");
+            Log.d("poste effect name", preEffect);
             applyEffect(preEffect, enemy, charge, false, NPlevel, false);
             return;
         }
@@ -218,9 +225,16 @@ public class Servant implements Parcelable{
             Calculate.teamAtkBonus += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
         }
 
+        if(effectName.equals("TeamCritBonus"))
+        {
+            Calculate.teamCritBonus += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
         if(effectName.equals("Dmg Rcvd Plus"))
         {
-            Calculate.teamDmgAdd += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+            Log.d("modifier for dmgcut", getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess) + "");
+            Enemy.deductDmgCut((int)(getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess)));
+            //Calculate.teamDmgAdd +=  getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
         }
 
         if(effectName.equals("Buster Def Down"))
@@ -241,6 +255,11 @@ public class Servant implements Parcelable{
         if(effectName.equals("AtkUp"))
         {
             this.atkMod += getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
+        }
+
+        if(effectName.equals("AtkDown"))
+        {
+            this.atkMod -= getModifierNum(charge, NPlevel, prePost, effectName, upgradeAccess);
         }
 
         if(effectName.equals("Defense Down"))
@@ -510,6 +529,24 @@ public class Servant implements Parcelable{
         this.skill3lvl = skill3lvl;
     }
 
+    public int getDmgCut() {
+        return dmgCut;
+    }
+
+    public void setDmgCut(int dmgCut) {
+        this.dmgCut = dmgCut;
+    }
+
+    public void deductDmgCut(int dmgCuts){this.dmgCut -= dmgCuts;}
+
+    public double getSpecialDef() {
+        return specialDef;
+    }
+
+    public void setSpecialDef(double specialDef) {
+        this.specialDef = specialDef;
+    }
+
     public boolean isNPupgraded(){
         if(this.isUpgraded == 1)
             return true;
@@ -604,6 +641,9 @@ public class Servant implements Parcelable{
 
 
             if(classSkillName.equals("Divinity A"))
+                this.dmgPlusAdd += 230;
+
+            if(classSkillName.equals("Divinity A"))
                 this.dmgPlusAdd += 200;
 
             if(classSkillName.equals("Divinity B"))
@@ -638,8 +678,14 @@ public class Servant implements Parcelable{
             if(classSkillName.equals("Madness Enhancement C"))
                 this.busterMOD += .06;
 
+            if(classSkillName.equals("Madness Enhancement D+"))
+                this.busterMOD += .05;
+
             if(classSkillName.equals("Madness Enhancement D"))
                 this.busterMOD += .04;
+
+            if(classSkillName.equals("Madness Enhancement E+"))
+                this.busterMOD += .03;
 
             if(classSkillName.equals("Madness Enhancement E"))
                 this.busterMOD += .02;
@@ -667,6 +713,9 @@ public class Servant implements Parcelable{
             if(classSkillName.equals("Oblivion Correction A"))
                 this.critDamageMod += .1;
 
+            if(classSkillName.equals("Oblivion Correction C"))
+                this.critDamageMod += .06;
+
 
             if(classSkillName.equals("Independent Manifestation C"))
                 this.critDamageMod += .06;
@@ -682,6 +731,12 @@ public class Servant implements Parcelable{
 
             if(classSkillName.equals("Core of the Goddesss EX"))
                 this.dmgPlusAdd += 300;
+
+            if(classSkillName.equals("Core of the Goddesss A"))
+                this.dmgPlusAdd += 250;
+
+            if(classSkillName.equals("Core of the Goddesss B"))
+                this.dmgPlusAdd += 225;
 
             if(classSkillName.equals("Core of the Goddesss C"))
                 this.dmgPlusAdd += 200;
@@ -704,6 +759,17 @@ public class Servant implements Parcelable{
 
             if(classSkillName.equals("Territory Creation D"))
                 this.artsMOD += .04;
+
+
+            if(classSkillName.equals("Surfing A"))
+                this.artsMOD += .05;
+
+
+            if(classSkillName.equals("Ruffian A"))
+            {
+                this.critDamageMod += .05;
+                this.quickMOD += .05;
+            }
 
             if(nameMod.equals("6"))
                 nameMod = "7";

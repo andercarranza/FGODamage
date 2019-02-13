@@ -271,6 +271,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/totalLabel" />
 
+            <!-- servnat 1 START-->
+
+
+
+
             <TextView
                 android:id="@+id/servant1NM"
                 android:layout_width="wrap_content"
@@ -397,6 +402,13 @@
                 android:textSize="15dp"
                 app:layout_constraintLeft_toRightOf="@+id/servant1NM"
                 app:layout_constraintTop_toBottomOf="@id/servant1QUICKmod" />
+
+
+            <!-- SERVANT 2 START-->
+
+
+
+
 
             <TextView
                 android:id="@+id/servant2NM"
@@ -525,6 +537,14 @@
                 app:layout_constraintLeft_toRightOf="@+id/servant2NM"
                 app:layout_constraintTop_toBottomOf="@id/servant2QUICKmod" />
 
+
+
+            <!-- Servant 3 START-->
+
+
+
+
+
             <TextView
                 android:id="@+id/servant3NM"
                 android:layout_width="wrap_content"
@@ -651,6 +671,118 @@
                 app:layout_constraintLeft_toRightOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@id/servant3QUICKmod" />
 
+
+
+
+
+            <!-- ENEMY START-->
+
+
+
+
+
+            <TextView
+                android:id="@+id/enemyServ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Enemy name"
+                android:textColor="@color/Black"
+                android:textSize="25dp"
+                app:layout_constraintTop_toBottomOf="@id/servant3DMGPLUSADD" />
+
+            <TextView
+                android:id="@+id/enemyDeflabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="14dp"
+                android:gravity="center"
+                android:text="Defense mod: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="@+id/servant1NM"
+                app:layout_constraintTop_toBottomOf="@id/enemyServ" />
+
+
+            <TextView
+                android:id="@+id/enemySpDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Special Defense mod: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@id/enemyDmgCutLabel"
+                app:layout_constraintTop_toBottomOf="@id/enemyDeflabel" />
+
+
+            <TextView
+                android:id="@+id/enemyDmgCutLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:text="Damage Cut: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/enemySpDefLabel" />
+
+
+            <TextView
+                android:id="@+id/artsDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:text="Arts Resist: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/enemyDmgCutLabel" />
+
+
+            <TextView
+                android:id="@+id/busterDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:text="Buster Resist: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/artsDefLabel" />
+
+
+            <TextView
+                android:id="@+id/quickDefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:text="Quick Resist: "
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/busterDefLabel" />
+
+
             <Button
                 android:id="@+id/backBtn"
                 android:layout_width="wrap_content"
@@ -664,7 +796,7 @@
                 android:text="Reset Modifiers and Back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@+id/servant3NM"
-                app:layout_constraintTop_toBottomOf="@+id/servant3DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@+id/quickDefLabel" />
 
             <Button
                 android:id="@+id/editBtn"
@@ -679,7 +811,7 @@
                 android:text="Edit Modifiers"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/backBtn"
-                app:layout_constraintTop_toBottomOf="@+id/servant3DMGPLUSADD" />
+                app:layout_constraintTop_toBottomOf="@+id/quickDefLabel" />
 
             <Button
                 android:id="@+id/keepBtn"

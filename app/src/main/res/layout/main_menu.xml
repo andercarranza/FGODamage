@@ -39,5 +39,19 @@
         app:layout_constraintEnd_toEndOf="@id/saved-btn"
         app:layout_constraintTop_toBottomOf="@id/saved-btn" />
 
+    <Button
+        android:id="@+id/faq-btn"
+        android:layout_width="171dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="FAQ"
+        app:layout_constraintStart_toStartOf="@id/newteam-btn"
+        app:layout_constraintEnd_toEndOf="@id/newteam-btn"
+        app:layout_constraintTop_toBottomOf="@id/newteam-btn" />
+
 
 </android.support.constraint.ConstraintLayout>

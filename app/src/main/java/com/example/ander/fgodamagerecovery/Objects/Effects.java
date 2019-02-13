@@ -1740,7 +1740,7 @@ public class Effects {
         list6.add("Ishtar");
         list6.add("Quetzalcoatl");
         list6.add("Gilgamesh (Caster)");
-        list6.add("Medusa (Loli)");
+        list6.add("Medusa (Lancer)");
         list6.add("Tiamat");
         list6.add("Melt");
         list6.add("Passsionlip");
@@ -1829,6 +1829,77 @@ public class Effects {
         filedUnder.put("Demonic", list9);
 
         List<String> list10 = new ArrayList<String>();
+        list10.add("Arturia Alter");
+        list10.add("Atlante");
+        list10.add("Liz");
+        list10.add("Edward Teach");
+        list10.add("Medea");
+        list10.add("Gilles Caster");
+        list10.add("Mephistopheles");
+        list10.add("Sasaki Kojirou");
+        list10.add("Hassan of the Cursed Arm");
+        list10.add("Charles-Henri Sanson");
+        list10.add("Phantom of the Opera");
+        list10.add("Carmilla");
+        list10.add("Lu Bu Fengxian");
+        list10.add("Vlad III");
+        list10.add("Asterios");
+        list10.add("Caligula");
+        list10.add("Kiyohime");
+        list10.add("Liz (Halloween)");
+        list10.add("Tamamo");
+        list10.add("Anne Bonny & Mary Read");
+        list10.add("Jack the Ripper");
+        list10.add("Edmond Dantes");
+        list10.add("Queen Medb");
+        list10.add("Li Shuwen");
+        list10.add("Jeanne d'Arc (Alter)");
+        list10.add("Angry Manjew");
+        list10.add("Emiya (Assassin)");
+        list10.add("Hassan Hundred Persona");
+        list10.add("Shuten-Douji");
+        list10.add("Ibaraki-Douji");
+        list10.add("Summer Kiyohime");
+        list10.add("Gorgon");
+        list10.add("Tiamat");
+        list10.add("Goetia");
+        list10.add("First Hassan");
+        list10.add("MHX Alter");
+        list10.add("Moriarty");
+        list10.add("Emiya (Alter)");
+        list10.add("Shinjuku Avenger");
+        list10.add("Shinjuku Assassin");
+        list10.add("Hijikata Toshizo");
+        list10.add("Suzuka Gozen");
+        list10.add("Kiara");
+        list10.add("Beast III");
+        list10.add("Wu Zetian");
+        list10.add("Columbus");
+        list10.add("Summer Arturia Alter");
+        list10.add("Chiyome");
+        list10.add("Abigail Williams");
+        list10.add("Ereshkigal");
+        list10.add("Semiramis");
+        list10.add("Fujino");
+        list10.add("Atlante Alter");
+        list10.add("Antonio Salieri");
+        list10.add("Ivan the Terrible");
+        list10.add("Okada Izou");
+        list10.add("Summer Ibaraki-Douji");
+        list10.add("Gyaru BB");
+        list10.add("Summer Medb");
+        list10.add("Summer Shuten-Douji");
+        list10.add("Yu Meiren");
+        list10.add("Li Shuwen (Veteran)");
+        list10.add("Lamu");
+        list10.add("Bel Lamu");
+        list10.add("Gangster");
+        list10.add("Yakuza");
+        list10.add("Hornet");
+        list10.add("Slaughter Hunter");
+        list10.add("Surt");
+        list10.add("BBB");
+        filedUnder.put("Evil", list10);
 
 
         hiddenTraits = Collections.unmodifiableMap(filedUnder);
@@ -1836,102 +1907,167 @@ public class Effects {
         Map <String, double[]> patterns = new HashMap<String, double[]>();
         double [] arr = {0,0,0,0,0};
         patterns.put("0", arr);
+
         double [] arr1 = {3,4,4.5,4.75,5};
         patterns.put("1", arr1);
+
         double [] arr2 = {4.00,5.00,5.50,5.75,6.00};
         patterns.put("2", arr2);
+
         double [] arr3 = {4.50,5.50,6.00,6.25,6.50};
         patterns.put("3", arr3);
+
         double [] arr4 = {3.00,4.50,5.25,5.625,6.00};
         patterns.put("4", arr4);
+
         double [] arr5 = {4.00,5.50,6.25,6.625,7.00};
         patterns.put("5", arr5);
+
         double [] arr6 = {4.50,6.00,6.75,7.125,7.50};
         patterns.put("6", arr6);
+
         double [] arr7 = {6.00,7.50,8.25,8.625,9.00};
         patterns.put("7", arr7);
+
         double [] arr8 = {3,4,4.5,4.75,5};
         patterns.put("8", arr8);
+
         double [] arr9 = {12.00,16.00,18.00,19.00,20.00};
         patterns.put("9", arr9);
+
         double [] arr10 = {9.00,12.00,13.50,14.25,15.00};
         patterns.put("10", arr10);
+
         double [] arr11 = {6.00,8.00,9.00,9.50,10.00};
         patterns.put("11", arr11);
+
         double [] arr12 = {8.00,10.00,11.00,11.50,12.00};
         patterns.put("12", arr12);
+
         double [] arr13 = {9,9,9,9,9};
         patterns.put("13", arr13);
+
         double [] arr14 = {12.00,12.00,12.00,12.00,12.00};
         patterns.put("14", arr14);
+
         double [] arr15 = {8.00,10.00,11.00,11.50,12.00};
         patterns.put("15", arr15);
+
         double [] arr16 = {4.50,6.00,6.75,7.125,7.50};
         patterns.put("16", arr16);
+
         double [] arr17 = {16.00,20.00,22.00,23.00,24.00};
         patterns.put("17", arr17);
+
         double [] arr18 = {12.00,15.00,16.50,17.25,18.00};
         patterns.put("18", arr18);
+
         double [] arr19 = {14.00,18.00,20.00,21.00,22.00};
         patterns.put("19", arr19);
+
         double [] arr20 = {7.00,9.00,10.00,10.50,11.00};
         patterns.put("20", arr20);
+
         double [] arr21 = {9.00,11.00,12.00,12.50,13.00};
         patterns.put("21", arr21);
+
         double [] arr22 = {1.50,1.625,1.75,1.875,2.00};
         patterns.put("22", arr22);
+
         double [] arr23 = {.10,.15,.20,.25,.30};
         patterns.put("23", arr23);
+
         double [] arr24 = {.20,.25,.30,.35,.40};
         patterns.put("24", arr24);
+
         double [] arr25 = {.10,.20,.25,.275,.30};
         patterns.put("25", arr25);
+
         double [] arr26 = {.30,.30,.30,.30,.30};
         patterns.put("26", arr26);
+
         double [] arr27 = {2.00,2.125,2.25,2.375,2.50};
         patterns.put("27", arr27);
+
         double [] arr28 = {1.30,1.40,1.45,1.475,1.50};
         patterns.put("28", arr28);
+
         double [] arr29 = {1.50,2.00,2.25,2.375,2.50};
         patterns.put("29", arr29);
+
         double [] arr30 = {.00,1.00,2.00,3.00,4.00};
         patterns.put("30", arr30);
+
         double [] arr31 = {.00,2.00,4.00,6.00,8.00};
         patterns.put("31", arr31);
+
         double [] arr32 = {.20,.20,.20,.20,.20};
         patterns.put("32", arr32);
+
         double [] arr33 = {.30,.40,.45,.475,.50};
         patterns.put("33", arr33);
+
         double [] arr34 = {1.20,1.325,1.45,1.575,1.70};
         patterns.put("34", arr34);
+
         double [] arr35 = {.50,.55,.575,.588,.60};
         patterns.put("35", arr35);
+
         double [] arr36 = {.50,.625,.75,.875,1.00};
         patterns.put("36", arr36);
+
         double [] arr37 = {1.80,1.90,2.00,2.10,2.20};
         patterns.put("37", arr37);
+
         double [] arr38 = {.10,.125,.15,.175,.20};
         patterns.put("38", arr38);
+
         double [] arr39 = {.20,.30,.40,.50,.60};
         patterns.put("39", arr39);
+
         double [] arr40 = {.40,.50,.60,.70,.80};
         patterns.put("40", arr40);
+
         double [] arr41 = {.30,.40,.50,.60,.70};
         patterns.put("41", arr41);
+
         double [] arr42 = {.10,.20,.30,.40,.50};
         patterns.put("42", arr42);
+
         double [] arr43 = {.10,.10,.10,.10,.10};
         patterns.put("43", arr43);
+
         double [] arr44 = {.10,.30,.50,.70,.90};
         patterns.put("44", arr44);
+
         double [] arr45 = {1000,1500,2000,2500,3000};
         patterns.put("45", arr45);
+
         double [] arr46 = {.50,.75,.875,.938,1};
         patterns.put("46", arr46);
+
+        double [] arr47 = {.30,.45,.60,.75,.90};
+        patterns.put("47", arr47);
+
+        double [] arr48 = {.20,.35,.50,.65,.80};
+        patterns.put("48", arr48);
+
+        double [] arr49 = {.20,.40,.60,.80,1.00};
+        patterns.put("49", arr49);
 
         damagePattern = Collections.unmodifiableMap(patterns);
 
         Map <String, String> noble = new HashMap<String, String>();
+
+        //0 - damage pattern
+        //1 - preeffect
+        //2 - posteffect
+        //3 - pre effect name
+        //4 - post effect name
+        //5 - card type
+        //6 - special attack type of enemy
+        //7 - pre effect damage pattern
+        //8 - post effect damage pattern
 
         noble.put("Unlimited Blade Works0","1");
         noble.put("Unlimited Blade Works0u","2");
@@ -2416,13 +2552,13 @@ public class Effects {
         noble.put("Bloodbath Crown5","Buster");
         noble.put("Bloodbath Crown7","33");
 
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin0","10");
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin0u","11");
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin1","1");
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin2","1");
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin3","1");
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin4","1");
-        noble.put("Sansan Nikkou Hiruyasumi Shuchi Nikurin5","Quick");
+        noble.put("Napping and Feasting0","10");
+        noble.put("Napping and Feasting0u","11");
+        noble.put("Napping and Feasting1","1");
+        noble.put("Napping and Feasting2","1");
+        noble.put("Napping and Feasting3","1");
+        noble.put("Napping and Feasting4","1");
+        noble.put("Napping and Feasting5","Quick");
 
         noble.put("Luminosite Eternelle0","0");
         noble.put("Luminosite Eternelle1","1");
@@ -2446,12 +2582,12 @@ public class Effects {
         noble.put("Bathory Halloween Erzsebet4","0");
         noble.put("Bathory Halloween Erzsebet5","Buster");
 
-        noble.put("Suiten Nikkou Amaterasu Yano Shizu-Ishi0","0");
-        noble.put("Suiten Nikkou Amaterasu Yano Shizu-Ishi1","1");
-        noble.put("Suiten Nikkou Amaterasu Yano Shizu-Ishi2","1");
-        noble.put("Suiten Nikkou Amaterasu Yano Shizu-Ishi3","1");
-        noble.put("Suiten Nikkou Amaterasu Yano Shizu-Ishi4","1");
-        noble.put("Suiten Nikkou Amaterasu Yano Shizu-Ishi5","Arts");
+        noble.put("Blessing of Amaterasu0","0");
+        noble.put("Blessing of Amaterasu1","1");
+        noble.put("Blessing of Amaterasu2","1");
+        noble.put("Blessing of Amaterasu3","1");
+        noble.put("Blessing of Amaterasu4","1");
+        noble.put("Blessing of Amaterasu5","Arts");
 
         noble.put("Hamesh Avanim0","11");
         noble.put("Hamesh Avanim1","1");
@@ -2576,13 +2712,13 @@ public class Effects {
         noble.put("System Keraunos6","Sky/Earth");
         noble.put("System Keraunos7","22");
 
-        noble.put("Rhongomyniad0","1");
-        noble.put("Rhongomyniad0u","2");
-        noble.put("Rhongomyniad1","1");
-        noble.put("Rhongomyniad2","1");
-        noble.put("Rhongomyniad3","1");
-        noble.put("Rhongomyniad4","1");
-        noble.put("Rhongomyniad5","Buster");
+        noble.put("Rhongomyniad Alter0","1");
+        noble.put("Rhongomyniad Alter0u","2");
+        noble.put("Rhongomyniad Alter1","1");
+        noble.put("Rhongomyniad Alter2","1");
+        noble.put("Rhongomyniad Alter3","1");
+        noble.put("Rhongomyniad Alter4","1");
+        noble.put("Rhongomyniad Alter5","Buster");
 
         noble.put("Sword of Paracelsus0","1");
         noble.put("Sword of Paracelsus0u","2");
@@ -2861,21 +2997,21 @@ public class Effects {
         noble.put("Song of Grail4","10");
         noble.put("Song of Grail5","Arts");
 
-        noble.put("Senshi Bankou - Shinpen Kidoku0","6");
-        noble.put("Senshi Bankou - Shinpen Kidoku1","10");
-        noble.put("Senshi Bankou - Shinpen Kidoku2","True");
-        noble.put("Senshi Bankou - Shinpen Kidoku3","10");
-        noble.put("Senshi Bankou - Shinpen Kidoku4","Defense Down");
-        noble.put("Senshi Bankou - Shinpen Kidoku5","Arts");
-        noble.put("Senshi Bankou - Shinpen Kidoku8","43");
+        noble.put("Multicolored Poison0","6");
+        noble.put("Multicolored Poison1","10");
+        noble.put("Multicolored Poison2","True");
+        noble.put("Multicolored Poison3","10");
+        noble.put("Multicolored Poison4","Defense Down");
+        noble.put("Multicolored Poison5","Arts");
+        noble.put("Multicolored Poison8","43");
 
-        noble.put("Five Elements Mountain Buddha Palm0","11");
-        noble.put("Five Elements Mountain Buddha Palm0u","12");
-        noble.put("Five Elements Mountain Buddha Palm1","6");
-        noble.put("Five Elements Mountain Buddha Palm2","6");
-        noble.put("Five Elements Mountain Buddha Palm3","6");
-        noble.put("Five Elements Mountain Buddha Palm4","6");
-        noble.put("Five Elements Mountain Buddha Palm5","Buster");
+        noble.put("Mountain Buddha Palm0","11");
+        noble.put("Mountain Buddha Palm0u","12");
+        noble.put("Mountain Buddha Palm1","6");
+        noble.put("Mountain Buddha Palm2","6");
+        noble.put("Mountain Buddha Palm3","6");
+        noble.put("Mountain Buddha Palm4","6");
+        noble.put("Mountain Buddha Palm5","Buster");
 
         noble.put("Vengeful Lightning of the Ox-King0","1");
         noble.put("Vengeful Lightning of the Ox-King1","6");
@@ -2960,8 +3096,323 @@ public class Effects {
         noble.put("Excalibur Galatine4","10");
         noble.put("Excalibur Galatine5","Buster");
 
+        noble.put("Zabaniya Serenity0","10");
+        noble.put("Zabaniya Serenity0u","18");
+        noble.put("Zabaniya Serenity1","10");
+        noble.put("Zabaniya Serenity2","10");
+        noble.put("Zabaniya Serenity3","10");
+        noble.put("Zabaniya Serenity4","10");
+        noble.put("Zabaniya Serenity5","Arts");
+
+        noble.put("Hachiman Prayer0","1");
+        noble.put("Hachiman Prayer0u","2");
+        noble.put("Hachiman Prayer1","True");
+        noble.put("Hachiman Prayer2","10");
+        noble.put("Hachiman Prayer3","Special Attack");
+        noble.put("Hachiman Prayer4","10");
+        noble.put("Hachiman Prayer5","Buster");
+        noble.put("Hachiman Prayer6","Demonic");
+        noble.put("Hachiman Prayer7","36");
+
+        noble.put("Switch On - Airgetlam0","11");
+        noble.put("Switch On - Airgetlam0u","12");
+        noble.put("Switch On - Airgetlam1","True");
+        noble.put("Switch On - Airgetlam2","36");
+        noble.put("Switch On - Airgetlam3","BusterUp");
+        noble.put("Switch On - Airgetlam4","36");
+        noble.put("Switch On - Airgetlam5","Buster");
+        noble.put("Switch On - Airgetlam7","41");
+        noble.put("Switch On - Airgetlam1u","True");
+        noble.put("Switch On - Airgetlam3u","BusterUp");
+        noble.put("Switch On - Airgetlam7u","47");
+
+        noble.put("Uomo Universale0","6");
+        noble.put("Uomo Universale0u","7");
+        noble.put("Uomo Universale1","True");
+        noble.put("Uomo Universale2","11");
+        noble.put("Uomo Universale3","NP Strength");
+        noble.put("Uomo Universale4","11");
+        noble.put("Uomo Universale5","Arts");
+        noble.put("Uomo Universale7","41");
+
+        noble.put("Goddess Love Parasol0","11");
+        noble.put("Goddess Love Parasol1","True");
+        noble.put("Goddess Love Parasol2","11");
+        noble.put("Goddess Love Parasol3","Special Attack");
+        noble.put("Goddess Love Parasol4","11");
+        noble.put("Goddess Love Parasol5","Buster");
+        noble.put("Goddess Love Parasol6","Male");
+        noble.put("Goddess Love Parasol7","22");
+
+        noble.put("Excalibur Vivian0","10");
+        noble.put("Excalibur Vivian1","10");
+        noble.put("Excalibur Vivian2","10");
+        noble.put("Excalibur Vivian3","10");
+        noble.put("Excalibur Vivian4","10");
+        noble.put("Excalibur Vivian5","Arts");
+
+        noble.put("Crystal Dress0","16");
+        noble.put("Crystal Dress1","16");
+        noble.put("Crystal Dress2","True");
+        noble.put("Crystal Dress3","16");
+        noble.put("Crystal Dress4","TeamCritBonus");
+        noble.put("Crystal Dress5","Arts");
+        noble.put("Crystal Dress8","24");
+
+        //special case
+        noble.put("Free Bird Act 20","11");
+        noble.put("Free Bird Act 21","11");
+        noble.put("Free Bird Act 22","True");
+        noble.put("Free Bird Act 23","11");
+        noble.put("Free Bird Act 24","Defense Down");
+        noble.put("Free Bird Act 25","Buster");
+        noble.put("Free Bird Act 28","23");
+
+        noble.put("Prydwen Tube Riding0","6");
+        noble.put("Prydwen Tube Riding1","6");
+        noble.put("Prydwen Tube Riding2","6");
+        noble.put("Prydwen Tube Riding3","6");
+        noble.put("Prydwen Tube Riding4","6");
+        noble.put("Prydwen Tube Riding5","Arts");
+
+        noble.put("Summer Gae Bolg0","11");
+        noble.put("Summer Gae Bolg1","11");
+        noble.put("Summer Gae Bolg2","11");
+        noble.put("Summer Gae Bolg3","11");
+        noble.put("Summer Gae Bolg4","11");
+        noble.put("Summer Gae Bolg5","Quick");
+
+        noble.put("Bell Form 1080","11");
+        noble.put("Bell Form 1081","11");
+        noble.put("Bell Form 1082","11");
+        noble.put("Bell Form 1083","11");
+        noble.put("Bell Form 1084","11");
+        noble.put("Bell Form 1085","Buster");
+
+        noble.put("Tarasque Summer0","11");
+        noble.put("Tarasque Summer1","True");
+        noble.put("Tarasque Summer2","11");
+        noble.put("Tarasque Summer3","Defense Down");
+        noble.put("Tarasque Summer4","11");
+        noble.put("Tarasque Summer5","Buster");
+        noble.put("Tarasque Summer7","42");
+
+        noble.put("Quintett Feuer0","11");
+        noble.put("Quintett Feuer0u","12");
+        noble.put("Quintett Feuer1","True");
+        noble.put("Quintett Feuer2","True");
+        noble.put("Quintett Feuer3","BusterUp");
+        noble.put("Quintett Feuer4","AtkDown");
+        noble.put("Quintett Feuer5","Buster");
+        noble.put("Quintett Feuer7","48");
+        noble.put("Quintett Feuer8","11");
+        noble.put("Quintett Feuer1u","True");
+        noble.put("Quintett Feuer3u","BusterUp");
+        noble.put("Quintett Feuer7u","43");
+
+        noble.put("Triple Crane Wings0","10");
+        noble.put("Triple Crane Wings1","10");
+        noble.put("Triple Crane Wings2","10");
+        noble.put("Triple Crane Wings3","10");
+        noble.put("Triple Crane Wings4","10");
+        noble.put("Triple Crane Wings5","Arts");
+
+        noble.put("Bathory Brave Erzebet0","11");
+        noble.put("Bathory Brave Erzebet1","True");
+        noble.put("Bathory Brave Erzebet2","11");
+        noble.put("Bathory Brave Erzebet3","Ignores Defense");
+        noble.put("Bathory Brave Erzebet4","11");
+        noble.put("Bathory Brave Erzebet5","Buster");
+
+        noble.put("Uraeus Astrape0","1");
+        noble.put("Uraeus Astrape0u","2");
+        noble.put("Uraeus Astrape1","True");
+        noble.put("Uraeus Astrape2","1");
+        noble.put("Uraeus Astrape3","BusterUp");
+        noble.put("Uraeus Astrape4","1");
+        noble.put("Uraeus Astrape5","Buster");
+        noble.put("Uraeus Astrape7","41");
+
+        noble.put("Kazikli Bey Sad0","11");
+        noble.put("Kazikli Bey Sad1","True");
+        noble.put("Kazikli Bey Sad2","11");
+        noble.put("Kazikli Bey Sad3","Special Attack");
+        noble.put("Kazikli Bey Sad4","11");
+        noble.put("Kazikli Bey Sad5","Buster");
+        noble.put("Kazikli Bey Sad6","Evil");
+        noble.put("Kazikli Bey Sad7","22");
+
+        noble.put("La Grace Fille Noel0","1");
+        noble.put("La Grace Fille Noel1","1");
+        noble.put("La Grace Fille Noel2","True");
+        noble.put("La Grace Fille Noel3","1");
+        noble.put("La Grace Fille Noel4","TeamAtkBonus");
+        noble.put("La Grace Fille Noel5","Buster");
+        noble.put("La Grace Fille Noel8","25");
+
+        noble.put("An Gal Ta Ki Gal Se0","1");
+        noble.put("An Gal Ta Ki Gal Se1","True");
+        noble.put("An Gal Ta Ki Gal Se2","1");
+        noble.put("An Gal Ta Ki Gal Se3","BusterUp");
+        noble.put("An Gal Ta Ki Gal Se4","1");
+        noble.put("An Gal Ta Ki Gal Se5","Buster");
+        noble.put("An Gal Ta Ki Gal Se7","39");
+
+        noble.put("Enuma Elish Clae0","11");
+        noble.put("Enuma Elish Clae1","True");
+        noble.put("Enuma Elish Clae2","11");
+        noble.put("Enuma Elish Clae3","Defense Down");
+        noble.put("Enuma Elish Clae4","11");
+        noble.put("Enuma Elish Clae5","Buster");
+        noble.put("Enuma Elish Clae7","24");
+
+        noble.put("Xiuhcoatl0","11");
+        noble.put("Xiuhcoatl1","11");
+        noble.put("Xiuhcoatl2","11");
+        noble.put("Xiuhcoatl3","11");
+        noble.put("Xiuhcoatl4","11");
+        noble.put("Xiuhcoatl5","Buster");
+
+        noble.put("Melammu Dingir0","6");
+        noble.put("Melammu Dingir1","11");
+        noble.put("Melammu Dingir2","True");
+        noble.put("Melammu Dingir3","11");
+        noble.put("Melammu Dingir4","Defense Down");
+        noble.put("Melammu Dingir5","Arts");
+        noble.put("Melammu Dingir8","24");
+
+        noble.put("Caress of the Medusa0","9");
+        noble.put("Caress of the Medusa0u","17");
+        noble.put("Caress of the Medusa1","9");
+        noble.put("Caress of the Medusa2","9");
+        noble.put("Caress of the Medusa3","9");
+        noble.put("Caress of the Medusa4","9");
+        noble.put("Caress of the Medusa5","Quick");
+        noble.put("Caress of the Medusa2u","True");
+        noble.put("Caress of the Medusa4u","Quick Def Down");
+        noble.put("Caress of the Medusa8u","32");
+
+        noble.put("Pandemonium Cetus0","1");
+        noble.put("Pandemonium Cetus0u","2");
+        noble.put("Pandemonium Cetus1","1");
+        noble.put("Pandemonium Cetus2","1");
+        noble.put("Pandemonium Cetus3","1");
+        noble.put("Pandemonium Cetus4","1");
+        noble.put("Pandemonium Cetus5","Buster");
+
+        noble.put("Great Death Claw0","11");
+        noble.put("Great Death Claw1","11");
+        noble.put("Great Death Claw2","11");
+        noble.put("Great Death Claw3","11");
+        noble.put("Great Death Claw4","11");
+        noble.put("Great Death Claw5","Buster");
+
+        noble.put("Garden of Avalon0","0");
+        noble.put("Garden of Avalon1","0");
+        noble.put("Garden of Avalon2","0");
+        noble.put("Garden of Avalon3","0");
+        noble.put("Garden of Avalon4","0");
+        noble.put("Garden of Avalon5","Arts");
+
+        noble.put("Six Paths, Five Rings0","11");
+        noble.put("Six Paths, Five Rings1","True");
+        noble.put("Six Paths, Five Rings2","11");
+        noble.put("Six Paths, Five Rings3","NP Strength");
+        noble.put("Six Paths, Five Rings4","11");
+        noble.put("Six Paths, Five Rings5","Buster");
+        noble.put("Six Paths, Five Rings7","39");
+
+        noble.put("Azrael0","11");
+        noble.put("Azrael1","11");
+        noble.put("Azrael2","11");
+        noble.put("Azrael3","11");
+        noble.put("Azrael4","11");
+        noble.put("Azrael5","Buster");
+
+        noble.put("Cross Calibur0","9");
+        noble.put("Cross Calibur1","True");
+        noble.put("Cross Calibur2","9");
+        noble.put("Cross Calibur3","Special Attack");
+        noble.put("Cross Calibur4","9");
+        noble.put("Cross Calibur5","Quick");
+        noble.put("Cross Calibur6","Saber");
+        noble.put("Cross Calibur7","22");
+
+        noble.put("The Dynamics of an Asteroid0","11");
+        noble.put("The Dynamics of an Asteroid1","True");
+        noble.put("The Dynamics of an Asteroid2","11");
+        noble.put("The Dynamics of an Asteroid3","Defense Down");
+        noble.put("The Dynamics of an Asteroid4","11");
+        noble.put("The Dynamics of an Asteroid5","Buster");
+        noble.put("The Dynamics of an Asteroid7","24");
+
+        noble.put("Unlimited Lost Works0","10");
+        noble.put("Unlimited Lost Works0u","18");
+        noble.put("Unlimited Lost Works1","True");
+        noble.put("Unlimited Lost Works2","10");
+        noble.put("Unlimited Lost Works3","Ignores Defense");
+        noble.put("Unlimited Lost Works4","10");
+        noble.put("Unlimited Lost Works5","Arts");
+
+        noble.put("Frieren Scharfricther0","9");
+        noble.put("Frieren Scharfricther1","9");
+        noble.put("Frieren Scharfricther2","9");
+        noble.put("Frieren Scharfricther3","9");
+        noble.put("Frieren Scharfricther4","9");
+        noble.put("Frieren Scharfricther5","Quick");
+
+        noble.put("Ambush from Ten Sides0","9");
+        noble.put("Ambush from Ten Sides1","9");
+        noble.put("Ambush from Ten Sides2","9");
+        noble.put("Ambush from Ten Sides3","9");
+        noble.put("Ambush from Ten Sides4","9");
+        noble.put("Ambush from Ten Sides5","Quick");
+
+        noble.put("Excalibur Arthur0","1");
+        noble.put("Excalibur Arthur1","True");
+        noble.put("Excalibur Arthur2","1");
+        noble.put("Excalibur Arthur3","NP Strength");
+        noble.put("Excalibur Arthur4","1");
+        noble.put("Excalibur Arthur5","Buster");
+        noble.put("Excalibur Arthur7","42");
+
+        //bonus when HP is low
+        noble.put("Shinsengumi0","11");
+        noble.put("Shinsengumi1","11");
+        noble.put("Shinsengumi2","11");
+        noble.put("Shinsengumi3","11");
+        noble.put("Shinsengumi4","11");
+        noble.put("Shinsengumi5","Buster");
+
+        noble.put("Dazzling Demon Realm0","1");
+        noble.put("Dazzling Demon Realm1","11");
+        noble.put("Dazzling Demon Realm2","11");
+        noble.put("Dazzling Demon Realm3","11");
+        noble.put("Dazzling Demon Realm4","11");
+        noble.put("Dazzling Demon Realm5","Buster");
+
 
         hougu = Collections.unmodifiableMap(noble);
+
+        //0 - damage pattern
+        //1 - preeffect
+        //2 - posteffect
+        //3 - pre effect name
+        //4 - post effect name
+        //5 - card type
+        //6 - special attack type of enemy
+        //7 - pre effect damage pattern
+        //8 - post effect damage pattern
+
+        //example
+        /*noble.put("Brahmastra0","11");
+        noble.put("Brahmastra1","True");
+        noble.put("Brahmastra2","6");
+        noble.put("Brahmastra3","Special Attack");
+        noble.put("Brahmastra4","6");
+        noble.put("Brahmastra5","Buster");
+        noble.put("Brahmastra6","Demonic");
+        noble.put("Brahmastra7","22");*/
 
     }
 

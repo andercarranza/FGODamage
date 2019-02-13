@@ -13,4 +13,10 @@
     <string name="next">Next</string>
 
     <string name="confirm">Is this information correct?</string>
+
+    <string name="txtCredits"><a href = "http://blogs.nrvnqsr.com/entry.php/3309-How-is-damage-calculated">Beast\'s Liar</a></string>
+
+    <string name="dmgplusexplain">DamagePlusAdd is a modifier that adds a set amount of damage to your attack. This damage is not affected by any modifier and there is no skill that solely gives bonus damage plus.
+        For some examples of this modifier: Waver\'s third skill gives some along with an ATK mod, and Divinity is a form of DamagePlusAdd. There is no skill specifically for DamagePlusAdd but when it is applied
+        in skills it looks just like the Power Mod applied</string>
 </resources>

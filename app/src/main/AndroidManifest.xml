@@ -26,6 +26,8 @@
         <activity android:name=".SavedTeams" />
         <activity android:name=".EditSavedClass" />
         <activity android:name=".ModifierEdits" />
+        <activity android:name=".CustomDEFENSE" />
+        <activity android:name=".FAQpage" />
     </application>
 
 </manifest>

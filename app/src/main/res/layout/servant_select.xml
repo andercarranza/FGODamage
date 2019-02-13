@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/layoutofAll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,227 +9,243 @@
     tools:context=".LoadEnemy">
 
 
-    <TextView
-        android:id="@+id/serv_select"
-        android:layout_width="328dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-
-        android:text="Servant Number"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/serv_class"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        app:layout_constraintVertical_bias="1.0">
 
-    <Spinner
-        android:id="@+id/serv_class"
-        android:layout_width="328dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/serv_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serv_select"
-        app:layout_constraintVertical_bias="0.026" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/serv_name"
-        android:layout_width="328dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+            <TextView
+                android:id="@+id/serv_select"
+                android:layout_width="328dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serv_class" />
+                android:text="Servant Number"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/serv_class"
+                app:layout_constraintEnd_toEndOf="parent"
 
-    <TextView
-        android:id="@+id/NPname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginTop="6dp"
-        android:text="not found"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+            <Spinner
+                android:id="@+id/serv_class"
+                android:layout_width="328dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/serv_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/serv_select"
+                app:layout_constraintVertical_bias="0.026" />
 
-        app:layout_constraintTop_toBottomOf="@id/serv_name" />
+            <Spinner
+                android:id="@+id/serv_name"
+                android:layout_width="328dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
 
-    <Spinner
-        android:id="@+id/NPlvlspinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@+id/NPname"
-        app:layout_constraintTop_toBottomOf="@id/serv_name" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/serv_class" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:gravity="center"
-        android:text="Noble Phantasm Upgraded"
-        android:visibility="invisible"
-        android:layout_marginTop="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/NPname" />
+            <TextView
+                android:id="@+id/NPname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/skill1Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="6dp"
-        android:text="Skill 1 Level:"
-        android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:text="not found"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkBox1" />
+                app:layout_constraintTop_toBottomOf="@id/serv_name" />
 
-    <Spinner
-        android:id="@+id/skill1Spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
+            <Spinner
+                android:id="@+id/NPlvlspinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="20dp"
+                app:layout_constraintLeft_toRightOf="@+id/NPname"
+                app:layout_constraintTop_toBottomOf="@id/serv_name" />
 
-        app:layout_constraintLeft_toRightOf="@+id/skill1Label"
-        app:layout_constraintTop_toBottomOf="@id/checkBox1" />
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Noble Phantasm Upgraded"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/NPname" />
 
-    <CheckBox
-        android:id="@+id/skill1Upgrade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
-        android:text="Upgraded"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/skill1Spinner"
-        app:layout_constraintTop_toBottomOf="@id/checkBox1" />
+            <TextView
+                android:id="@+id/skill1Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="6dp"
+                android:text="Skill 1 Level:"
+                android:textSize="15dp"
 
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkBox1" />
 
-    <TextView
-        android:id="@+id/skill2Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="6dp"
-        android:text="Skill 2 Level:"
-        android:textSize="15dp"
+            <Spinner
+                android:id="@+id/skill1Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/skill1Label" />
+                app:layout_constraintLeft_toRightOf="@+id/skill1Label"
+                app:layout_constraintTop_toBottomOf="@id/checkBox1" />
 
-    <Spinner
-        android:id="@+id/skill2Spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
-
-        app:layout_constraintLeft_toRightOf="@+id/skill2Label"
-        app:layout_constraintTop_toBottomOf="@id/skill1Label" />
-
-    <CheckBox
-        android:id="@+id/skill2Upgrade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
-        android:text="Upgraded"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/skill2Spinner"
-        app:layout_constraintTop_toBottomOf="@id/skill1Label" />
+            <CheckBox
+                android:id="@+id/skill1Upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:text="Upgraded"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toRightOf="@+id/skill1Spinner"
+                app:layout_constraintTop_toBottomOf="@id/checkBox1" />
 
 
-    <TextView
-        android:id="@+id/skill3Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="6dp"
-        android:text="Skill 3 Level:"
-        android:textSize="15dp"
+            <TextView
+                android:id="@+id/skill2Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="6dp"
+                android:text="Skill 2 Level:"
+                android:textSize="15dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/skill2Label" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/skill1Label" />
 
-    <Spinner
-        android:id="@+id/skill3Spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
+            <Spinner
+                android:id="@+id/skill2Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
 
-        app:layout_constraintLeft_toRightOf="@+id/skill3Label"
-        app:layout_constraintTop_toBottomOf="@id/skill2Label" />
+                app:layout_constraintLeft_toRightOf="@+id/skill2Label"
+                app:layout_constraintTop_toBottomOf="@id/skill1Label" />
 
-    <CheckBox
-        android:id="@+id/skill3Upgrade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
-        android:text="Upgraded"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/skill3Spinner"
-        app:layout_constraintTop_toBottomOf="@id/skill2Label" />
+            <CheckBox
+                android:id="@+id/skill2Upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:text="Upgraded"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toRightOf="@+id/skill2Spinner"
+                app:layout_constraintTop_toBottomOf="@id/skill1Label" />
 
 
-    <EditText
-        android:id="@+id/serv_atk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/input_atk"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/skill3Label" />
+            <TextView
+                android:id="@+id/skill3Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="6dp"
+                android:text="Skill 3 Level:"
+                android:textSize="15dp"
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/next"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/skill2Label" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/serv_atk" />
+            <Spinner
+                android:id="@+id/skill3Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+
+                app:layout_constraintLeft_toRightOf="@+id/skill3Label"
+                app:layout_constraintTop_toBottomOf="@id/skill2Label" />
+
+            <CheckBox
+                android:id="@+id/skill3Upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:text="Upgraded"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toRightOf="@+id/skill3Spinner"
+                app:layout_constraintTop_toBottomOf="@id/skill2Label" />
+
+
+            <EditText
+                android:id="@+id/serv_atk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/input_atk"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/skill3Label" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/next"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/serv_atk" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>

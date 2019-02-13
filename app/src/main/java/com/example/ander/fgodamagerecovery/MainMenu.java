@@ -16,9 +16,11 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener,
 
         Button savedTeams = (Button)findViewById(R.id.saved_btn);
         Button newTeam = (Button)findViewById(R.id.newteam_btn);
+        Button faqNav = (Button)findViewById(R.id.faq_btn);
 
         final Intent startNewParty = new Intent(this, LoadServants.class);
         final Intent loadSavedParties = new Intent(this, SavedTeams.class);
+        final Intent gotoFaq = new Intent(this, FAQpage.class);
 
         newTeam.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -32,6 +34,13 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 startActivity(loadSavedParties);
+            }
+        });
+        faqNav.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                startActivity(gotoFaq);
             }
         });
     }

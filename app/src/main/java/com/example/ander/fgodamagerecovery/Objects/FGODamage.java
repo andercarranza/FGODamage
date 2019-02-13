@@ -579,7 +579,7 @@ public class FGODamage {
         servants.put("Tamamo Cat2","Morph B");
         servants.put("Tamamo Cat3","Female");
         servants.put("Tamamo Cat4","Earth");
-        servants.put("Tamamo Cat5","Sansan Nikkou Hiruyasumi Shuchi Nikurin");
+        servants.put("Tamamo Cat5","Napping and Feasting");
         servants.put("Tamamo Cat6","Madness Enhancement C");
 
         servants.put("Jeanne d'Arc0","Revelation A");
@@ -610,7 +610,7 @@ public class FGODamage {
         servants.put("Tamamo2","Fox's Wedding EX");
         servants.put("Tamamo3","Female");
         servants.put("Tamamo4","Sky");
-        servants.put("Tamamo5","Suiten Nikkou Amaterasu Yano Shizu-Ishi");
+        servants.put("Tamamo5","Blessing of Amaterasu");
         servants.put("Tamamo6","Territory Creation C");
         servants.put("Tamamo7","Divinity A");
 
@@ -735,7 +735,7 @@ public class FGODamage {
         servants.put("Arturia Alter (Lancer)2","Charisma E");
         servants.put("Arturia Alter (Lancer)3","Female");
         servants.put("Arturia Alter (Lancer)4","Sky");
-        servants.put("Arturia Alter (Lancer)5","Rhongomyniad");
+        servants.put("Arturia Alter (Lancer)5","Rhongomyniad Alter");
         servants.put("Arturia Alter (Lancer)6","Riding A");
 
         servants.put("Paracelsus0","Rapid Casting A");
@@ -985,12 +985,12 @@ public class FGODamage {
         servants.put("Emiya (Assassin)6","Independent Action A");
 
         //potential new skills from here
-        servants.put("Hassan of the Hundred Persona0","Librarian of Knowledge C");
-        servants.put("Hassan of the Hundred Persona1","Wide Specialization A+");
-        servants.put("Hassan of the Hundred Persona2","Battle Retreat B");
-        servants.put("Hassan of the Hundred Persona3","Female");
-        servants.put("Hassan of the Hundred Persona4","Man");
-        servants.put("Hassan of the Hundred Persona5","Zabaniya Hundred");
+        servants.put("Hassan Hundred Persona0","Librarian of Knowledge C");
+        servants.put("Hassan Hundred Persona1","Wide Specialization A+");
+        servants.put("Hassan Hundred Persona2","Battle Retreat B");
+        servants.put("Hassan Hundred Persona3","Female");
+        servants.put("Hassan Hundred Persona4","Man");
+        servants.put("Hassan Hundred Persona5","Zabaniya Hundred");
 
         servants.put("Irisviel0","Sacrificial Resolve A");
         servants.put("Irisviel1","Child of Nature A");
@@ -1006,7 +1006,7 @@ public class FGODamage {
         servants.put("Shuten-Douji2","Battle Continuation A+");
         servants.put("Shuten-Douji3","Female");
         servants.put("Shuten-Douji4","Earth");
-        servants.put("Shuten-Douji5","Senshi Bankou - Shinpen Kidoku");
+        servants.put("Shuten-Douji5","Multicolored Poison");
         servants.put("Shuten-Douji6","Divinity C");
 
         servants.put("Xuanzang Sanzang0","Rapid Sutra Chanting A");
@@ -1014,19 +1014,19 @@ public class FGODamage {
         servants.put("Xuanzang Sanzang2","Sanzang's Teachings A");
         servants.put("Xuanzang Sanzang3","Female");
         servants.put("Xuanzang Sanzang4","Man");
-        servants.put("Xuanzang Sanzang5","Five Elements Mountain Buddha Palm");
+        servants.put("Xuanzang Sanzang5","Mountain Buddha Palm");
         servants.put("Xuanzang Sanzang6","Territory Creation A+");
         servants.put("Xuanzang Sanzang7","Divinity D");
 
-        servants.put("Minamoto-no-Raikou0","Eternal Arms Mastery A+");
-        servants.put("Minamoto-no-Raikou1","Mana Burst (Lightning) A");
-        servants.put("Minamoto-no-Raikou2","Mystic Slayer A");
-        servants.put("Minamoto-no-Raikou3","Female");
-        servants.put("Minamoto-no-Raikou4","Sky");
-        servants.put("Minamoto-no-Raikou5","Vengeful Lightning of the Ox-King");
-        servants.put("Minamoto-no-Raikou6","Madness Enhancement EX");
-        servants.put("Minamoto-no-Raikou7","Riding A+");
-        servants.put("Minamoto-no-Raikou8","Divinity C");
+        servants.put("Raikou0","Eternal Arms Mastery A+");
+        servants.put("Raikou1","Mana Burst (Lightning) A");
+        servants.put("Raikou2","Mystic Slayer A");
+        servants.put("Raikou3","Female");
+        servants.put("Raikou4","Sky");
+        servants.put("Raikou5","Vengeful Lightning of the Ox-King");
+        servants.put("Raikou6","Madness Enhancement EX");
+        servants.put("Raikou7","Riding A+");
+        servants.put("Raikou8","Divinity C");
 
         servants.put("Ibaraki-Douji0","Demonic Nature of Oni A");
         servants.put("Ibaraki-Douji1","Disengage A");
@@ -1060,13 +1060,13 @@ public class FGODamage {
         servants.put("Ozymandias6","Riding A+");
         servants.put("Ozymandias7","Divinity B");
 
-        servants.put("Arturia Pendragon (Lancer)0","Mana Burst A");
-        servants.put("Arturia Pendragon (Lancer)1","Charisma B");
-        servants.put("Arturia Pendragon (Lancer)2","Protection of World's End EX");
-        servants.put("Arturia Pendragon (Lancer)3","Female");
-        servants.put("Arturia Pendragon (Lancer)4","Sky");
-        servants.put("Arturia Pendragon (Lancer)5","Rhongomyniad");
-        servants.put("Arturia Pendragon (Lancer)6","Riding A");
+        servants.put("Arturia (Lancer)0","Mana Burst A");
+        servants.put("Arturia (Lancer)1","Charisma B");
+        servants.put("Arturia (Lancer)2","Protection of World's End EX");
+        servants.put("Arturia (Lancer)3","Female");
+        servants.put("Arturia (Lancer)4","Sky");
+        servants.put("Arturia (Lancer)5","Rhongomyniad");
+        servants.put("Arturia (Lancer)6","Riding A");
 
         servants.put("Nitocris0","Egyptian WItchcraft A");
         servants.put("Nitocris1","Rapid Words of Divine B");
@@ -1100,6 +1100,294 @@ public class FGODamage {
         servants.put("Gawain4","Earth");
         servants.put("Gawain5","Excalibur Galatine");
         servants.put("Gawain6","Riding B");
+
+        servants.put("Hassan Serenity0","Transformation (Infiltrate) C");
+        servants.put("Hassan Serenity1","Throw (Dagger) C");
+        servants.put("Hassan Serenity2","Silent Performance B");
+        servants.put("Hassan Serenity3","Female");
+        servants.put("Hassan Serenity4","Man");
+        servants.put("Hassan Serenity5","Zabaniya Serenity");
+        servants.put("Hassan Serenity6","Independent Action A");
+
+        servants.put("Tawara Touta0","Protection of the Dragon King C");
+        servants.put("Tawara Touta1","Protection from Arrows C");
+        servants.put("Tawara Touta2","Inexhaustible Sack EX");
+        servants.put("Tawara Touta3","Male");
+        servants.put("Tawara Touta4","Man");
+        servants.put("Tawara Touta5","Hachiman Prayer");
+        servants.put("Tawara Touta6","Independent Action B");
+
+        servants.put("Bedivere0","Tactics C");
+        servants.put("Bedivere1","Calm Composure B");
+        servants.put("Bedivere2","Covenant of Protection B");
+        servants.put("Bedivere3","Male");
+        servants.put("Bedivere4","Star");
+        servants.put("Bedivere5","Switch On - Airgetlam");
+        servants.put("Bedivere6","Riding A");
+
+        servants.put("Leonardo da Vinci0","Inherent Wisdom EX");
+        servants.put("Leonardo da Vinci1","Golden Rule (Body) B");
+        servants.put("Leonardo da Vinci2","Pioneer of the Stars EX");
+        servants.put("Leonardo da Vinci3","Female");
+        servants.put("Leonardo da Vinci4","Stars");
+        servants.put("Leonardo da Vinci5","Uomo Universale");
+        servants.put("Leonardo da Vinci6","Territory Creation A");
+
+        servants.put("Summer Tamamo0","Beach Flower EX");
+        servants.put("Summer Tamamo1","Midsummer Curse A");
+        servants.put("Summer Tamamo2","Goddess Morph B");
+        servants.put("Summer Tamamo3","Female");
+        servants.put("Summer Tamamo4","Sky");
+        servants.put("Summer Tamamo5","Goddess Love Parasol");
+        servants.put("Summer Tamamo6","Riding A");
+        servants.put("Summer Tamamo7","Territory Creation A");
+        servants.put("Summer Tamamo8","Divinity A++");
+
+        servants.put("Archuria0","Summer Splash A+");
+        servants.put("Archuria1","Beach House Protection EX");
+        servants.put("Archuria2","Beach Flower B");
+        servants.put("Archuria3","Female");
+        servants.put("Archuria4","Earth");
+        servants.put("Archuria5","Excalibur Vivian");
+        servants.put("Archuria6","Independent Action A");
+        servants.put("Archuria7","Territory Creation A");
+
+        servants.put("Summer Marie0","Beach Flower A+");
+        servants.put("Summer Marie1","Radiant Sunflower A");
+        servants.put("Summer Marie2","Beautiful Princess (Sea) A");
+        servants.put("Summer Marie3","Female");
+        servants.put("Summer Marie4","Man");
+        servants.put("Summer Marie5","Crystal Dress");
+        servants.put("Summer Marie6","Territory Creation A");
+
+        servants.put("Summer Anne & Mary0","Beach Flower A+");
+        servants.put("Summer Anne & Mary1","Treasure Hunt (Sea) C");
+        servants.put("Summer Anne & Mary2","Pirate's Glory C+");
+        servants.put("Summer Anne & Mary3","Female");
+        servants.put("Summer Anne & Mary4","Man");
+        servants.put("Summer Anne & Mary5","Free Bird Act 2");
+        servants.put("Summer Anne & Mary6","Independent Action A+");
+
+        servants.put("Summer Mordred0","Cerulean Ride A");
+        servants.put("Summer Mordred1","Rodeo Flip A+");
+        servants.put("Summer Mordred2","Endless Summer B");
+        servants.put("Summer Mordred3","Female");
+        servants.put("Summer Mordred4","Earth");
+        servants.put("Summer Mordred5","Prydwen Tube Riding");
+        servants.put("Summer Mordred6","Surfing A");
+
+        servants.put("Summer Scathach0","Beach Crisis A+");
+        servants.put("Summer Scathach1","Primordial Rune (Sea) A");
+        servants.put("Summer Scathach2","Midsummer Mistakes C");
+        servants.put("Summer Scathach3","Female");
+        servants.put("Summer Scathach4","Star");
+        servants.put("Summer Scathach5","Summer Gae Bolg");
+
+        servants.put("Summer Kiyohime0","Passionate Summer A");
+        servants.put("Summer Kiyohime1","Beach Transformation A");
+        servants.put("Summer Kiyohime2","Pursuer of Love A");
+        servants.put("Summer Kiyohime3","Female");
+        servants.put("Summer Kiyohime4","Earth");
+        servants.put("Summer Kiyohime5","Bell Form 108");
+        servants.put("Summer Kiyohime6","Madness Enhancement EX");
+
+        servants.put("Summer Martha0","Saint of the Shore B+");
+        servants.put("Summer Martha1","Natural Body (Sea) A");
+        servants.put("Summer Martha2","Jacob's Limbs B");
+        servants.put("Summer Martha3","Female");
+        servants.put("Summer Martha4","Man");
+        servants.put("Summer Martha5","Tarasque Summer");
+
+        servants.put("Illyasviel0","Cheerful Model A");
+        servants.put("Illyasviel1","Child of Nature B");
+        servants.put("Illyasviel2","Suspiscious Medicine A");
+        servants.put("Illyasviel3","Female");
+        servants.put("Illyasviel4","Man");
+        servants.put("Illyasviel5","Quintett Feuer");
+
+        servants.put("Kuro0","Mind's Eye (Fake) A");
+        servants.put("Kuro1","Projection B");
+        servants.put("Kuro2","Kissing Freak B");
+        servants.put("Kuro3","Female");
+        servants.put("Kuro4","Sky");
+        servants.put("Kuro5","Triple Crane Wings");
+        servants.put("Kuro6","Independent Action B");
+
+        servants.put("Brave Liz0","Hero's Principles EX");
+        servants.put("Brave Liz1","Mana Burst (Courage) D");
+        servants.put("Brave Liz2","Legend of the Crimson Hero EX");
+        servants.put("Brave Liz3","Female");
+        servants.put("Brave Liz4","Earth");
+        servants.put("Brave Liz5","Bathory Brave Erzebet");
+        servants.put("Brave Liz6","Territory Creation C");
+
+        servants.put("Cleopatra0","Imperial Priviledge A");
+        servants.put("Cleopatra1","Golden Rule (Wealth & Body) B");
+        servants.put("Cleopatra2","Protection of the Goddess C");
+        servants.put("Cleopatra3","Female");
+        servants.put("Cleopatra4","Man");
+        servants.put("Cleopatra5","Uraeus Astrape");
+        servants.put("Cleopatra6","Divinity D");
+
+        servants.put("Vlad (Extra)0","Protection of the Faith A+++");
+        servants.put("Vlad (Extra)1","Tactics B");
+        servants.put("Vlad (Extra)2","Innocent Monster A");
+        servants.put("Vlad (Extra)3","Male");
+        servants.put("Vlad (Extra)4","Earth");
+        servants.put("Vlad (Extra)5","Kazikli Bey Sad");
+
+        servants.put("Santa Jeanne Alter0","Saint's Gift C");
+        servants.put("Santa Jeanne Alter1","Self-Transformation A");
+        servants.put("Santa Jeanne Alter2","Ephemeral Dream EX");
+        servants.put("Santa Jeanne Alter3","Female");
+        servants.put("Santa Jeanne Alter4","Man");
+        servants.put("Santa Jeanne Alter5","La Grace Fille Noel");
+
+        servants.put("Ishtar0","Manifestation of Beauty B");
+        servants.put("Ishtar1","Shining Majestic Crown A");
+        servants.put("Ishtar2","Mana Burst (Gem) A+");
+        servants.put("Ishtar3","Female");
+        servants.put("Ishtar4","Sky");
+        servants.put("Ishtar5","An Gal Ta Ki Gal Se");
+        servants.put("Ishtar6","Independent Action A");
+        servants.put("Ishtar7","Core of the Goddess B");
+
+        servants.put("Enkidu0","Transfiguration A");
+        servants.put("Enkidu1","Presence Detection A+");
+        servants.put("Enkidu2","Perfect Form A");
+        servants.put("Enkidu3","Trap");
+        servants.put("Enkidu4","Sky");
+        servants.put("Enkidu5","Enuma Elish Clae");
+
+        servants.put("Quetzalcoatl0","Charisma A+");
+        servants.put("Quetzalcoatl1","Wisdom of the Benevolent God A+");
+        servants.put("Quetzalcoatl2","Lucha Libre EX");
+        servants.put("Quetzalcoatl3","Female");
+        servants.put("Quetzalcoatl4","Sky");
+        servants.put("Quetzalcoatl5","Xiuhcoatl");
+        servants.put("Quetzalcoatl6","Riding EX");
+        servants.put("Quetzalcoatl7","Core of the Goddess EX");
+
+        servants.put("Gilgamesh (Caster)0","King's Return A");
+        servants.put("Gilgamesh (Caster)1","Charisma A+");
+        servants.put("Gilgamesh (Caster)2","Sovereign of Magical Staff EX");
+        servants.put("Gilgamesh (Caster)3","Male");
+        servants.put("Gilgamesh (Caster)4","Man");
+        servants.put("Gilgamesh (Caster)5","Melammu Dingir");
+        servants.put("Gilgamesh (Caster)6","Territory Creation A");
+        servants.put("Gilgamesh (Caster)7","Divinity B");
+
+        servants.put("Medusa (Lancer)0","Siren Song B");
+        servants.put("Medusa (Lancer)1","Monstrous Strength C");
+        servants.put("Medusa (Lancer)2","Distant Thoughts A");
+        servants.put("Medusa (Lancer)3","Female");
+        servants.put("Medusa (Lancer)4","Earth");
+        servants.put("Medusa (Lancer)5","Caress of the Medusa");
+        servants.put("Medusa (Lancer)6","Core of the Goddess A");
+
+        servants.put("Gorgon0","Monstrous Strength A+");
+        servants.put("Gorgon1","Demonic Mutation B");
+        servants.put("Gorgon2","Mystic Eyes A++");
+        servants.put("Gorgon3","Female");
+        servants.put("Gorgon4","Earth");
+        servants.put("Gorgon5","Pandemonium Cetus");
+        servants.put("Gorgon6","Oblivion Correction C");
+
+        servants.put("Jaguar Warrior0","Jaguar Punch A");
+        servants.put("Jaguar Warrior1","Jaguar Kick B");
+        servants.put("Jaguar Warrior2","Jaguar Eye A+");
+        servants.put("Jaguar Warrior3","Female");
+        servants.put("Jaguar Warrior4","Earth");
+        servants.put("Jaguar Warrior5","Great Death Claw");
+        servants.put("Jaguar Warrior6","Madness Enhancement E");
+        servants.put("Jaguar Warrior7","Divinity A");
+
+        servants.put("Merlin0","Dreamlike Charisma A");
+        servants.put("Merlin1","Illusion A");
+        servants.put("Merlin2","Hero Creation EX");
+        servants.put("Merlin3","Male");
+        servants.put("Merlin4","Earth");
+        servants.put("Merlin5","Garden of Avalon");
+        servants.put("Merlin6","Territory Creation C");
+
+        servants.put("Musashi0","Fifth Sequence A");
+        servants.put("Musashi1","Heavenly Eyes A");
+        servants.put("Musashi2","Emptiness A");
+        servants.put("Musashi3","Female");
+        servants.put("Musashi4","Man");
+        servants.put("Musashi5","Six Paths, Five Rings");
+
+        servants.put("First Hassan0","Battle Continuation EX");
+        servants.put("First Hassan1","Protection of the Faith A+++");
+        servants.put("First Hassan2","Evening Bell EX");
+        servants.put("First Hassan3","Male");
+        servants.put("First Hassan4","Man");
+        servants.put("First Hassan5","Azrael");
+        servants.put("First Hassan6","Independent Action B");
+
+        servants.put("MHX Alter0","Chocolate EX");
+        servants.put("MHX Alter1","Intuition C");
+        servants.put("MHX Alter2","King's Invisible Hand");
+        servants.put("MHX Alter3","Female");
+        servants.put("MHX Alter4","Star");
+        servants.put("MHX Alter5","Cross Calibur");
+        servants.put("MHX Alter6","Madness Enhancement C");
+
+        servants.put("Moriarty0","Magic Shooter EX");
+        servants.put("Moriarty1","End of the Spider Thread A++");
+        servants.put("Moriarty2","Evil Charisma A");
+        servants.put("Moriarty3","Male");
+        servants.put("Moriarty4","Man");
+        servants.put("Moriarty5","The Dynamics of an Asteroid");
+        servants.put("Moriarty6","Independent Action A+");
+
+        servants.put("Emiya Alter0","Bulletproof Reinforcement A");
+        servants.put("Emiya Alter1","Projection C");
+        servants.put("Emiya Alter2","Mocked Conviction A");
+        servants.put("Emiya Alter3","Male");
+        servants.put("Emiya Alter4","Man");
+        servants.put("Emiya Alter5","Unlimited Lost Works");
+        servants.put("Emiya Alter6","Independent Action A");
+
+        servants.put("Shinjuku Avenger0","Fallen Demon of Heaven A+");
+        servants.put("Shinjuku Avenger1","Monstrous Strength B");
+        servants.put("Shinjuku Avenger2","Those Shrouded In Death A");
+        servants.put("Shinjuku Avenger3","Male");
+        servants.put("Shinjuku Avenger4","Earth");
+        servants.put("Shinjuku Avenger5","Frieren Scharfricther");
+        servants.put("Shinjuku Avenger6","Oblivion Correction B");
+
+        servants.put("Shinjuku Assassin0","Chinese Martial Arts EX");
+        servants.put("Shinjuku Assassin1","Espionage A");
+        servants.put("Shinjuku Assassin2","Skillful Star A+");
+        servants.put("Shinjuku Assassin3","Male");
+        servants.put("Shinjuku Assassin4","Man");
+        servants.put("Shinjuku Assassin5","Ambush from Ten Sides");
+        servants.put("Shinjuku Assassin6","Ruffian A");
+
+        servants.put("Arthur Pendragon0","Mana Burst A");
+        servants.put("Arthur Pendragon1","Intuition A");
+        servants.put("Arthur Pendragon2","Giant Beast Hunt A");
+        servants.put("Arthur Pendragon3","Male");
+        servants.put("Arthur Pendragon4","Earth");
+        servants.put("Arthur Pendragon5","Excalibur Arthur");
+        servants.put("Arthur Pendragon6","Riding B");
+
+        servants.put("Hijikata Toshizo0","Demon of the Battlefield B");
+        servants.put("Hijikata Toshizo1","Disengage C");
+        servants.put("Hijikata Toshizo2","Hatto EX");
+        servants.put("Hijikata Toshizo3","Male");
+        servants.put("Hijikata Toshizo4","Man");
+        servants.put("Hijikata Toshizo5","Shinsengumi");
+        servants.put("Hijikata Toshizo6","Madness Enhancement D+");
+
+        servants.put("Chacha0","Golden Rule (Misfortune) B");
+        servants.put("Chacha1","Innocent Monster (Flame) C");
+        servants.put("Chacha2","Beloved Mistress of the Sun EX");
+        servants.put("Chacha3","Female");
+        servants.put("Chacha4","Man");
+        servants.put("Chacha5","Dazzling Demon Realm");
+        servants.put("Chacha6","Madness Enhancement E+");
 
         servantsMap = Collections.unmodifiableMap(servants);
 

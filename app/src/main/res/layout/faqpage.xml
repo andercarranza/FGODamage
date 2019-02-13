@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="FAQ"
+                android:textColor="@color/Black"
+                android:textSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/faqQ1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Where did you get the info for this app?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <TextView
+                android:id="@+id/faqQ1ans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/txtCredits"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ1"
+                app:layout_constraintTop_toBottomOf="@id/faqQ1" />
+
+            <TextView
+                android:id="@+id/faqQ1anspt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Equation for damage calculations based on the above link"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ1"
+                app:layout_constraintTop_toBottomOf="@id/faqQ1ans" />
+
+            <TextView
+                android:id="@+id/faqQ2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is an 'ATK mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/faqQ1anspt2" />
+
+            <TextView
+                android:id="@+id/faqQ2ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="ATK mod is an attack modifier. Several skills in the game often use an attack modifier in combination with other modifiers. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ2"
+                app:layout_constraintTop_toBottomOf="@id/faqQ2" />
+
+            <ImageView
+                android:id="@+id/atkmodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/atkmod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ2"
+                app:layout_constraintTop_toBottomOf="@id/faqQ2ans" />
+
+            <TextView
+                android:id="@+id/faqQ3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is a 'Crit mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/atkmodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ3ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="Crit mod is a modification the amount of damage critical hits do. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ3"
+                app:layout_constraintTop_toBottomOf="@id/faqQ3" />
+
+            <ImageView
+                android:id="@+id/critmodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/critmod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ3"
+                app:layout_constraintTop_toBottomOf="@id/faqQ3ans" />
+
+            <TextView
+                android:id="@+id/faqQ4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is an 'NP damage mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/critmodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ4ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="NP damage mod is a modification the amount of damage a noble phantasm will do. It is a multiplier so noble phantasms that do no inherent damage will not be modified. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ4"
+                app:layout_constraintTop_toBottomOf="@id/faqQ4" />
+
+            <ImageView
+                android:id="@+id/npmodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/npdmgmod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ4"
+                app:layout_constraintTop_toBottomOf="@id/faqQ4ans" />
+
+            <TextView
+                android:id="@+id/faqQ5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is a 'Power mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/npmodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ5ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="Power mod is a modifier that increases damage to certain enemies depending on the skill/Noble Phantasm. However, Power mod is also used to increase your damage in events/raids that provide a bonus to 'Attack Power'. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ5"
+                app:layout_constraintTop_toBottomOf="@id/faqQ5" />
+
+            <ImageView
+                android:id="@+id/powermodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/powermod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ5"
+                app:layout_constraintTop_toBottomOf="@id/faqQ5ans" />
+
+            <TextView
+                android:id="@+id/faqQ5anspt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Skill Power mods when applied look like this: "
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ5"
+                app:layout_constraintTop_toBottomOf="@id/powermodsymbol" />
+
+            <ImageView
+                android:id="@+id/powermodsymbolpt2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/powermodapplied"
+                app:layout_constraintLeft_toRightOf="@id/faqQ5anspt2"
+                app:layout_constraintTop_toBottomOf="@id/powermodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ5anspt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Event/Raid Power mods when applied look like this: "
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ5"
+                app:layout_constraintTop_toBottomOf="@id/powermodsymbolpt2" />
+
+            <ImageView
+                android:id="@+id/powermodsymbolpt3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/eventpowermod"
+                app:layout_constraintLeft_toRightOf="@id/faqQ5anspt3"
+                app:layout_constraintTop_toBottomOf="@id/powermodsymbolpt2" />
+
+            <TextView
+                android:id="@+id/faqQ6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is an 'Arts mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/powermodsymbolpt3" />
+
+            <TextView
+                android:id="@+id/faqQ6ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="Arts mod is a modifier that increases the effectiveness of Arts cards. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ6"
+                app:layout_constraintTop_toBottomOf="@id/faqQ6" />
+
+            <ImageView
+                android:id="@+id/artsmodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/artsmod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ6"
+                app:layout_constraintTop_toBottomOf="@id/faqQ6ans" />
+
+            <TextView
+                android:id="@+id/faqQ7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is a 'Buster mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/artsmodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ7ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="Buster mod is a modifier that increases the effectiveness of Buster cards. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ7"
+                app:layout_constraintTop_toBottomOf="@id/faqQ7" />
+
+            <ImageView
+                android:id="@+id/bustermodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/bustermod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ7"
+                app:layout_constraintTop_toBottomOf="@id/faqQ7ans" />
+
+            <TextView
+                android:id="@+id/faqQ8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is a 'Quick mod'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/bustermodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ8ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="Quick mod is a modifier that increases the effectiveness of Quick cards. Their symbols typically look like this:"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ8"
+                app:layout_constraintTop_toBottomOf="@id/faqQ8" />
+
+            <ImageView
+                android:id="@+id/quickmodsymbol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/quickmod"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ8"
+                app:layout_constraintTop_toBottomOf="@id/faqQ8ans" />
+
+            <TextView
+                android:id="@+id/faqQ9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="What is 'DamagePlusAdd'?"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/quickmodsymbol" />
+
+            <TextView
+                android:id="@+id/faqQ9ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/dmgplusexplain"
+                android:textColor="@color/fgoLB"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="@id/faqQ9"
+                app:layout_constraintTop_toBottomOf="@id/faqQ9" />
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="20dp"
+                android:text="Back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/faqQ9ans" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

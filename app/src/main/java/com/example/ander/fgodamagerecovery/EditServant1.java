@@ -198,6 +198,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
             case 1:
                 nextServant.setText("Servant 1");
                 spinnerClass.setSelection(getIndex(spinnerClass, servant1.getClassName()));
+                fillNameArray();
                 spinnerServname.setSelection(getIndex(spinnerServname, servant1.getName()));
                 spinnerNPlvl.setSelection(servant1.getNPlvl() - 1);
                 skill1LVL.setSelection(servant1.getSkill1lvl() - 1);
@@ -216,6 +217,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
             case 2:
                 nextServant.setText("Servant 2");
                 spinnerClass.setSelection(getIndex(spinnerClass, servant2.getClassName()));
+                fillNameArray();
                 spinnerServname.setSelection(getIndex(spinnerServname, servant2.getName()));
                 spinnerNPlvl.setSelection(servant2.getNPlvl() - 1);
                 skill1LVL.setSelection(servant2.getSkill1lvl() - 1);
@@ -234,6 +236,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
             case 3:
                 nextServant.setText("Servant 3");
                 spinnerClass.setSelection(getIndex(spinnerClass, servant3.getClassName()));
+                fillNameArray();
                 spinnerServname.setSelection(getIndex(spinnerServname, servant3.getName()));
                 spinnerNPlvl.setSelection(servant3.getNPlvl() - 1);
                 skill1LVL.setSelection(servant3.getSkill1lvl() - 1);
@@ -444,6 +447,14 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Arjuna");
         nameArray.add("Gilgamesh (Child)");
         nameArray.add("Billy The Kid");
+        nameArray.add("Tristan");
+        nameArray.add("Tawara Touta");
+        nameArray.add("Archuria");
+        nameArray.add("Summer Anne & Mary");
+        nameArray.add("Kuro");
+        nameArray.add("Ishtar");
+        nameArray.add("Moriarty");
+        nameArray.add("Emiya Alter");
         nameArray.notifyDataSetChanged();
     }
     private void fillSaberNames(){
@@ -464,6 +475,12 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Mordred");
         nameArray.add("Shiki Void");
         nameArray.add("Rama");
+        nameArray.add("Lancelot (Saber)");
+        nameArray.add("Gawain");
+        nameArray.add("Bedivere");
+        nameArray.add("Brave Liz");
+        nameArray.add("Musashi");
+        nameArray.add("Arthur Pendragon");
         nameArray.notifyDataSetChanged();
     }
 
@@ -484,6 +501,13 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Brynhild");
         nameArray.add("Li Shuwen");
         nameArray.add("Arturia (Lancer)");
+        nameArray.add("Summer Tamamo");
+        nameArray.add("Summer Kiyohime");
+        nameArray.add("Vlad (Extra)");
+        nameArray.add("Santa Jeanne Alter");
+        nameArray.add("Enkidu");
+        nameArray.add("Medusa (Lancer)");
+        nameArray.add("Jaguar Warrior");
         nameArray.notifyDataSetChanged();
     }
 
@@ -504,6 +528,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Astolfo");
         nameArray.add("Queen Medb");
         nameArray.add("Iskandar");
+        nameArray.add("Kintoki Rider");
+        nameArray.add("Ozymandias");
+        nameArray.add("Summer Mordred");
+        nameArray.add("Quetzalcoatl");
 
         nameArray.notifyDataSetChanged();
     }
@@ -529,6 +557,13 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Thomas Edison");
         nameArray.add("Geronimo");
         nameArray.add("Irisviel");
+        nameArray.add("Xuanzang Sanzang");
+        nameArray.add("Nitocris");
+        nameArray.add("Leonardo da Vinci");
+        nameArray.add("Summer Marie");
+        nameArray.add("Illyasviel");
+        nameArray.add("Gilgamesh (Caster)");
+        nameArray.add("Merlin");
 
         nameArray.notifyDataSetChanged();
     }
@@ -549,6 +584,14 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Mysterious Heroine X");
         nameArray.add("Shiki");
         nameArray.add("Emiya (Assassin)");
+        nameArray.add("Hassan Hundred Persona");
+        nameArray.add("Shuten-Douji");
+        nameArray.add("Fuuma Koutarou");
+        nameArray.add("Hassan Serenity");
+        nameArray.add("Summer Scathach");
+        nameArray.add("Cleopatra");
+        nameArray.add("First Hassan");
+        nameArray.add("Shinjuku Assassin");
 
         nameArray.notifyDataSetChanged();
     }
@@ -573,6 +616,10 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Nightingale");
         nameArray.add("Cu Chulainn (Alter)");
         nameArray.add("Raikou");
+        nameArray.add("Ibaraki-Douji");
+        nameArray.add("MHX Alter");
+        nameArray.add("Hijikata Toshizo");
+        nameArray.add("Chacha");
 
         nameArray.notifyDataSetChanged();
     }
@@ -593,6 +640,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Amakusa Shirou");
         nameArray.add("Martha");
         nameArray.add("Sherlock Holmes");
+        nameArray.add("Summer Martha");
 
         nameArray.notifyDataSetChanged();
     }
@@ -603,7 +651,8 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
         nameArray.add("Edmond Dantes");
         nameArray.add("Jeanne d'Arc (Alter)");
         nameArray.add("Angry Manjew");
-
+        nameArray.add("Gorgon");
+        nameArray.add("Shinjuku Avenger");
 
         nameArray.notifyDataSetChanged();
     }

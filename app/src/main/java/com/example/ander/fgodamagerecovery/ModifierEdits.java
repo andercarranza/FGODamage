@@ -15,7 +15,7 @@ import com.example.ander.fgodamagerecovery.Objects.Servant;
 
 public class ModifierEdits extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    Servant servant1, servant2, servant3, dealer;
+    Servant servant1, servant2, servant3, enemy;
     EditText servant1ATKmod, servant1CRITmod, servant1NPDMGmod, servant1POWERmod, servant1ARTSmod, servant1BUSTERmod, servant1QUICKmod, servant1DMGPLUSADD,
             servant2ATKmod, servant2CRITmod, servant2NPDMGmod, servant2POWERmod, servant2ARTSmod, servant2BUSTERmod, servant2QUICKmod, servant2DMGPLUSADD,
             servant3ATKmod, servant3CRITmod, servant3NPDMGmod, servant3POWERmod, servant3ARTSmod, servant3BUSTERmod, servant3QUICKmod, servant3DMGPLUSADD;
@@ -27,17 +27,19 @@ public class ModifierEdits extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.modifieredit);
         Intent servantInfo = getIntent();
         final Bundle recieved = servantInfo.getExtras();
-        final Servant enemy = servantInfo.getParcelableExtra("EnemyObj");
+        enemy = servantInfo.getParcelableExtra("EnemyObj");
         servant1 = servantInfo.getParcelableExtra("serv_1a");
         servant2 = servantInfo.getParcelableExtra("serv_2a");
         servant3 = servantInfo.getParcelableExtra("serv_3a");
         TextView servant1NM = (TextView) findViewById(R.id.servant1NM);
         TextView servant2NM = (TextView) findViewById(R.id.servant2NM);
         TextView servant3NM = (TextView) findViewById(R.id.servant3NM);
+        TextView enemyNM = (TextView) findViewById(R.id.enemyServ);
 
         servant1NM.setText(servant1.getName());
         servant2NM.setText(servant2.getName());
         servant3NM.setText(servant3.getName());
+        enemyNM.setText(enemy.getName());
 
         Button recalculate = (Button) findViewById(R.id.recalcBtn);
         Button cardSelect = (Button) findViewById(R.id.cardSelBtn);
@@ -72,6 +74,7 @@ public class ModifierEdits extends AppCompatActivity implements View.OnClickList
         setHints();
 
         final Intent recalc = new Intent(this, Calculate.class);
+        final Intent selectCards = new Intent(this, CardSelect.class);
 
         recalculate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -85,6 +88,19 @@ public class ModifierEdits extends AppCompatActivity implements View.OnClickList
             }
         });
 
+        cardSelect.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //selectCards.putExtra("servant", 1);
+                retrieveInputs();
+                selectCards.putExtra("enemyObj", enemy);
+                selectCards.putExtra("serv_1a", servant1);
+                selectCards.putExtra("serv_2a", servant2);
+                selectCards.putExtra("serv_3a", servant3);
+                startActivity(selectCards);
+                //this.overridePendingTransition(0, 0);
+            }
+
+        });
 
     }
 

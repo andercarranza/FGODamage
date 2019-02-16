@@ -74,11 +74,14 @@ public class SavedTeams extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
-
+            case R.id.menu_add:
+                Intent newTeam = new Intent(this, LoadServants.class);
+                newTeam.putExtra("servant", 1);
+                startActivity(newTeam);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
-
+        return super.onOptionsItemSelected(item);
     }
 }

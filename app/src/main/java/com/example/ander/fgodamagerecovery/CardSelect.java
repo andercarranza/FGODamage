@@ -22,6 +22,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
     ArrayAdapter<String> cardLineup, oneThruFive, chargePercent;
     Servant servant1, servant2, servant3, enemy;
     TextView text1,text2,text3, chargetxt1, chargetxt2, chargetxt3;
+    CheckBox poisonedEnemy;
     //CheckBox check1, check2, check3;
     Button calculate;
 
@@ -40,7 +41,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         Log.d("Defense", enemy.getDefMOD() + "");
 
         calculate = (Button)findViewById(R.id.next);
-        //check1 = (CheckBox)findViewById(R.id.checkBox1);
+        poisonedEnemy = (CheckBox)findViewById(R.id.poisonedBox);
         //check2 = (CheckBox)findViewById(R.id.checkBox2);
         //check3 = (CheckBox)findViewById(R.id.checkBox3);
         //text1 = (TextView)findViewById(R.id.NP1label);
@@ -58,6 +59,9 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         chargetxt1 = (TextView)findViewById(R.id.overcharge1);
         chargetxt2 = (TextView)findViewById(R.id.overcharge2);
         chargetxt3 = (TextView)findViewById(R.id.overcharge3);
+
+        if(servant1.getName().equals("Robin Hood") || servant2.getName().equals("Robin Hood") || servant3.getName().equals("Robin Hood"))
+            poisonedEnemy.setVisibility(View.VISIBLE);
 
         cardLineup = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         cardLineup.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -101,6 +105,7 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
         final Bundle passThis = new Bundle();
         //passThis.putString("enemy_1", recieved.getString("enemy_1"));
         //passThis.putString("enemy_2", recieved.getString("enemy_2"));
+
 
         card1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
@@ -294,6 +299,18 @@ public class CardSelect extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 passThis.putString("card3Charge", "100");
+            }
+        });
+
+        poisonedEnemy.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(poisonedEnemy.isChecked()){
+                    enemy.setPoisoned(true);
+                }else{
+                    enemy.setPoisoned(false);
+                }
             }
         });
 

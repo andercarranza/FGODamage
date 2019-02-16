@@ -11,6 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:isScrollContainer="false"
+        android:background="@drawable/background1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -155,6 +156,19 @@
                 app:layout_constraintLeft_toRightOf="@+id/overcharge3"
                 app:layout_constraintTop_toBottomOf="@id/card3spinner" />
 
+            <CheckBox
+                android:id="@+id/poisonedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Poison Enemy"
+                android:textSize="20dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/next"
+                app:layout_constraintTop_toBottomOf="@id/charge3" />
+
 
             <Button
                 android:id="@+id/next"
@@ -166,7 +180,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Calculate"
-                app:layout_constraintTop_toBottomOf="@id/charge3"
+                app:layout_constraintTop_toBottomOf="@id/poisonedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </android.support.constraint.ConstraintLayout>

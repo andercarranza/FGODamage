@@ -409,7 +409,10 @@ public class Servant implements Parcelable{
     }
 
     public void setPoisoned(boolean poisoned) {
-        isPoisoned = 1;
+        if(poisoned)
+            isPoisoned = 1;
+        else
+            isPoisoned = 0;
     }
 
     public double getArtsMOD() {

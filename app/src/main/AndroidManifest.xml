@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ander.fgodamagerecovery">
+    package="com.fgoWork.ander.fgodamagerecovery">
 
     <application
         android:allowBackup="true"
@@ -9,25 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenu">
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoadServants" />
-        <activity android:name=".Confirm" />
-        <activity android:name=".EditEnemy" />
-        <activity android:name=".EditServant1" />
-        <activity android:name=".CardSelect" />
-        <activity android:name=".Calculate" />
-        <activity android:name=".LoadEnemy" />
-        <activity android:name=".SavedTeams" />
-        <activity android:name=".EditSavedClass" />
-        <activity android:name=".ModifierEdits" />
-        <activity android:name=".CustomDEFENSE" />
-        <activity android:name=".FAQpage" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.LoadServants" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.Confirm" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.EditEnemy" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.EditServant1" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.CardSelect" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.Calculate" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.LoadEnemy" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.SavedTeams" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.EditSavedClass" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.ModifierEdits" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.CustomDEFENSE" />
+        <activity android:name="com.fgoWork.ander.fgodamagerecovery.FAQpage" />
     </application>
 
 </manifest>

@@ -19,4 +19,8 @@
     <string name="dmgplusexplain">DamagePlusAdd is a modifier that adds a set amount of damage to your attack. This damage is not affected by any modifier and there is no skill that solely gives bonus damage plus.
         For some examples of this modifier: Waver\'s third skill gives some along with an ATK mod, and Divinity is a form of DamagePlusAdd. There is no skill specifically for DamagePlusAdd but when it is applied
         in skills it looks just like the Power Mod applied</string>
+
+    <string name="rangeExplain">Damage in FGO can at best be simplified to a range. Each attack by your servant has a random multiplier from  .9 to 1.1 (it is not possible to predict which value your attack will
+        get in this range). The value you get is decided at the start of your turn. However, you can change this modifier by using a skill. Each time you use a skill this modifier will be rerolled (even if this
+        skill does not inherently affect damage).</string>
 </resources>

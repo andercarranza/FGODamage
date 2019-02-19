@@ -17,15 +17,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.christian.fgodamage.LoadEnemy" >
+        <activity android:name="com.fgoWork.christian.fgodamage.LoadEnemy" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.christian.fgodamage.LoadServants" />
-        <activity android:name="com.example.christian.fgodamage.Confirm" />
+        <activity android:name="com.fgoWork.christian.fgodamage.LoadServants" />
+        <activity android:name="com.fgoWork.christian.fgodamage.Confirm" />
 
         <meta-data
             android:name="android.support.VERSION"

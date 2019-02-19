@@ -3,6 +3,7 @@ package com.example.ander.fgodamagerecovery;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,6 +20,7 @@ import static java.lang.Math.*;
 
 import com.example.ander.fgodamagerecovery.Objects.Effects;
 import com.example.ander.fgodamagerecovery.Objects.FGODamage;
+import com.example.ander.fgodamagerecovery.Objects.Party;
 import com.example.ander.fgodamagerecovery.Objects.Servant;
 
 import junit.framework.Test;
@@ -95,6 +97,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         Button cardSelect = (Button) findViewById(R.id.backBtn);
         Button cardSelectWMods = (Button) findViewById(R.id.keepBtn);
         Button editMods = (Button) findViewById(R.id.editBtn);
+        Button newEnemy = (Button) findViewById(R.id.enemyBtn);
 
         extraLabel.setVisibility(View.INVISIBLE);
         extraValue.setVisibility(View.INVISIBLE);
@@ -179,6 +182,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
         final Intent selectCards = new Intent(this, CardSelect.class);
         final Intent modifiers = new Intent(this, ModifierEdits.class);
+        final Intent loadEnemy = new Intent(this, LoadEnemy.class);
 
         critActivate1.setOnClickListener(new View.OnClickListener() {
 
@@ -297,6 +301,14 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                 modifiers.putExtra("serv_2a", servant2);
                 modifiers.putExtra("serv_3a", servant3);
                 startActivity(modifiers);
+            }
+        });
+
+        newEnemy.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Party passingParty = new Party (servant1, servant2, servant3);
+                loadEnemy.putExtra("team", (Parcelable) passingParty);
+                startActivity(loadEnemy);
             }
         });
 

@@ -970,11 +970,13 @@
 
             <Button
                 android:id="@+id/recalcBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
+                android:textColor="@color/white"
+                android:background="@drawable/gradient1"
                 android:text="Recalculate"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@+id/servant3NM"
@@ -982,11 +984,13 @@
 
             <Button
                 android:id="@+id/cardSelBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
+                android:textColor="@color/white"
+                android:background="@drawable/gradient2"
                 android:text="Card Select"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/recalcBtn"

@@ -959,13 +959,13 @@ public class FGODamage {
         servants.put("Jeanne d'Arc (Alter)5","La Grondement Du Haine");
         servants.put("Jeanne d'Arc (Alter)6","Oblivion Correction A");
 
-        servants.put("Angry Manjew0","Tawrich C");
-        servants.put("Angry Manjew1","Zarich C");
-        servants.put("Angry Manjew2","Annihilation Wish A");
-        servants.put("Angry Manjew3","Male");
-        servants.put("Angry Manjew4","Man");
-        servants.put("Angry Manjew5","Verg Avesta");
-        servants.put("Angry Manjew6","Oblivion Correction A");
+        servants.put("Angra Mainyu0","Tawrich C");
+        servants.put("Angra Mainyu1","Zarich C");
+        servants.put("Angra Mainyu2","Annihilation Wish A");
+        servants.put("Angra Mainyu3","Male");
+        servants.put("Angra Mainyu4","Man");
+        servants.put("Angra Mainyu5","Verg Avesta");
+        servants.put("Angra Mainyu6","Oblivion Correction A");
 
         servants.put("Iskandar0","Charisma A");
         servants.put("Iskandar1","Tactics B");

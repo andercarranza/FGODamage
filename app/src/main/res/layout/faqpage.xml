@@ -373,6 +373,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/gradient1"
+                android:textColor="@color/white"
                 android:text="Back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

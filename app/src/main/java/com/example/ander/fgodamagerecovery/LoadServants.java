@@ -570,7 +570,7 @@ public class LoadServants extends AppCompatActivity implements View.OnClickListe
         nameArray.notifyDataSetChanged();
         nameArray.add("Edmond Dantes");
         nameArray.add("Jeanne d'Arc (Alter)");
-        nameArray.add("Angry Manjew");
+        nameArray.add("Angra Mainyu");
         nameArray.add("Gorgon");
         nameArray.add("Shinjuku Avenger");
 

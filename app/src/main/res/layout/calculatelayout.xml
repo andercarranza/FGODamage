@@ -786,7 +786,7 @@
 
             <Button
                 android:id="@+id/backBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -794,14 +794,16 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
+                android:background="@drawable/gradient1"
                 android:text="Reset Modifiers and Back"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@+id/servant3NM"
                 app:layout_constraintTop_toBottomOf="@+id/quickDefLabel" />
 
             <Button
                 android:id="@+id/editBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -809,25 +811,44 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
+                android:background="@drawable/gradient2"
                 android:text="Edit Modifiers"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/backBtn"
                 app:layout_constraintTop_toBottomOf="@+id/quickDefLabel" />
 
             <Button
                 android:id="@+id/keepBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:background="@drawable/gradient1"
+                android:text="Keep Modifiers and Back"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/backBtn"
+                app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+            <Button
+                android:id="@+id/enemyBtn"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
-                android:text="Keep Modifiers and Back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/backBtn"
-                app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+                android:background="@drawable/gradient2"
+                android:text="New Enemy"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/keepBtn"
+                app:layout_constraintLeft_toRightOf="@+id/keepBtn"
+                app:layout_constraintTop_toBottomOf="@+id/editBtn" />
 
 
         </android.support.constraint.ConstraintLayout>

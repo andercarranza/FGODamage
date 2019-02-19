@@ -1854,7 +1854,7 @@ public class Effects {
         list10.add("Queen Medb");
         list10.add("Li Shuwen");
         list10.add("Jeanne d'Arc (Alter)");
-        list10.add("Angry Manjew");
+        list10.add("Angra Mainyu");
         list10.add("Emiya (Assassin)");
         list10.add("Hassan Hundred Persona");
         list10.add("Shuten-Douji");

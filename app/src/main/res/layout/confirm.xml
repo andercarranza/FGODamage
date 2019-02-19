@@ -299,42 +299,36 @@
                 app:layout_constraintTop_toBottomOf="@+id/servant3d" />
             <!-- endservants -->
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:orientation="horizontal"
-            >
-            <Button
-                android:id="@+id/next"
-                android:layout_width="wrap_content"
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Save Team"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editServant3Btn"
-                android:orientation="horizontal"/>
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/enemy_select"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Select Enemy"
-                android:orientation="horizontal"
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
 
-                app:layout_constraintLeft_toRightOf="@+id/next" />
-        </LinearLayout>
+                    android:background="@drawable/gradient1"
+                    android:orientation="horizontal"
+                    android:text="Save Team"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/enemy_select"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/enemy_select"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/gradient2"
+                    android:orientation="horizontal"
+                    android:text="Select Enemy"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/next" />
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 

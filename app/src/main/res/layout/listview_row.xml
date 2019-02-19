@@ -54,6 +54,8 @@
                 android:layout_height="40sp"
                 android:layout_alignParentRight="true"
                 android:text="Select"
+                android:textColor="@color/white"
+                android:background="@drawable/gradient1"
                 android:textSize="9sp" />
 
             <Button
@@ -62,6 +64,8 @@
                 android:layout_height="40sp"
                 android:layout_marginRight="66sp"
                 android:layout_alignParentRight="true"
+                android:background="@drawable/gradient2"
+                android:textColor="@color/white"
                 android:text="Edit"
                 android:textSize="9sp" />
 

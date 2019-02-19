@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/menu_add"
-        android:icon="@drawable/square"
+        android:icon="@drawable/add_icon"
         android:title="Add"
         app:showAsAction="always" />
 

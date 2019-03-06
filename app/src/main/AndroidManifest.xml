@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fgoWork.ander.fgodamagerecovery">
+    package="com.fgoWork">
 
     <application
         android:allowBackup="true"
@@ -9,25 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.MainMenu">
+        <activity android:name="com.fgoWork.MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.LoadServants" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.Confirm" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.EditEnemy" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.EditServant1" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.CardSelect" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.Calculate" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.LoadEnemy" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.SavedTeams" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.EditSavedClass" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.ModifierEdits" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.CustomDEFENSE" />
-        <activity android:name="com.fgoWork.ander.fgodamagerecovery.FAQpage" />
+        <activity android:name="com.fgoWork.LoadServants" />
+        <activity android:name="com.fgoWork.Confirm" />
+        <activity android:name="com.fgoWork.EditEnemy" />
+        <activity android:name="com.fgoWork.EditServant1" />
+        <activity android:name="com.fgoWork.CardSelect" />
+        <activity android:name="com.fgoWork.Calculate" />
+        <activity android:name="com.fgoWork.LoadEnemy" />
+        <activity android:name="com.fgoWork.SavedTeams" />
+        <activity android:name="com.fgoWork.EditSavedClass" />
+        <activity android:name="com.fgoWork.ModifierEdits" />
+        <activity android:name="com.fgoWork.CustomDEFENSE" />
+        <activity android:name="com.fgoWork.FAQpage" />
     </application>
 
 </manifest>

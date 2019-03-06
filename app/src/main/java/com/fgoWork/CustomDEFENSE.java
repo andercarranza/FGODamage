@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.Objects.Servant;
 
 public class CustomDEFENSE extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 

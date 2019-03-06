@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery.Objects;
+package com.fgoWork.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -3429,7 +3429,7 @@ public class Effects {
         }
         if(effectsMap.get(skillName + "12").equals("Self"))
         {
-            if(FGODamage.cardType.equals(effectsMap.get(skillName + "11")))
+            if(com.fgoWork.Objects.FGODamage.cardType.equals(effectsMap.get(skillName + "11")))
                 //FGODamage.(effectsMap.get(skillName + "0")) += Double.parseDouble(effectsMap.get(skillName + Integer.toString(level)));
                 if(effectsMap.get(skillName + "0").equals("cardMOD"))
                 {

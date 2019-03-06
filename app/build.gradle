@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.fgoWork.ander.fgodamagerecovery"
+        applicationId "com.fgoWork"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 1
+        versionCode 7
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.fgoWork.MainMenu;
 
 public class FAQpage  extends Activity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 

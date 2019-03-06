@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery.Objects;
+package com.fgoWork.Objects;
 
 import android.content.Context;
 import android.os.Parcel;
@@ -7,22 +7,22 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class Party implements Parcelable, Serializable {
-    private Servant servant1;
-    private Servant servant2;
-    private Servant servant3;
+    private com.fgoWork.Objects.Servant servant1;
+    private com.fgoWork.Objects.Servant servant2;
+    private com.fgoWork.Objects.Servant servant3;
     public transient Context myContext;
 
 
-    public Party(Servant servant1, Servant servant2, Servant servant3) {
+    public Party(com.fgoWork.Objects.Servant servant1, com.fgoWork.Objects.Servant servant2, com.fgoWork.Objects.Servant servant3) {
         this.servant1 = servant1;
         this.servant2 = servant2;
         this.servant3 = servant3;
     }
 
     protected Party(Parcel in) {
-        servant1 = in.readParcelable(Servant.class.getClassLoader());
-        servant2 = in.readParcelable(Servant.class.getClassLoader());
-        servant3 = in.readParcelable(Servant.class.getClassLoader());
+        servant1 = in.readParcelable(com.fgoWork.Objects.Servant.class.getClassLoader());
+        servant2 = in.readParcelable(com.fgoWork.Objects.Servant.class.getClassLoader());
+        servant3 = in.readParcelable(com.fgoWork.Objects.Servant.class.getClassLoader());
     }
 
     public static final Creator<Party> CREATOR = new Creator<Party>() {
@@ -37,27 +37,27 @@ public class Party implements Parcelable, Serializable {
         }
     };
 
-    public Servant getServant1() {
+    public com.fgoWork.Objects.Servant getServant1() {
         return servant1;
     }
 
-    public void setServant1(Servant servant1) {
+    public void setServant1(com.fgoWork.Objects.Servant servant1) {
         this.servant1 = servant1;
     }
 
-    public Servant getServant2() {
+    public com.fgoWork.Objects.Servant getServant2() {
         return servant2;
     }
 
-    public void setServant2(Servant servant2) {
+    public void setServant2(com.fgoWork.Objects.Servant servant2) {
         this.servant2 = servant2;
     }
 
-    public Servant getServant3() {
+    public com.fgoWork.Objects.Servant getServant3() {
         return servant3;
     }
 
-    public void setServant3(Servant servant3) {
+    public void setServant3(com.fgoWork.Objects.Servant servant3) {
         this.servant3 = servant3;
     }
 

@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,10 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.Calculate;
+import com.fgoWork.Objects.Servant;
 
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
+import static com.fgoWork.Objects.FGODamage.servantsMap;
 
 public class CardSelect extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     Spinner card1, card2, card3, NPlevel1, NPlevel2, NPlevel3, charge1, charge2, charge3;

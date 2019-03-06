@@ -1,5 +1,5 @@
 
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.fgoWork.EditServant1;
+import com.fgoWork.LoadEnemy;
 import com.google.gson.Gson;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Party;
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.Objects.Party;
+import com.fgoWork.Objects.Servant;
 import com.google.gson.reflect.TypeToken;
 
 

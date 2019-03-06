@@ -1,5 +1,5 @@
 
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +15,10 @@ import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
+import com.fgoWork.Objects.Servant;
+
+import static com.fgoWork.Objects.FGODamage.servantsMap;
+import static com.fgoWork.Objects.FGODamage.upgradelist;
 
 /**
  * Created by Christian on 4/9/2018.

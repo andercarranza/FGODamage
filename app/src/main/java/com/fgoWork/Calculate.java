@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +14,15 @@ import android.widget.TextView;
 
 import static java.lang.Math.abs;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Party;
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.LoadEnemy;
+import com.fgoWork.ModifierEdits;
+import com.fgoWork.Objects.Party;
+import com.fgoWork.Objects.Servant;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import static com.fgoWork.ander.fgodamagerecovery.Objects.Effects.hougu;
+import static com.fgoWork.Objects.Effects.hougu;
 
 public class Calculate extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 

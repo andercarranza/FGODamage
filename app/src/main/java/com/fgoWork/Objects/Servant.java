@@ -1,18 +1,18 @@
-package com.fgoWork.ander.fgodamagerecovery.Objects;
+package com.fgoWork.Objects;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-import com.fgoWork.ander.fgodamagerecovery.Calculate;
+import com.fgoWork.Calculate;
 
 import java.util.List;
 
-import static com.fgoWork.ander.fgodamagerecovery.Objects.Effects.hiddenTraits;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.Effects.damagePattern;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.Effects.hougu;
+import static com.fgoWork.Objects.Effects.hiddenTraits;
+import static com.fgoWork.Objects.FGODamage.servantsMap;
+import static com.fgoWork.Objects.FGODamage.upgradelist;
+import static com.fgoWork.Objects.Effects.damagePattern;
+import static com.fgoWork.Objects.Effects.hougu;
 
 public class Servant implements Parcelable{
     private int ATK;

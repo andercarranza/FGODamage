@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,8 +20,8 @@ import android.widget.TextView;
 
 
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Party;
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.Objects.Party;
+import com.fgoWork.Objects.Servant;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

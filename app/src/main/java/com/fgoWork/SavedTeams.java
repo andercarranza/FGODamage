@@ -1,4 +1,4 @@
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.app.ActionBar;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Party;
+import com.fgoWork.Objects.Party;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

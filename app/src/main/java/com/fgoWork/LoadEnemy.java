@@ -1,5 +1,5 @@
 
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Button;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Party;
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.Objects.Party;
+import com.fgoWork.Objects.Servant;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 

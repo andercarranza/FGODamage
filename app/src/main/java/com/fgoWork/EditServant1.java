@@ -1,5 +1,5 @@
 
-package com.fgoWork.ander.fgodamagerecovery;
+package com.fgoWork;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fgoWork.ander.fgodamagerecovery.Objects.Party;
-import com.fgoWork.ander.fgodamagerecovery.Objects.Servant;
+import com.fgoWork.Objects.Party;
+import com.fgoWork.Objects.Servant;
 
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.servantsMap;
-import static com.fgoWork.ander.fgodamagerecovery.Objects.FGODamage.upgradelist;
+import static com.fgoWork.Objects.FGODamage.servantsMap;
+import static com.fgoWork.Objects.FGODamage.upgradelist;
 
 //servantnumber not needed
 
@@ -658,7 +658,7 @@ public class EditServant1 extends AppCompatActivity implements View.OnClickListe
     }
 
     public void loadServants(View view){
-        Intent loadServants = new Intent(this, com.fgoWork.ander.fgodamagerecovery.LoadServants.class);
+        Intent loadServants = new Intent(this, LoadServants.class);
         loadServants.putExtra("servant", 1);
         startActivity(loadServants);
         //this.overridePendingTransition(0, 0);
